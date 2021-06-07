@@ -1,4 +1,4 @@
-![](design/Rue_logo_pink.png)
+<img src="design/Rue_logo_pink.png" alt="img" style="zoom:50%;" />
 
 ## Integrantes
 * Brenda Alejandra Medez Torres
