@@ -1,5 +1,7 @@
 <!-- ![](design/Rue_logo_pink.png) -->
+<div align="center">
 <img src="./design/Rue_logo_pink.png" width="350" height="350">
+</div>
 
 ## Integrantes
 * Brenda Alejandra Medez Torres
