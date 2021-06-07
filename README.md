@@ -1,22 +1,17 @@
-![](design/Rue_logo_pink.png)
+<!-- ![](design/Rue_logo_pink.png) -->
+<img src="./design/Rue_logo_pink.png" width="350" height="350">
 
 ## Integrantes
 * Brenda Alejandra Medez Torres
 * Flavio Isay Valladolid Magaña
 * Luis Jesus Villegas Castillo
 
-## Descripcion
+## Descripción
 <p align="justify">
-El sitio Rue estará enfocado en los productos <strong>
-Gastronómico
-</strong>de todo tipo y brindará servicios <em>delivery</em>.
-El público objetivo de Rue son los puestos de comida informales y los clientes que no cuenten con el tiempo de cocinar sus alimentos  o que no sepan cocinar.
+Nuestro país es famoso mundialmente por su gastronomía y no hay mejor interpretación que la comida callejera en México, donde te puedes deleitar a buen precio. Por eso <strong>RUE</strong> estará orientada a una gran cantidad de puestos y platillos callejeros que aún no cuentan con una cadena de suministro digital y que por su naturaleza de negocio informal, no son candidatos de aplicaciones actuales en el mercado. 
+<strong>RUE</strong> es una aplicación que opera de una forma sencilla e intuitiva donde los usuarios  podrán pedir comida a domicilio, basando sus elecciones a partir de recomendaciones de otros usuarios.
+De igual manera los restaurantes se pueden registrar y agregar sus respectivos platillos a vender ofreciendo los servicios a domicilio.
 </p>
-
-
-* ¿Como ajustaremos nuestra oferta a esé público?
-
-
 
 ## Sitios de referencia
 * **[Rappi](https://www.rappi.com.mx/)**
