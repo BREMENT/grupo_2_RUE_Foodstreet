@@ -25,3 +25,20 @@ De igual manera los restaurantes se pueden registrar y agregar sus respectivos p
 
 <ppEl align="justify">Estos sitios fueron elegidos, ya que el sitio Rue al igual que estos sitios mencionados anteriormente estará enfocado al los sectores de restaurantes, estos mismos presentan una estética llamativa, cada uno cuenta con una funcionalidad y enfoque diferente.</ppEl>
 
+## Diseño
+
+### Logo
+<img src="./design/Rue_logo_pink.png" width="350" height="350">
+<img src="./design/Rue_logo_white.png" width="350" height="350">
+<img src="./design/Rue_logo_black.png" width="350" height="350">
+
+### Colores
+- #F2274C
+- #91CCD9
+- #FFFFFF
+
+### Tipografías
+- [Montserrat](https://fonts.google.com/specimen/Montserrat?query=montserrat) <span style="font-family:Montserrat">(para contenido)</span>
+Rubik (para titulares)
+- [**Rubik**](https://fonts.google.com/specimen/Rubik?query=rubik) <span style="font-family:Rubik">(para titulares)</span>
+
