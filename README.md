@@ -39,6 +39,5 @@ De igual manera los restaurantes se pueden registrar y agregar sus respectivos p
 
 ### Tipografías
 - [Montserrat](https://fonts.google.com/specimen/Montserrat?query=montserrat) <span style="font-family:Montserrat">(para contenido)</span>
-Rubik (para titulares)
 - [**Rubik**](https://fonts.google.com/specimen/Rubik?query=rubik) <span style="font-family:Rubik">(para titulares)</span>
 
