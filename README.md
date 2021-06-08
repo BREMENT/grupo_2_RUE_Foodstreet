@@ -28,9 +28,13 @@ De igual manera los restaurantes se pueden registrar y agregar sus respectivos p
 ## Diseño
 
 ### Logo
-<img src="./design/Rue_logo_pink.png" width="350" height="350">
-<img src="./design/Rue_logo_white.png" width="350" height="350">
-<img src="./design/Rue_logo_black.png" width="350" height="350">
+
+|   Rosa   |  Blanco |  Negro |
+| ---- | ---- | ---- |
+| <img src="./design/Rue_logo_pink.png" width="350" height="350">  | <img src="./design/Rue_logo_white.png" width="350" height="350">   |    <img src="./design/Rue_logo_black.png" width="350" height="350">  |
+
+
+
 
 ### Colores
 - #F2274C
