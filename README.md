@@ -4,7 +4,7 @@
 </div>
 
 ## Integrantes
-* Brenda Alejandra Medez Torres
+* Brenda Alejandra Mendez Torres: Hola soy estudiante de Maestria en Logistica, interesada en la creacion de sitios web y la aplicacion de algoritmos. Mi principal aportacion al trabajo es el process management. 
 * Flavio Isay Valladolid Magaña
 * Luis Jesus Villegas Castillo
 
