@@ -8,6 +8,7 @@
 Hola soy estudiante de maestria en Direccion Logistica y Cadena de Suministro y estoy interesada en la creacion de sitios web y la aplicacion de algoritmos aplicados a la industria automotriz. Mi principal aportacion al trabajo es el process management. 
 * Flavio Isay Valladolid Magaña
 * Luis Jesus Villegas Castillo
+>> Soy estudiante de la carrera de Ingeniería en informática octavo semestre, me gusta programar y mi principal interés es el entorno web para el desarrollo.
 
 ## Descripción
 <p align="justify">
