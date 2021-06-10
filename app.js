@@ -5,11 +5,11 @@ app.use('/static', express.static(__dirname + '/public'));
 
 
 app.get('/', (req,res) => {
-    res.sendFile(__dirname + '/views/home.html');
+    res.sendFile(__dirname + '/views/inicio.html');
 });
 
 app.get('/home', (req,res) => {
-    res.sendFile(__dirname + '/views/home.html');
+    res.sendFile(__dirname + '/views/inicio.html');
 });
 
 app.get('/producto', (req,res) => {
@@ -31,3 +31,4 @@ app.get('/registro', (req,res) => {
 app.listen(3000, () => {
     console.log('Servidor funcionando');
 });
+
