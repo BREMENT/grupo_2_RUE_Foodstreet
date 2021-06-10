@@ -1,5 +1,5 @@
 {
-  "name": "grupo_2_RUE_Foodstreet",
+  "name": "grupo_2_rue_foodstreet",
   "version": "1.0.0",
   "description": "<!-- ![](design/Rue_logo_pink.png) --> <div align=\"center\"> <img src=\"./design/Rue_logo_pink.png\" width=\"350\" height=\"350\"> </div>",
   "main": "app.js",
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/BREMENT/grupo_2_RUE_Foodstreet/issues"
   },
-  "homepage": "https://github.com/BREMENT/grupo_2_RUE_Foodstreet#readme"
+  "homepage": "https://github.com/BREMENT/grupo_2_RUE_Foodstreet#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
