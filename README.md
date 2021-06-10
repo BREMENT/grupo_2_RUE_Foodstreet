@@ -5,9 +5,11 @@
 
 ## Integrantes
 * Brenda Mendez Torres:
-Hola soy estudiante de maestria en Direccion Logistica y Cadena de Suministro y estoy interesada en la creacion de sitios web y la aplicacion de algoritmos aplicados a la industria automotriz. Mi principal aportacion al trabajo es el process management. 
+  * Hola soy estudiante de maestria en Direccion Logistica y Cadena de Suministro y estoy interesada en la creacion de sitios web y la aplicacion de algoritmos aplicados a la industria automotriz. Mi principal aportacion al trabajo es el process management. 
 * Flavio Isay Valladolid Magaña
+  * Soy estudiante de Ingeniería en Nanotecnología con interés en la desarrollo web, UI/UX y en la ciencia de datos para la optimización de procesos. Considero que mi aportación clave en este proyecto es el diseño de interfaces y contenido.
 * Luis Jesus Villegas Castillo
+  * Soy estudiante de la carrera de Ingeniería en informática octavo semestre, me gusta programar y mi principal interés es el entorno web para el desarrollo.
 
 ## Descripción
 <p align="justify">
@@ -45,4 +47,7 @@ De igual manera los restaurantes se pueden registrar y agregar sus respectivos p
 ### Tipografías
 - [Montserrat](https://fonts.google.com/specimen/Montserrat?query=montserrat) <span style="font-family:Montserrat">(para contenido)</span>
 - [**Rubik**](https://fonts.google.com/specimen/Rubik?query=rubik) <span style="font-family:Rubik">(para titulares)</span>
+
+### Enlaces adicionales
+- [Tablero de trabajo](https://trello.com/b/mVW3dA9E)
 
