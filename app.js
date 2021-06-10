@@ -1,20 +1,13 @@
-let express = require('express');
+const express = require('express');
+const app = express();
 
-let app = express ();
+app.use('/static', express.static(__dirname + '/public'));
 
-app.listen(3000,()=> console.log("Esto fue exitoso"));
 
-app.get('/', function(req, res){ res.send("Bienvenidos al sitio modafackas");
+app.get('/', (req,res) => {
+    res.sendFile(__dirname + '/views/home.html');
 });
 
-app.get('/contacto', function(req,res){
-    res.send("Dejanos tu contacto!");
-});
-
-app.get('/un-array', function(req,res){
-    res.send([1,2,3]);
-});
-
-app.get('/un-objeto', function(req,res){
-    res.send({name:"Brenda"});
+app.listen(3000, () => {
+    console.log('Servidor funcionando');
 });
