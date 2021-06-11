@@ -12,12 +12,16 @@ app.get('/home', (req,res) => {
     res.sendFile(__dirname + '/views/inicio.html');
 });
 
-app.get('/producto', (req,res) => {
-    res.sendFile(__dirname + '/views/detalleProducto.html');
-});
-
 app.get('/inicio', (req,res) => {
     res.sendFile(__dirname + '/views/inicio.html');
+});
+
+app.get('/restaurante', (req,res) => {
+    res.sendFile(__dirname + '/views/detalleRestaurante.html');
+});
+
+app.get('/producto', (req,res) => {
+    res.sendFile(__dirname + '/views/detalleProducto.html');
 });
 
 app.get('/login', (req,res) => {
