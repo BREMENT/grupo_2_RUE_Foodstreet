@@ -1,0 +1,46 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+/* General Style */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500;700;900&display=swap');
+
+body{
+    margin: 0;
+    line-height: 1.5;
+    font-size: 16px;
+    font-family: 'Montserrat', 'sans-serif';
+    font-weight: 400;
+}
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    text-decoration: none;
+    box-sizing: border-box;
+
+}
+.banner-restaurante img{
+    width: 100%;
+}
+/* Header */
+header * {
+    display: inline;
+}
+.barra img {
+    width: 70px;
+    height: auto;
+
+}
+.barra .ubicacion{
+    margin: 10px;
+}
+.barra .ubicacion p {
+    padding: 10px;
+}
+
+.barra-busqueda {
+    background-color: red;
+    margin-left: 10px;
+    padding-left: 10px;
+    border-radius: 10px;
+    width: 60%;
+}

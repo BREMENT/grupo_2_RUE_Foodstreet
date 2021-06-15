@@ -5,20 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalle del restaurante</title>
-    <style>
-        .banner-restaurante img{
-            width: 100%;
-        }
-    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
     <header>
-        <img src="static/images/Rue_logo_pink_resized.png" alt="logo" width="70px" height="auto">
-        <p>Aquí va ícono de ubicación</p>
-        <p>Aquí va texto de ubiación</p>
-        <p>Aquí va la barra de búsqueda con el texto "¿Qué deseas comer hoy?"</p>
-        <p>Aquí va botón de carrito</p>
-        <p>Aquí va botón de usuario</p>
+        <div class="barra">
+                <img src="static/images/Rue_logo_pink_resized.png" alt="logo" >
+            <div class="ubicacion">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>Aquí va texto de ubicación</p>
+            </div>
+            <div class="barra-busqueda">
+                <p>¿Qué deseas comer hoy?</p>
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="carrito">
+                <i class="fas fa-cart-plus"></i>            
+            </div>
+            <div class="user">
+                <i class="fas fa-user-circle"></i>
+            </div>
+        </div>
     </header>
     <nav>
         <!-- Banner Restaurante -->
