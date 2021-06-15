@@ -22,25 +22,34 @@ body{
     width: 100%;
 }
 /* Header */
-header * {
-    display: inline;
+.barra {
+    background-color: #F2274C;
+    width: 100%;
 }
 .barra img {
     width: 70px;
     height: auto;
+    padding: 8px;
+}
+.barra ul,
+.barra img{
+    display: flex;
+    align-items: center;
+}
+.barra ul li{
+    list-style: none;
+}
 
-}
-.barra .ubicacion{
-    margin: 10px;
-}
-.barra .ubicacion p {
+.barra ul li a {
+    color: white;
+    display: block; 
     padding: 10px;
 }
-
-.barra-busqueda {
-    background-color: red;
-    margin-left: 10px;
-    padding-left: 10px;
-    border-radius: 10px;
-    width: 60%;
+.barra ul li a .busqueda{
+    background-color: white;
+    color: gray;
+    padding: 5px;
+    border-radius: 15px;
+    width: 400px;
+    height: 25px;
 }
