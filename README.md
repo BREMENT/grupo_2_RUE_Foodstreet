@@ -34,7 +34,7 @@ De igual manera los restaurantes se pueden registrar y agregar sus respectivos p
 
 |   Rosa   |  Blanco |  Negro |
 | ---- | ---- | ---- |
-| <img src="./design/Rue_logo_pink.png" width="350" height="350">  | <img src="./design/Rue_logo_white.png" width="350" height="350">   |    <img src="./design/Rue_logo_black.png" width="350" height="350">  |
+| <img src="./public/images/Rue_logo_pink_resized.png" width="200px" height="auto">  | <img src="./public/images/Rue_logo_white_resized.png" width="200px" height="auto">   |    <img src="./public/images/Rue_logo_black_resized.png" width="200px" height="auto">  |
 
 
 
