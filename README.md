@@ -40,9 +40,9 @@ De igual manera los restaurantes se pueden registrar y agregar sus respectivos p
 
 
 ### Colores
-- <div style="background-color:#F2274C;width:15px;height:15px;display:inline-block">1</div> #F2274C
-- <div style="background-color:#91CCD9;width:15px;height:15px;display:inline-block"><1/div> #91CCD9
-- <div style="background-color:#FFFFFF;width:15px;height:15px;display:inline-block">1</div> #FFFFFF
+- #F2274C
+- #91CCD9
+- #FFFFFF
 
 ### Tipografías
 - [Montserrat](https://fonts.google.com/specimen/Montserrat?query=montserrat) <span style="font-family:Montserrat">(para contenido)</span>
