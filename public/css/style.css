@@ -4,7 +4,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500;700;900&display=swap');
 
 body{
-    margin: 0;
     line-height: 1.5;
     font-size: 16px;
     font-family: 'Montserrat', 'sans-serif';
@@ -22,34 +21,51 @@ body{
     width: 100%;
 }
 /* Header */
-.barra {
+header ul{
+    display: inline-flex;
     background-color: #F2274C;
-    width: 100%;
-}
-.barra img {
-    width: 70px;
-    height: auto;
-    padding: 8px;
-}
-.barra ul,
-.barra img{
-    display: flex;
-    align-items: center;
-}
-.barra ul li{
     list-style: none;
+    height: 100%;
 }
 
-.barra ul li a {
-    color: white;
-    display: block; 
-    padding: 10px;
+header ul .iconos{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 80vw;
 }
-.barra ul li a .busqueda{
-    background-color: white;
-    color: gray;
-    padding: 5px;
-    border-radius: 15px;
-    width: 40vw;
-    height: 25px;
+header  ul li a img{
+    width: 50px;
+    height: auto;
+    
+}
+header ul li .logo{
+    width: 20vw;
+}
+header ul li .logo,
+header ul li .ubicacion,
+header ul li .buscador,
+header ul li .carrito,
+header ul li .usuario{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    height: 51.89px;
+    color: white;
+    display: flex;
+    padding: 12px
+}
+
+
+/* Footer */
+
+footer {
+    background-color: #F2274C;
+    color: white;
+    text-align: center;
+    padding-bottom: 40px;
+}
+footer .info,
+footer .follow{
+    padding-top: 15px;
 }
