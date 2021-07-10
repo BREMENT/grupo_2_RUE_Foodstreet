@@ -22,15 +22,36 @@
     </header>
     <nav>
         <!-- Banner Restaurante -->
-        <div class="banner-restaurante">
+        <div class="banner-restaurante" style="background-image: url(https://placekitten.com/1546/423);">
             <!-- Contenido Izquierda -->
-            <img src="https://placekitten.com/1546/423" alt="banner de la comida">
             <h2>Nombre del puesto</h2>
-            <p>Aquí van los íconos de la puntiacón</p>
-            <p>Aquí van los íconos de la valoración del precio</p>
-            <p>Aquí van los íconos del tiempo de atención</p>
+            <div class="left-info">
+                <div class="puntuacion">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="precio">
+                    <i class="fas fa-dollar-sign"></i>
+                    <i class="fas fa-dollar-sign"></i>
+                    <i class="fas fa-dollar-sign"></i>
+                </div>
+                <div class="tiempo">
+                    <i class="fas fa-clock"></i>
+                    <i class="fas fa-clock"></i>
+                    <i class="fas fa-clock"></i>
+                </div>
+            </div>
+                
             <!-- Contenido Derecha -->
-            <p>Botón de seguir puesto</p>
+            <div class="right-info">
+                <div class="seguir">
+                    <i class="fas fa-plus-circle"></i>
+                    <p>Seguir lugar</p>
+                </div>
+            </div>
         </div>
         <!-- Banner Restaurante Termina -->
         <!-- Descripción -->
@@ -106,31 +127,47 @@
         <!-- Platillos Temina -->
     </nav>
     <footer>
-        <!-- Mayor Información -->
-        <div class="info">
-            <h3>Información de interés</h3>
-            <p>Lorem ipsum dolor sit amet.</p>
-            <p>Lorem ipsum dolor sit amet.</p>
-            <p>Lorem ipsum dolor sit amet.</p>
-        </div>
-        <!-- Mayor Información Termina -->
-        <!-- Redes Sociales -->
-        <div class="follow">
-            <h3>Síguenos</h3>
-            <div class="social">
-                <img src="https://placekitten.com/50/50" alt="botón de red social">
-            </div>
-            <div class="social">
-                <img src="https://placekitten.com/50/50" alt="botón de red social">
-            </div>
-            <div class="social">
-                <img src="https://placekitten.com/50/50" alt="botón de red social">
-            </div>
-            <div class="social">
-                <img src="https://placekitten.com/50/50" alt="botón de red social">
-            </div>
-        </div>
-        <!-- Redes Sociales Termina -->
+        <section class="footer-img">
+            <img src="static/images/Rue_logo_white_resized.png" alt="logo">
+        </section>
+        <section class="info-interes">
+            <h4>Información de interes</h4>
+            <article>
+                <p>Lorem, ipsum dolor.</p>
+                <p>Lorem, ipsum dolor.</p>
+                <p>Lorem, ipsum dolor.</p>
+                <p>Lorem, ipsum dolor.</p>
+                <p>Lorem, ipsum dolor.</p>
+            </article>
+            <article>
+                <p>Lorem, ipsum dolor.</p>
+                <p>Lorem, ipsum dolor.</p>
+                <p>Lorem, ipsum dolor.</p>
+                <p>Lorem, ipsum dolor.</p>
+            </article>
+        </section>
+        <section class="info-redes">
+            <ul>
+                <li>
+                    <a href="http://" target="_blank">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://" target="_blank">
+                        <i class="fab fa-twitter-square"></i>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <section class="copyright">
+            <p>&copy; copyright Rue 2021</p>
+        </section>
     </footer>
 </body>
 </html>

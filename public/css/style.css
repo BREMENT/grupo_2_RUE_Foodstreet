@@ -19,11 +19,18 @@ body {
     text-decoration: none;
     box-sizing: border-box;
 }
+.banner-restaurante{
+    /* display: inline-flex;
+    width: 100vw; */
+    height: 250px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 
-.banner-restaurante img {
-    width: 100%;
 }
-
+.banner-restaurante > *{
+    color: white;
+}
 
 /* Header */
 
@@ -63,7 +70,6 @@ header ul li .usuario {
     display: flex;
     padding: 12px
 }
-
 
 /* Footer */
 
