@@ -19,18 +19,6 @@ body {
     text-decoration: none;
     box-sizing: border-box;
 }
-.banner-restaurante{
-    /* display: inline-flex;
-    width: 100vw; */
-    height: 250px;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-
-}
-.banner-restaurante > *{
-    color: white;
-}
 
 /* Header */
 
@@ -207,6 +195,61 @@ main section img {
 
 /* fin main home */
 
+/* Inicio Restaurante */
+nav {
+    background-color: #faede3;
+}
+.banner-restaurante{
+
+    height: 250px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+}
+.banner-restaurante > *{
+    color: white;
+}
+
+.descripcion,
+.platillos .aleatorio,
+.platillos .recomendacion,
+.platillos .valoracion-usuarios,
+.platillos .todos-platillos {
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.platillos .recomendacion,
+.platillos .valoracion-usuarios,
+.platillos .todos-platillos{
+    display: inline-block;
+    width: 95vw;
+}
+.descripcion {
+    width: 250px;
+    height: 250px;
+}
+.platillos, 
+.descripcion {
+    color: #F2274C;
+}
+.platillos .aleatorio {
+    width: 250px;
+    height: 250px;
+}
+.platillos .aleatorio i{
+    font-size: 50px;
+}
+.platillos .recomendacion .figuras-comida,
+.platillos .valoracion-usuarios .figuras-comida,
+.platillos .todos-platillos .figuras-comida{
+    display: inline-block;
+}
+/* Fin Restaurante */
 
 /* tablets */
 
