@@ -139,8 +139,16 @@ footer .copyright {
     flex-wrap: wrap;
     justify-content: space-between;
     padding:20px;
-    background-color: rgb(221, 219, 219);
-    }
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+       }
+.control-login i{
+    color:#F2274C;
+    margin-right: 5px;  
+}
 
 .control {
     width:100%;
