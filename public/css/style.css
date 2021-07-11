@@ -1,3 +1,9 @@
+    /* #F2274C
+    - #91CCD9
+    - #FFFFFF 
+    - #faede3;*/
+
+
 /* Google Fonts */
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
@@ -62,9 +68,6 @@ header ul li .usuario {
 /* Footer */
 
 footer {
-    /* #F2274C
-    - #91CCD9
-    - #FFFFFF */
     background-color: #F2274C;
     color: white;
     width: 100%;
