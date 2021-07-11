@@ -251,6 +251,23 @@ nav {
 }
 /* Fin Restaurante */
 
+/* Inicio Producto */
+
+.banner-producto{
+
+    height: 250px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+}
+.banner-producto > *{
+    color: white;
+}
+
+
+/* Fin Producto */
+
 /* tablets */
 
 @media (min-width: 568px) {

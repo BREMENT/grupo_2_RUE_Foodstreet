@@ -5,24 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalle del producto</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="static/css/style.css">
 </head>
-<style>
-    .banner-producto img{
-        width: 100%;
-    }
-</style>
 <body>
+    <header>
+        <ul>
+            <li><a href="#" class="logo"> <img src="static/images/Rue_logo_white_resized.png" alt="logo" ></a></li>
+            <div class="iconos">
+                <li><a href="#" class="ubicacion"><i class="fas fa-map-marker-alt"></i></a></li>
+                <li><a href="#" class="buscador"><i class="fas fa-search"></i></a></li>
+                <li><a href="#" class="carrito"><i class="fas fa-cart-plus"></i> </a></li>
+                <li><a href="#" class="usuario"><i class="fas fa-user-circle"></i></a></li>
+            </div>
+        </ul>
+    </header>
     <nav>
         <!-- Banner Producto -->
-        <div class="banner-producto">
+        <div class="banner-producto" style="background-image: url(https://placekitten.com/1546/423);">
             <!-- Contenido Izquierda -->
-            <img src="https://placekitten.com/1546/423" alt="banner de la comida">
             <h2>Nombre de platillo</h2>
-            <p>Aquí van los íconos de la puntiacón</p>
-            <p>Precio</p>
-            <p>Aquí van los íconos del tiempo de atención</p>
+            <div class="left-info">
+                <div class="puntuacion">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="precio">
+                    <i class="fas fa-dollar-sign"></i>
+                    <i class="fas fa-dollar-sign"></i>
+                    <i class="fas fa-dollar-sign"></i>
+                </div>
+                <div class="tiempo">
+                    <i class="fas fa-clock"></i>
+                    <i class="fas fa-clock"></i>
+                    <i class="fas fa-clock"></i>
+                </div>
+            </div>
             <!-- Contenido Derecha -->
-            <p>Botón de seguir puesto</p>
+            <div class="right-info">
+                <div class="seguir">
+                    <i class="fas fa-plus-circle"></i>
+                    <p>Seguir lugar</p>
+                </div>
+            </div>
         </div>
         <!-- Banner Producto Termina -->
         <!-- Descripción Producto -->
@@ -44,5 +72,48 @@
         </div>
         <!-- Comentarios Termina -->
     </nav>
+    <footer>
+        <section class="footer-img">
+            <img src="static/images/Rue_logo_white_resized.png" alt="logo">
+        </section>
+        <section class="info-interes">
+            <h4>Información de interes</h4>
+            <article>
+                <p>Lorem, ipsum dolor.</p>
+                <p>Lorem, ipsum dolor.</p>
+                <p>Lorem, ipsum dolor.</p>
+                <p>Lorem, ipsum dolor.</p>
+                <p>Lorem, ipsum dolor.</p>
+            </article>
+            <article>
+                <p>Lorem, ipsum dolor.</p>
+                <p>Lorem, ipsum dolor.</p>
+                <p>Lorem, ipsum dolor.</p>
+                <p>Lorem, ipsum dolor.</p>
+            </article>
+        </section>
+        <section class="info-redes">
+            <ul>
+                <li>
+                    <a href="http://" target="_blank">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://" target="_blank">
+                        <i class="fab fa-twitter-square"></i>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <section class="copyright">
+            <p>&copy; copyright Rue 2021</p>
+        </section>
+    </footer>
 </body>
 </html>
