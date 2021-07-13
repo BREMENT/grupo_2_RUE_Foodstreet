@@ -195,6 +195,7 @@ footer .copyright {
 .banner-section{
     width: 100%;
     position: relative;
+    background-color: #faede3;
 }
 
 .banner {
@@ -240,6 +241,10 @@ footer .copyright {
 /* fin banner */
 
 /* main home */
+.main-home{
+    background-color: #faede3;
+}
+
 .main-section-home {
     width: 100%;
     padding: 0px 10px;
@@ -258,6 +263,11 @@ footer .copyright {
     background-color: #f8f7f7;
     margin-bottom: 10px;
     border-radius: 5px;
+    transition: all 0.5s;
+}
+
+.main-article-home:hover{
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 
 .main-article-home img {
