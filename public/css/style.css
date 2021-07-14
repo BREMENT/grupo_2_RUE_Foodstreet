@@ -1,9 +1,8 @@
-    /* #F2274C
+/* 
+    -#F2274C
     - #91CCD9
     - #FFFFFF 
     - #faede3;*/
-
-
 /* Google Fonts */
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
@@ -272,6 +271,20 @@ footer .copyright {
 }
 .form-register-item input[type="checkbox"]{
     margin-bottom: 10px;
+    
+}
+
+.div-btns{
+    display:flex;
+    justify-content:center;
+}
+
+.btn{
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 10px;
+    width: 77%;
 }
 
 /* fin registro */
