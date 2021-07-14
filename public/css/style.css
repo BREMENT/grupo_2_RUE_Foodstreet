@@ -188,11 +188,22 @@ footer .copyright {
 /* fin login */
 
 /* inicio registro */
-.main-register-section{
-    padding-top: 13px;
+.main-register{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 25px 0px 55px;
 }
-.main-register-section h1,
-.main-register-section h3{
+.main-register-section-buttons{
+    padding-top: 13px;
+    width: 100%;
+}
+.main-register-section-form{
+    padding-top: 13px;
+    width: 100%;
+}
+.main-register-section-buttons h1,
+.main-register-section-form h3{
     text-align: center;
 }
 
@@ -251,9 +262,9 @@ footer .copyright {
 }
 
 .form-register{
-    background-color: blue;
     margin: 0px 5%;
-    padding: 15px;
+    padding: 15px 15px 30px;
+    margin-bottom: 20px;
 }
 .form-register-item{
     width: 100%;
@@ -286,6 +297,28 @@ footer .copyright {
     padding: 10px;
     border-radius: 10px;
     width: 77%;
+    background-color: #3b5998;
+    color: #ffff;
+}
+
+.div-register-radio{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.div-radio{
+    width: 100%;
+}
+
+.text-label{
+    font-size: 14px;
+}
+
+.div-register-input{
+    display: flex;
+    flex-wrap: wrap;
 }
 
 /* fin registro */
@@ -626,7 +659,12 @@ nav {
         padding: 20px;
     }
     /* fin main article store */
-
+    /* main register  */
+    .form-register{
+        margin: 0px 16%;
+    }
+    
+    /* fin main register */
 }
 /* fin tablets */
 
@@ -670,5 +708,30 @@ nav {
         height: 52vh;
     }
     /* fin benner home */
+    /* main register */
+    .form-register{
+        margin: 0 5%;
+    }
+
+    .div-radio{
+        width: 45%;
+    }
+
+    .main-register-section-buttons{
+        width: 45%;
+    }
+
+    .main-register-section-form{
+        width: 55%;
+    }
+
+    .div-register-input{
+        justify-content: space-between;
+    }
+    
+    .form-register-item input[type="text"]{
+        width: 48%;
+    }
+    /* fin main register */
 }
 /*  fin desktop */

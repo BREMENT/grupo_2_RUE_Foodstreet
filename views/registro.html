@@ -27,7 +27,7 @@
 
     <!-- main home -->
     <main class="main-register">
-        <section class="main-register-section">
+        <section class="main-register-section-buttons">
             <h1>Regístrate</h1>
             <div class="div-text-cuenta">
                 <p class="text-inicio-cuenta">
@@ -55,13 +55,15 @@
                 </div>
             </div>
         </section>
-        <section class="main-register-section">
+        <section class="main-register-section-form">
             <h3>Puedes registrarte con tus datos</h3>
             <div class="form-register">
                 <form action="">
                     <div class="form-register-item">
-                        <input type="text" placeholder="nombres">
-                        <input type="text" placeholder="apellidos">
+                        <div class="div-register-input">
+                            <input type="text" placeholder="nombres">
+                            <input type="text" placeholder="apellidos">
+                        </div>
                     </div>
                     <div class="form-register-item">
                         <input type="email" placeholder="Correo">
@@ -71,16 +73,20 @@
                     </div>
                     <div class="form-register-item">
                         <input type="checkbox" name="condicion" id="condicion" value="acepto">
-                        <label for="">Acepta acuerdo y condiciones</label>
+                        <label class="text-label" for="">Acepto los terminos y condiciones y la política de privacidad</label>
                     </div>
                     <div class="form-register-item">
-                        <div>
-                            <input type="radio">
-                            <label for=""> verificar por llamada</label>
-                        </div>
-                        <div>
-                            <input type="radio">
-                            <label for="">verificar por sms</label>
+                        <div class="div-register-radio">
+                            <div class="div-radio">
+                                <input type="radio" id="" name="verificar" value="llamada">
+                                <label class="text-label" for=""> Verificar por llamada</label>
+                            </div>
+                            <div class="div-radio">
+                                <input type="radio"
+                                name="verificar"
+                                value="mensaje">
+                                <label class="text-label" for="">Verificar por sms</label>
+                            </div>
                         </div>
                     </div>
                     <div class="form-register-item div-btns">
