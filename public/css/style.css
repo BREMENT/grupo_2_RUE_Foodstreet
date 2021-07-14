@@ -254,7 +254,7 @@ footer .copyright {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    padding: 25px 0px 55px;
+    padding: 25px 0px 50px;
 }
 .main-register-section-buttons{
     padding-top: 13px;
@@ -334,7 +334,7 @@ footer .copyright {
 
 .form-register{
     margin: 0px 5%;
-    padding: 15px 15px 30px;
+    padding: 15px 15px 25px;
     margin-bottom: 20px;
 }
 .form-register-item{
@@ -349,11 +349,11 @@ footer .copyright {
     border-radius: 10px;
     padding: 10px;
     border: none;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 .form-register-item input[type="checkbox"],
 .form-register-item input[type="radio"]{
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .div-btns{
