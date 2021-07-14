@@ -261,7 +261,7 @@ footer .copyright {
 
 .form-register-item input[type="text"], 
 .form-register-item input[type="email"],
-.form-register-item input[type="password"]{
+.form-register-item input[type="tel"]{
     width: 100%;
     outline: none;
     border-radius: 10px;
@@ -269,17 +269,18 @@ footer .copyright {
     border: none;
     margin-bottom: 10px;
 }
-.form-register-item input[type="checkbox"]{
+.form-register-item input[type="checkbox"],
+.form-register-item input[type="radio"]{
     margin-bottom: 10px;
-    
 }
 
 .div-btns{
+    margin-top: 5px;
     display:flex;
     justify-content:center;
 }
 
-.btn{
+.btn-register{
     border: none;
     outline: none;
     padding: 10px;
