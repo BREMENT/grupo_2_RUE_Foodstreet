@@ -9,30 +9,42 @@
     <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
+    <header>
+        <ul>
+            <li><a href="/" class="logo"> <img src="static/images/Rue_logo_white_resized.png" alt="logo" ></a></li>
+            <div class="iconos">
+                <li><a href="#" class="ubicacion"><i class="fas fa-map-marker-alt"></i></a></li>
+                <li><a href="#" class="buscador"><i class="fas fa-search"></i></a></li>
+                <li><a href="#" class="carrito"><i class="fas fa-cart-plus"></i> </a></li>
+                <li><a href="#" class="usuario"><i class="fas fa-user-circle"></i></a></li>
+            </div>
+        </ul>
+    </header>
     <nav>
         <!-- Banner Producto -->
-        <div class="banner-producto" style="background-image: url(https://placekitten.com/1546/423);">
+        <div class="banner-producto" style="background-image: url(https://images.unsplash.com/photo-1613514785940-daed07799d9b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80);">
             <!-- Contenido Izquierda -->
-            <h2>Nombre de platillo</h2>
-            <div class="left-info">
-                <div class="puntuacion">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-                <div class="precio">
-                    <i class="fas fa-dollar-sign"></i>
-                    <i class="fas fa-dollar-sign"></i>
-                    <i class="fas fa-dollar-sign"></i>
-                </div>
-                <div class="tiempo">
-                    <i class="fas fa-clock"></i>
-                    <i class="fas fa-clock"></i>
-                    <i class="fas fa-clock"></i>
-                </div>
+                <div class="left-info">
+                    <h2>Nombre de platillo</h2>
+                    <div class="puntuacion">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="precio">
+                        <i class="fas fa-dollar-sign"></i>
+                        <i class="fas fa-dollar-sign"></i>
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="tiempo">
+                        <i class="fas fa-clock"></i>
+                        <i class="fas fa-clock"></i>
+                        <i class="fas fa-clock"></i>
+                    </div>
             </div>
+
             <!-- Contenido Derecha -->
             <div class="right-info">
                 <div class="seguir">
@@ -50,7 +62,16 @@
         <!-- Descripción Producto Termina -->
         <div class="mas-fotos">
             <h3>Más fotos</h3>
-            <p>Fotos</p>
+            <div class="figuras-comida">
+                <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=714&q=80" alt="botón de comida de recomendación del día">
+            </div>
+            <div class="figuras-comida">
+                <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1371&q=80" alt="botón de comida de recomendación del día">
+            </div>
+            <div class="figuras-comida">
+                <img src="https://images.unsplash.com/photo-1613514785940-daed07799d9b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80" alt="botón de comida de recomendación del día">
+            </div>
+            <i class="fas fa-chevron-right"></i>
         </div>
         <!-- Comentarios -->
         <div class="comentarios">
@@ -61,5 +82,43 @@
         </div>
         <!-- Comentarios Termina -->
     </nav>
+    <footer>
+        <section class="footer-img">
+            <img src="/static/images/Rue_logo_white_resized.png" alt="logo">
+        </section>
+        <section class="info-interes">
+            <h4>Información de interes</h4>
+            <article>
+                <p>Terminos y condiciones</p>
+                <p>Restaurantes</p>
+                <p>Registrar tu restaurante</p>
+                <p>Aviso de privacidad</p>
+                <p>Restaurantes cerca de mi</p>
+                <p>Registrate para realizar entregas</p>
+            </article>
+        </section>
+        <section class="info-redes">
+            <ul>
+                <li>
+                    <a href="http://" target="_blank">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://" target="_blank">
+                        <i class="fab fa-twitter-square"></i>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <section class="copyright">
+            <p>&copy; copyright Rue 2021</p>
+        </section>
+    </footer>
 </body>
 </html>
