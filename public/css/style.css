@@ -192,7 +192,8 @@ footer .copyright {
 .main-register-section{
     padding-top: 13px;
 }
-.main-register-section h1{
+.main-register-section h1,
+.main-register-section h3{
     text-align: center;
 }
 
@@ -252,9 +253,27 @@ footer .copyright {
 
 .form-register{
     background-color: blue;
-    margin: 0px 10px;
+    margin: 0px 5%;
     padding: 15px;
 }
+.form-register-item{
+    width: 100%;
+}
+
+.form-register-item input[type="text"], 
+.form-register-item input[type="email"],
+.form-register-item input[type="password"]{
+    width: 100%;
+    outline: none;
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+    margin-bottom: 10px;
+}
+.form-register-item input[type="checkbox"]{
+    margin-bottom: 10px;
+}
+
 /* fin registro */
 
 /* banner home */
@@ -587,7 +606,7 @@ nav {
     /* fin main article store */
     /* banner home */
     .banner img{
-        height: 65vh;
+        height: 52vh;
     }
     /* fin benner home */
 }
