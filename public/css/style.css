@@ -301,14 +301,23 @@ footer .copyright {
 
 .btn-auth-facebook{
     background-color: #3b5998;
+    transition: all 0.5s;
 }
 
 .btn-auth-google{
     background-color: #1778f2;
+    transition: all 0.5s;
 }
 
 .btn-auth-apple{
     background-color: #000;
+    transition: all 0.5s;
+}
+.btn-auth-facebook:hover,
+.btn-auth-google:hover,
+.btn-auth-apple:hover,
+.btn-register:hover{
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 
 .btn-auth-facebook i, .btn-auth-google i{
@@ -361,6 +370,7 @@ footer .copyright {
     width: 77%;
     background-color: #3b5998;
     color: #ffff;
+    transition: all 0.5s;
 }
 
 .div-register-radio{
