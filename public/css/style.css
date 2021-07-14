@@ -472,7 +472,8 @@ footer .copyright {
 nav {
     background-color: #faede3;
 }
-.banner-restaurante{
+.banner-restaurante,
+.banner-producto{
 
     height: 250px;
     background-size: cover;
@@ -480,11 +481,39 @@ nav {
     background-repeat: no-repeat;
 
 }
-.banner-restaurante > *{
-    color: white;
+.banner-restaurante::before,
+.banner-producto::before{
+    content:'';
+	position: absolute;
+        top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.2);
+}
+.banner-restaurante,
+.banner-producto{
+    position: relative;
 }
 
+.banner-restaurante .left-info,
+.banner-producto .left-info{
+    position: absolute;
+    color: white;
+    left: 10px;
+    bottom: 10px;
+}
+
+.banner-restaurante .right-info,
+.banner-producto .right-info{
+    position: absolute;
+    color: white;
+    right: 10px;
+    bottom: 10px;
+}
 .descripcion,
+.mas-fotos,
+.comentarios,
 .platillos .aleatorio,
 .platillos .recomendacion,
 .platillos .valoracion-usuarios,
@@ -502,6 +531,7 @@ nav {
     display: inline-block;
     width: 95vw;
 }
+
 .descripcion {
     width: 250px;
     height: 250px;
@@ -514,6 +544,13 @@ nav {
     width: 250px;
     height: 250px;
 }
+.platillos .aleatorio .fa-container{
+    width: 230px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .platillos .aleatorio i{
     font-size: 50px;
 }
@@ -521,6 +558,13 @@ nav {
 .platillos .valoracion-usuarios .figuras-comida,
 .platillos .todos-platillos .figuras-comida{
     display: inline-block;
+}
+.platillos .recomendacion .figuras-comida img,
+.platillos .valoracion-usuarios .figuras-comida img,
+.platillos .todos-platillos .figuras-comida img,
+.mas-fotos img{
+    width: 200px;
+    height: 150px;
 }
 /* Fin Restaurante */
 
@@ -537,7 +581,10 @@ nav {
 .banner-producto > *{
     color: white;
 }
-
+.mas-fotos,
+.comentarios{
+    color: #F2274C;
+}
 
 /* Fin Producto */
 
