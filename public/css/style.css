@@ -196,8 +196,13 @@ footer .copyright {
     text-align: center;
 }
 
+.div-text-cuenta{
+    display: flex;
+    justify-content: center;
+}
+
 .text-inicio-cuenta{
-    width: 100%;
+    width: 60%;
     text-align: center;
 }
 
