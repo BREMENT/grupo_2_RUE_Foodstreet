@@ -142,7 +142,7 @@ footer .copyright {
 
 .control-login{
     display:flex;
-    flex-wrap: wrap;
+    
     justify-content: space-between;
     padding:20px;
     background-color: white;
@@ -153,7 +153,30 @@ footer .copyright {
        }
 .control-login i{
     color:#F2274C;
-    margin-right: 5px;  
+    margin-right: 5px;
+}
+
+
+.main-article-login {
+    width: 100%;
+    background-color: #f8f7f7;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: all 0.5s;
+}
+
+.main-article-login:hover{
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
+.main-article-login img {
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.main-article-login {
+    padding: 10px;
 }
 
 .control {
@@ -161,6 +184,10 @@ footer .copyright {
     padding:8px;
     border:none;
     border-radius: 5px;
+ }
+
+.control-login p, .create-form, .control{
+    text-align: center;
 }
 
 .button_login{
@@ -183,7 +210,10 @@ footer .copyright {
 
 .control-login{
     display:flex;
-    flex-direction: column;   
+       
+}
+.login{
+    flex-direction: column;
 }
 /* fin login */
 
@@ -591,6 +621,8 @@ nav {
 
 /* tablets */
 
+
+
 @media (min-width: 568px) {
     /*  footer */
     footer .footer-img {
@@ -627,10 +659,34 @@ nav {
     }
     /* fin main article store */
 
+    /* Log-in */
+           
+    .main-section-login {
+        justify-content: space-around;
+    }
+    .main-article-login {
+        width: 45%;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        transition: all 0.5s;
+    }
+
+    .main-article-login:hover{
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
+        
+    .main-article-login {
+        padding: 10px;
+    }
+
+/* fin Log-in */
+
+
 }
 /* fin tablets */
 
 /* desktop */
+
 
 @media (min-width: 1023px) {
     /* footer */
@@ -670,5 +726,13 @@ nav {
         height: 52vh;
     }
     /* fin benner home */
+
+    /* login */
+       .main-article-login {
+        width: 24%;
+    }
+    /* fin login */
+
+
 }
 /*  fin desktop */
