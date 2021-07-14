@@ -831,6 +831,10 @@ nav {
     .form-register-item input[type="text"]{
         width: 48%;
     }
+
+    .text-inicio-cuenta{
+        font-size: 14px;
+    }
     /* fin main register */
 
     /* login */
