@@ -8,7 +8,7 @@ app.set('view engine', 'ejs');
 app.use('/user', userRouter);
 app.get('/', (req, res)=>{
     res.render('inicio');
-})
+});
 
 // app.get('/restaurante', (req, res) => {
 //     res.sendFile(__dirname + '/views/detalleRestaurante.html');
