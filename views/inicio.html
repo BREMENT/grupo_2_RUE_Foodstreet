@@ -5,38 +5,173 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="static/css/style.css">
     <title>home</title>
 </head>
 
 <body>
+    <!-- header -->
     <header>
-
+        <ul>
+            <li><a href="/" class="logo"> <img src="static/images/Rue_logo_white_resized.png" alt="logo" ></a></li>
+            <div class="iconos">
+                <li><a href="#" class="ubicacion"><i class="fas fa-map-marker-alt"></i></a></li>
+                <li><a href="#" class="buscador"><i class="fas fa-search"></i></a></li>
+                <li><a href="#" class="carrito"><i class="fas fa-cart-plus"></i> </a></li>
+                <li><a href="#" class="usuario"><i class="fas fa-user-circle"></i></a></li>
+            </div>
+        </ul>
     </header>
-    <main>
-        <section>
-            <h3></h3>
-            <p>Ingresa la direccion...</p>
-            <button>ir</button>
+    <!-- fin header -->
+
+    <!-- banner -->
+    <section class="banner-section">
+        <div class="banner">
+            <img src="/static/images/Mexican-food-banner.png">
+        </div>
+        <div class="search-banner">
+            <div class="search-busqueda">
+                <input type="text" placeholder="Buscar...">
+                <button>
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- fin banner -->
+
+    <!-- main home -->
+    <main class="main-home">
+        <section class="main-section-home">
+            <h3>Basado en tus ordenes</h3>
+            <article class="main-article-home">
+                <img src="/static/images/img-chalupas.jpg" alt="chalupas">
+                <article>
+                    <p>Chalupas</p>
+                </article>
+            </article>
+            <article class="main-article-home">
+                <img src="/static/images/img-chilaquiles.jpg">
+                <article>
+                    <p>Chilaquiles</p>
+                </article>
+            </article>
+            <article class="main-article-home">
+                <img src="/static/images/img-chile_nogada.jpg">
+                <article>
+                    <p>Chile nogada</p>
+                </article>
+            </article>
+            <article class="main-article-home">
+                <img src="/static/images/img-tacos_pastor.jpg">
+                <article>
+                    <p>Tacos al pastor</p>
+                </article>
+            </article>
         </section>
-        <section>
-            <h3>Categoria</h3>
-            <article>
-                <img>
+        <section class="main-section-cat-home">
+            <h3>Categorias</h3>
+            <article class="main-section-cat-article">
+                <img src="/static/images/pozole.jpg" alt="comida mexicana">
+                <div class="cat-text">
+                    <h4>Comida mexicana</h4>
+                </div>
             </article>
-            <article>
-                <img>
+            <article class="main-section-cat-article">
+                <img src="/static/images/italiana.jpg" alt="comida italina">
+                <div class="cat-text">
+                    <h4>Comida italina</h4>
+                </div>
             </article>
-            <article>
-                <img>
+            <article class="main-section-cat-article">
+                <img src="/static/images/japonesa2.jpg" alt="comida italina">
+                <div class="cat-text">
+                    <h4>Comida Japonesa</h4>
+                </div>
             </article>
-            <article>
-                <img>
+            <article class="main-section-cat-article">
+                <img src="/static/images/cortes.jpg" alt="comida italina">
+                <div class="cat-text">
+                    <h4>Cortes Brasileños</h4>
+                </div>
+            </article>
+        </section>
+        <section class="main-section-store">
+            <article class="main-article-store">
+                <div class="div-marker-store">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="div-text-store">
+                    <p>
+                        Recibe el pedido de tu restaurante o súper en menos de 1 hora
+                    </p>
+                </div>
+            </article>
+            <article class="main-article-store">
+                <div class="div-marker-store">
+                    <i class="fas fa-hand-holding-heart"></i>
+                </div>
+                <div class="div-text-store">
+                    <p>
+                        Un shopper selecciona tus productos con amor
+                    </p>
+                </div>
+            </article>
+            <article class="main-article-store">
+                <div class="div-marker-store">
+                    <i class="fas fa-piggy-bank"></i>
+                </div>
+                <div class="div-text-store">
+                    <p>
+                        Si no te gusta el estado de un producto, ¡No lo pagas!
+                    </p>
+                </div>
             </article>
         </section>
     </main>
-    <footer>
+    <!-- fin main home -->
 
+    <!-- footer -->
+    <footer>
+        <section class="footer-img">
+            <img src="/static/images/Rue_logo_white_resized.png" alt="logo">
+        </section>
+        <section class="info-interes">
+            <h4>Información de interes</h4>
+            <article>
+                <p>Terminos y condiciones</p>
+                <p>Restaurantes</p>
+                <p>Registrar tu restaurante</p>
+                <p>Aviso de privacidad</p>
+                <p>Restaurantes cerca de mi</p>
+                <p>Registrate para realizar entregas</p>
+            </article>
+        </section>
+        <section class="info-redes">
+            <ul>
+                <li>
+                    <a href="http://" target="_blank">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://" target="_blank">
+                        <i class="fab fa-twitter-square"></i>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <section class="copyright">
+            <p>&copy; copyright Rue 2021</p>
+        </section>
     </footer>
+    <!-- fin footer -->
 </body>
 
 </html>

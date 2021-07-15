@@ -1,50 +1,120 @@
-<!DOCTYPE html>  
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>"Log-in"</title>
+    <title>Detalle del restaurante</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="static/css/style.css">
 </head>
-
 <body>
     <header>
-        <img src="static/images/Rue_logo_pink_resized.png" alt="logo" width="70px" height="auto">
-        <h4> << Volver </h4>
+        <ul>
+            <li><a href="/" class="logo"> <img src="static/images/Rue_logo_white_resized.png" alt="logo" ></a></li>
+            <div class="iconos">
+                <li><a href="#" class="ubicacion"><i class="fas fa-map-marker-alt"></i></a></li>
+                <li><a href="#" class="buscador"><i class="fas fa-search"></i></a></li>
+                <li><a href="#" class="carrito"><i class="fas fa-cart-plus"></i> </a></li>
+                <li><a href="#" class="usuario"><i class="fas fa-user-circle"></i></a></li>
+            </div>
+        </ul>
+    </header>
+
+
+<body>
+   
+    <nav class="main-navbar">
+       
+            <div class="main-header-top-bar"> 
+                <p class="return"> << Volver </p>
+             </div>
+             <section class="info-login">
+            <h4>Ingresa a RUE</h4>
+            <article>
+                <p>¿Nuevo en RUE?, registrate aquí</p>
+                <p class="privacidad"> Al continuar aceptas las condiciones de servicio y la politica de privacidad de RUE, incluyendo nuestra politica sobre cookies </p>
+            </article>
+        </section>
+    </nav>
+        <section class="control-login">
+            <section class="main-article-login">
+                <img src="/static/images/img-chilaquiles.jpg">
+                <article><p>Chilaquiles</p></article>
+            </section>
+        </section>
+    
+
+    <nav class="nav-login">
+       
+           <section class="control-login">         
+            <section class="login">
+                <p><a href="http://" target="_blank"></a><i class="fab fa-google"></i></a>Continuar con Google </p>
+                <p> <a href="http://" target="_blank"> <i class="fab fa-facebook-square"></i></a> Continuar con Facebook </p>             
+                <p><a href="http://" target="_blank"></a> <i class="fab fa-apple"></a></i>Continuar con Apple </p>
+                <form action="/register" method="GET" class="create-form">  <!--POST informacion sensible o segura, GET es para formulario de busqueda-->
+                    <div class="control-formulario">
+                            <input type="text" name='name' class="control" placeholder="Nombre de usuario">  
+                    </div>
+                    <div class="control-formulario">
+                            <input type="text" name='user' class="control" placeholder="Contraseña">  
+                    </div>
         
-</header>
+                    <div class="control-formulario">
+                            <button type="submit" class="button_login">Iniciar</button>
+                    </div>
+                    <h6>Olvidaste la contasena </h6>
+            </section>
+        </section>
+            </form>
+                               
+     <a href="https://www.google.com/"> Ir a Google >> </a>
+    </nav>
 
-    <h1> "Ingresa a RUE"</h1>
-
-    <h2> ¿Nuevo en RUE?, registrate aquí </h2>
-
-    
-    <h6> Al continuar aceptas las condiciones de servicio y la politica de privacidad de RUE, incluyendo nuestra politica sobre cookies </h6>
-    
-    
-        <p>Continuar con Google </p>
-            <p>Continuar con Facebook </p>
-                <p>Continuar con Apple </p>
-                    <p>Correo Electronico </p>
-                        <p>Contrasena </p>
-                            <p>Iniciar </p>
-                                <h6>Olvidaste la contasena </h6>
-                                
-    
-     
-     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis reprehenderit ad dignissimos officiis quae, aliquid libero minima cum. Blanditiis consequatur non praesentium ea temporibus cum ut quidem aspernatur iusto sapiente. </p>
-
-    
-     <a href="https://www.google.com/"> Ir a Google </a>
 </body>
 
-<footer>
-    <ul>
-        <li> <a href="#"> Ofertas </a> </a></li>
-        <li> <a href="#">Puestos oficiales</li>
-        <li> <a href="#">Vender</li>
-        <li> <a href="#">Ayuda</li>
-    </ul>
 
+
+
+
+<footer>
+    <section class="footer-img">
+        <img src="/static/images/Rue_logo_white_resized.png" alt="logo">
+    </section>
+    <section class="info-interes">
+        <h4>Información de interes</h4>
+        <article>
+            <p>Terminos y condiciones</p>
+            <p>Restaurantes</p>
+            <p>Registrar tu restaurante</p>
+            <p>Aviso de privacidad</p>
+            <p>Restaurantes cerca de mi</p>
+            <p>Registrate para realizar entregas</p>
+        </article>
+    </section>
+    <section class="info-redes">
+        <ul>
+            <li>
+                <a href="http://" target="_blank">
+                    <i class="fab fa-facebook-square"></i>
+                </a>
+            </li>
+            <li>
+                <a href="http://" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </li>
+            <li>
+                <a href="http://" target="_blank">
+                    <i class="fab fa-twitter-square"></i>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <section class="copyright">
+        <p>&copy; copyright Rue 2021</p>
+    </section>
 </footer>
+</body>
+
 </html>

@@ -11,7 +11,7 @@
 <body>
     <header>
         <ul>
-            <li><a href="#" class="logo"> <img src="static/images/Rue_logo_white_resized.png" alt="logo" ></a></li>
+            <li><a href="/" class="logo"> <img src="static/images/Rue_logo_white_resized.png" alt="logo" ></a></li>
             <div class="iconos">
                 <li><a href="#" class="ubicacion"><i class="fas fa-map-marker-alt"></i></a></li>
                 <li><a href="#" class="buscador"><i class="fas fa-search"></i></a></li>
@@ -22,24 +22,46 @@
     </header>
     <nav>
         <!-- Banner Restaurante -->
-        <div class="banner-restaurante">
+        <div class="banner-restaurante" style="background-image: url(https://images.unsplash.com/photo-1582234372722-50d7ccc30ebd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80);">
             <!-- Contenido Izquierda -->
-            <img src="https://placekitten.com/1546/423" alt="banner de la comida">
-            <h2>Nombre del puesto</h2>
-            <p>Aquí van los íconos de la puntuación</p>
-            <p>Aquí van los íconos de la valoración del precio</p>
-            <p>Aquí van los íconos del tiempo de atención</p>
+            <div class="left-info">
+                <h2>Nombre del puesto</h2>
+                <div class="puntuacion">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="precio">
+                    <i class="fas fa-dollar-sign"></i>
+                    <i class="fas fa-dollar-sign"></i>
+                    <i class="fas fa-dollar-sign"></i>
+                </div>
+                <div class="tiempo">
+                    <i class="fas fa-clock"></i>
+                    <i class="fas fa-clock"></i>
+                    <i class="fas fa-clock"></i>
+                </div>
+            </div>
+                
+>>>>>>> 73aace4f42c2b639847727c2667a5918e1782cdd
             <!-- Contenido Derecha -->
-            <p>Botón de seguir puesto</p>
+            <div class="right-info">
+                <div class="seguir">
+                    <i class="fas fa-plus-circle"></i>
+                    <p>Seguir lugar</p>
+                </div>
+            </div>
         </div>
         <!-- Banner Restaurante Termina -->
         <!-- Descripción -->
         <div class="descripcion">
             <h3>Descripción</h3>
-            <p>Ícono de ubicación</p>
+            <i class="fas fa-map-marker-alt"></i>
             <p>Ubicación de puesto</p>
-            <p>Ícono de restaurante</p>
-            <p>Tipo de restaurante</p>
+            <i class="fas fa-utensils"></i>
+            <p>Mexicana</p>
         </div>
         <!-- Descripción Termina -->
         <!-- Platillos -->
@@ -47,90 +69,102 @@
             <!-- Aleatorio -->
             <div class="aleatorio">
                 <h4>Sorpréndeme</h4>
-                <img src="https://placekitten.com/200/150" alt="botón de comida aleatoria">
-                <p>Ícono de aleatorio</p>
+                <div class="fa-container">
+                    <i class="fas fa-random"></i>
+                </div>
             </div>
             <!-- Aleatorio Termina -->
             <!-- Recomendación del Día -->
             <div class="recomendacion">
                 <h4>Recomendación del día</h4>
                 <div class="figuras-comida">
-                    <img src="https://placekitten.com/200/150" alt="botón de comida de recomendación del día">
+                    <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=714&q=80" alt="botón de comida de recomendación del día">
                 </div>
                 <div class="figuras-comida">
-                    <img src="https://placekitten.com/200/150" alt="botón de comida de recomendación del día">
+                    <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1371&q=80" alt="botón de comida de recomendación del día">
                 </div>
                 <div class="figuras-comida">
-                    <img src="https://placekitten.com/200/150" alt="botón de comida de recomendación del día">
-                    <p>Botón de más</p>
+                    <img src="https://images.unsplash.com/photo-1613514785940-daed07799d9b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80" alt="botón de comida de recomendación del día">
                 </div>
+                <i class="fas fa-chevron-right"></i>
             </div>
             <!-- Recomendación del Día Termina -->
             <!-- Platillos Mejor Valorados -->
             <div class="valoracion-usuarios">
                 <h4>Mejor valorado por los usuarios</h4>
                 <div class="figuras-comida">
-                    <img src="https://placekitten.com/200/150" alt="botón de comida de valoración de usuarios">
+                    <img src="https://images.unsplash.com/photo-1613514785940-daed07799d9b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80" alt="botón de comida de valoración de usuarios">
                 </div>
                 <div class="figuras-comida">
-                    <img src="https://placekitten.com/200/150" alt="botón de comida de valoración de usuarios">
+                    <img src="https://images.unsplash.com/photo-1618416096379-fa1f3262a72c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80" alt="botón de comida de valoración de usuarios">
                 </div>
                 <div class="figuras-comida">
-                    <img src="https://placekitten.com/200/150" alt="botón de comida de valoración de usuarios">
+                    <img src="https://images.unsplash.com/photo-1613591629320-40af6604bfed?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=925&q=80" alt="botón de comida de valoración de usuarios">
                 </div>
                 <div class="figuras-comida">
-                    <img src="https://placekitten.com/200/150" alt="botón de comida de valoración de usuarios">
-                    <p>Botón de más</p>
+                    <img src="https://images.unsplash.com/photo-1582234363542-ee64d0ccb0d5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="botón de comida de valoración de usuarios">
                 </div>
+                <i class="fas fa-chevron-right"></i>
             </div>
             <!-- Platillos Mejor Valorados Termina -->
             <!-- Todos los Platillos -->
             <div class="todos-platillos">
                 <h4>Todos los platillos</h4>
                 <div class="figuras-comida">
-                    <img src="https://placekitten.com/200/150" alt="botón de comida de toda la comida">
+                    <img src="https://images.unsplash.com/photo-1618416096379-fa1f3262a72c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80" alt="botón de comida de toda la comida">
                 </div>
                 <div class="figuras-comida">
-                    <img src="https://placekitten.com/200/150" alt="botón de comida de toda la comida">
+                    <img src="https://images.unsplash.com/photo-1613514785940-daed07799d9b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80" alt="botón de comida de toda la comida">
                 </div>
                 <div class="figuras-comida">
-                    <img src="https://placekitten.com/200/150" alt="botón de comida de toda la comida">
+                    <img src="https://images.unsplash.com/photo-1512838243191-e81e8f66f1fd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="botón de comida de toda la comida">
                 </div>
                 <div class="figuras-comida">
-                    <img src="https://placekitten.com/200/150" alt="botón de comida de toda la comida">
-                    <p>Botón de más</p>
+                    <img src="https://images.unsplash.com/photo-1511690078903-71dc5a49f5e3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80" alt="botón de comida de toda la comida">
                 </div>
+                <i class="fas fa-chevron-right"></i>
             </div>
             <!-- Todos los Platillos Termina -->
         </div>
         <!-- Platillos Temina -->
     </nav>
     <footer>
-        <!-- Mayor Información -->
-        <div class="info">
-            <h3>Información de interés</h3>
-            <p>Lorem ipsum dolor sit amet.</p>
-            <p>Lorem ipsum dolor sit amet.</p>
-            <p>Lorem ipsum dolor sit amet.</p>
-        </div>
-        <!-- Mayor Información Termina -->
-        <!-- Redes Sociales -->
-        <div class="follow">
-            <h3>Síguenos</h3>
-            <div class="social">
-                <img src="https://placekitten.com/50/50" alt="botón de red social">
-            </div>
-            <div class="social">
-                <img src="https://placekitten.com/50/50" alt="botón de red social">
-            </div>
-            <div class="social">
-                <img src="https://placekitten.com/50/50" alt="botón de red social">
-            </div>
-            <div class="social">
-                <img src="https://placekitten.com/50/50" alt="botón de red social">
-            </div>
-        </div>
-        <!-- Redes Sociales Termina -->
+        <section class="footer-img">
+            <img src="/static/images/Rue_logo_white_resized.png" alt="logo">
+        </section>
+        <section class="info-interes">
+            <h4>Información de interes</h4>
+            <article>
+                <p>Terminos y condiciones</p>
+                <p>Restaurantes</p>
+                <p>Registrar tu restaurante</p>
+                <p>Aviso de privacidad</p>
+                <p>Restaurantes cerca de mi</p>
+                <p>Registrate para realizar entregas</p>
+            </article>
+        </section>
+        <section class="info-redes">
+            <ul>
+                <li>
+                    <a href="http://" target="_blank">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://" target="_blank">
+                        <i class="fab fa-twitter-square"></i>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <section class="copyright">
+            <p>&copy; copyright Rue 2021</p>
+        </section>
     </footer>
 </body>
 </html>
