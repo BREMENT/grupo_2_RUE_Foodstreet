@@ -10,6 +10,7 @@
   * Soy estudiante de Ingeniería en Nanotecnología con interés en la desarrollo web, UI/UX y en la ciencia de datos para la optimización de procesos. Considero que mi aportación clave en este proyecto es el diseño de interfaces y contenido.
 * Luis Jesus Villegas Castillo
   * Soy estudiante de la carrera de Ingeniería en informática octavo semestre, me gusta programar y mi principal interés es el entorno web para el desarrollo.
+* Aura Delia Mata Hernández
 
 ## Descripción
 <p align="justify">
