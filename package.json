@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/BREMENT/grupo_2_RUE_Foodstreet#readme",
   "dependencies": {
+    "ejs": "^3.1.6",
     "express": "^4.17.1"
   }
 }
