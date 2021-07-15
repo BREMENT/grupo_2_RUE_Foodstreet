@@ -9,21 +9,10 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <header>
-        <ul>
-            <li><a href="/" class="logo"> <img src="/images/Rue_logo_white_resized.png" alt="logo" ></a></li>
-            <div class="iconos">
-                <li><a href="#" class="ubicacion"><i class="fas fa-map-marker-alt"></i></a></li>
-                <li><a href="#" class="buscador"><i class="fas fa-search"></i></a></li>
-                <li><a href="#" class="carrito"><i class="fas fa-cart-plus"></i> </a></li>
-                <li><a href="#" class="usuario"><i class="fas fa-user-circle"></i></a></li>
-            </div>
-        </ul>
-    </header>
-
-
-<body>
-   
+    <!-- header -->
+    <%- include('./partials/header') %> 
+    <!-- fin header -->
+    
     <nav class="main-navbar">
        
             <div class="main-header-top-bar"> 
@@ -38,8 +27,6 @@
         </section>
     </nav>
         
-    
-
     <main class="nav-login">
         <section class="control-login">
             <section class="main-article-login">
@@ -65,55 +52,17 @@
                             <button type="submit" class="button_login">Iniciar</button>
                     </div>
                     <h6>Olvidaste la contasena </h6>
+                </form>
             </section>
         </section>
-            </form>
                                
-     <a href="https://www.google.com/"> Ir a Google >> </a>
-        </main>
-
-</body>
+        <a href="https://www.google.com/"> Ir a Google >> </a>
+    </main>
 
 
-
-<footer>
-    <section class="footer-img">
-        <img src="/images/Rue_logo_white_resized.png" alt="logo">
-    </section>
-    <section class="info-interes">
-        <h4>Información de interes</h4>
-        <article>
-            <p>Terminos y condiciones</p>
-            <p>Restaurantes</p>
-            <p>Registrar tu restaurante</p>
-            <p>Aviso de privacidad</p>
-            <p>Restaurantes cerca de mi</p>
-            <p>Registrate para realizar entregas</p>
-        </article>
-    </section>
-    <section class="info-redes">
-        <ul>
-            <li>
-                <a href="http://" target="_blank">
-                    <i class="fab fa-facebook-square"></i>
-                </a>
-            </li>
-            <li>
-                <a href="http://" target="_blank">
-                    <i class="fab fa-instagram"></i>
-                </a>
-            </li>
-            <li>
-                <a href="http://" target="_blank">
-                    <i class="fab fa-twitter-square"></i>
-                </a>
-            </li>
-        </ul>
-    </section>
-    <section class="copyright">
-        <p>&copy; copyright Rue 2021</p>
-    </section>
-</footer>
+    <!-- footer -->
+    <%- include('./partials/footer') %> 
+    <!-- fin footer -->
 </body>
 
 </html>
