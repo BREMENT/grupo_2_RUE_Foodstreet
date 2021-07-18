@@ -18,46 +18,73 @@
             <div class="main-header-top-bar"> 
                 <p class="return"> << Volver </p>
              </div>
-             <section class="info-login">
-            <h4>Ingresa a RUE</h4>
-            <article>
-                <p>¿Nuevo en RUE?, registrate aquí</p>
-                <p class="privacidad"> Al continuar aceptas las condiciones de servicio y la politica de privacidad de RUE, incluyendo nuestra politica sobre cookies </p>
-            </article>
         </section>
     </nav>
         
-    <main class="nav-login">
-        <section class="control-login">
+
+ <!-- Botones luis  -->
+            <!-- main home -->
+    <main class="main-register">
+        <section class="main-register-section-form">
+            
             <section class="main-article-login">
                 <img src="/images/img-chilaquiles.jpg">
                 <article><p>Chilaquiles</p></article>
             </section>
         </section>
+        <section class="main-register-section-buttons">
+            <h1>Inicia sesión</h1>
+            <div class="div-text-cuenta">
+                <p class="text-inicio-cuenta">
+                    ¿Aún no tienes cuenta? <a href="/user/login">Registrate aquí</a>
+                </p>
+            </div>
+            <div class="buttons-group-auth">
+                <div class="button-auth">
+                    <button class="btn-auth btn-auth-facebook">
+                        <i class="fab fa-facebook"></i>
+                        Facebook
+                    </button>
+                </div>
+                <div class="button-auth">
+                    <button class="btn-auth btn-auth-google">
+                        <i class="fab fa-google"></i>
+                        Google
+                    </button>
+                </div>
+                <div class="button-auth">
+                    <button class="btn-auth btn-auth-apple">
+                        <i class="fab fa-apple"></i>
+                        Apple
+                    </button>
+                </div>
 
-        <section class="control-login">         
-            <section class="login">
-                <p><a href="http://" target="_blank"></a><i class="fab fa-google"></i></a>Continuar con Google </p>
-                <p> <a href="http://" target="_blank"> <i class="fab fa-facebook-square"></i></a> Continuar con Facebook </p>             
-                <p><a href="http://" target="_blank"></a> <i class="fab fa-apple"></a></i>Continuar con Apple </p>
-                <form action="/register" method="GET" class="create-form">  <!--POST informacion sensible o segura, GET es para formulario de busqueda-->
-                    <div class="control-formulario">
-                            <input type="text" name='name' class="control" placeholder="Nombre de usuario">  
-                    </div>
-                    <div class="control-formulario">
-                            <input type="text" name='user' class="control" placeholder="Contraseña">  
-                    </div>
-        
-                    <div class="control-formulario">
-                            <button type="submit" class="button_login">Iniciar</button>
-                    </div>
-                    <h6>Olvidaste la contasena </h6>
-                </form>
-            </section>
+                <div class="form-register-item">
+                    <input type="email" placeholder="Correo">
+                </div>
+                <div class="form-register-item">
+                    <input type="tel" placeholder="Escribe tu Contraseña">
+                </div>
+
+                <div class="form-register-item">
+                    <input type="checkbox" name="condicion" id="condicion" value="acepto">
+                    <label class="text-label" for="">Acepto los terminos y condiciones y la política de privacidad</label>
+                </div>
+                <div class="form-register-item div-btns">
+                    <button class="btn-register">Ingresar</button>
+                </div>
+            </div>        
+
+
         </section>
-                               
-        <a href="https://www.google.com/"> Ir a Google >> </a>
+       
+      
+
     </main>
+    <!-- fin main home -->
+
+ <!-- fin bontones -->
+
 
 
     <!-- footer -->
@@ -66,3 +93,50 @@
 </body>
 
 </html>
+
+
+
+ <!-- seccion para borrar Brenda 
+
+ <section class="info-login">
+    <h4>Ingresa a RUE</h4>
+    <article>
+        <p>¿Nuevo en RUE?, registrate aquí</p>
+    </article>
+
+ <p class="privacidad"> Al continuar aceptas las condiciones de servicio y la politica de privacidad de RUE, incluyendo nuestra politica sobre cookies </p>
+ <main class="nav-login">
+    <section class="control-login">
+        <section class="main-article-login">
+            <img src="/images/img-chilaquiles.jpg">
+            <article><p>Chilaquiles</p></article>
+        </section>
+    </section>
+
+
+ <section class="control-login">         
+    <section class="login">
+        <p><a href="http://" target="_blank"></a><i class="fab fa-google"></i></a>Continuar con Google </p>
+        <p> <a href="http://" target="_blank"> <i class="fab fa-facebook-square"></i></a> Continuar con Facebook </p>             
+        <p><a href="http://" target="_blank"></a> <i class="fab fa-apple"></a></i>Continuar con Apple </p>
+        <form action="/register" method="GET" class="create-form">  
+            <div class="control-formulario">
+                    <input type="text" name='name' class="control" placeholder="Nombre de usuario">  
+            </div>
+            <div class="control-formulario">
+                    <input type="text" name='user' class="control" placeholder="Contraseña">  
+            </div>
+
+            <div class="control-formulario">
+                    <button type="submit" class="button_login">Iniciar</button>
+            </div>
+            <h6>Olvidaste la contasena </h6>
+        </form>
+    </section>
+</section>
+                       
+<a href="https://www.google.com/"> Ir a Google >> </a>
+</main>
+
+
+fin seccion para borrar Brenda -->
