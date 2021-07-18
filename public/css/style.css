@@ -227,24 +227,6 @@ footer .copyright {
     display: flex;
 }
 
-.button_login{
-    background-color: #0044aa;
-    color:#ffff; 
-    border:none;
-    font-size: 20px;
-    padding:0px 90px;
-    text-align: center;
-    border-radius: 5px; 
-    
-}
-
-.button_login:hover {
-    background-color:grey;
-    color:rgb(196, 195, 195);   
-    transition-property: background-color,color;
-    transition-duration:0.1s;
-}
-
 .login{
     flex-direction: column;
     
