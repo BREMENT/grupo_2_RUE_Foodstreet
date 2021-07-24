@@ -3,6 +3,7 @@ const app = express();
 const userRouter = require('./routes/user.js');
 const productoRouter = require('./routes/producto.js');
 const restauranteRouter = require('./routes/restaurante.js');
+const indexRouter = require('./routes/index.js');
 
 const PORT = process.env.PORT || 3000;
 
@@ -12,10 +13,7 @@ app.set('view engine', 'ejs');
 app.use('/user', userRouter);
 app.use('/productos', productoRouter);
 app.use('/restaurantes', restauranteRouter);
-
-app.get('/', (req, res)=>{
-    res.render('inicio');
-});
+app.use(indexRouter);
 
 app.listen(PORT, () => {
     console.log(`Servidor funcionando en el puerto ${PORT} `);
