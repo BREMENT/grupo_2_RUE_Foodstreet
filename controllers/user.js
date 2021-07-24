@@ -2,7 +2,7 @@ const userController = {
     login: (req, res)=>{
         res.render('login');
     },
-    sigup: (req, res)=>{
+    signup: (req, res)=>{
         res.render('registro');
     }
 };
