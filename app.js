@@ -14,7 +14,7 @@ app.set('view engine', 'ejs');
 app.use('/user', userRouter);
 app.use('/productos', productoRouter);
 app.use('/restaurantes', restauranteRouter);
-app.use('/carrito', carritoRouter);
+app.use(carritoRouter);
 app.use(indexRouter);
 
 

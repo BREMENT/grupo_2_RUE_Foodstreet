@@ -49,6 +49,36 @@ De igual manera los restaurantes se pueden registrar y agregar sus respectivos p
 - [Montserrat](https://fonts.google.com/specimen/Montserrat?query=montserrat) <span style="font-family:Montserrat">(para contenido)</span>
 - [**Rubik**](https://fonts.google.com/specimen/Rubik?query=rubik) <span style="font-family:Rubik">(para titulares)</span>
 
+### Rutas de enlace
+**Index**
+
+`localhost:RUTA/`
+o
+`localhost:RUTA/home`
+
+**Login**
+
+`localhost:RUTA/user/login`
+
+**Registro**
+
+`localhost:RUTA/user/signup`
+
+**Producto**
+
+`localhost:RUTA/productos/producto`
+
+**Restaurante**
+
+`localhost:RUTA/restaurantes/restaurante`
+
+**Carrito**
+
+`localhost:RUTA/carrito`
+
+
+
+
 ### Enlaces adicionales
 - [Tablero de trabajo](https://trello.com/b/mVW3dA9E)
 
