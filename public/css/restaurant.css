@@ -1,0 +1,96 @@
+/* Inicio Restaurante */
+nav {
+    background-color: #faede3;
+}
+.banner-restaurante{
+
+    height: 250px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+}
+.banner-restaurante::before{
+    content:'';
+	position: absolute;
+        top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.2);
+}
+.banner-restaurante{
+    position: relative;
+}
+
+.banner-restaurante .left-info{
+    position: absolute;
+    color: white;
+    left: 10px;
+    bottom: 10px;
+}
+
+.banner-restaurante .right-info{
+    position: absolute;
+    color: white;
+    right: 10px;
+    bottom: 10px;
+}
+
+/* Posiblemente tenga que agrega a productos */
+.descripcion,
+.mas-fotos,
+.comentarios,
+.platillos .aleatorio,
+.platillos .recomendacion,
+.platillos .valoracion-usuarios,
+.platillos .todos-platillos {
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.platillos .recomendacion,
+.platillos .valoracion-usuarios,
+.platillos .todos-platillos{
+    display: inline-block;
+    width: 95vw;
+}
+
+.descripcion {
+    width: 250px;
+    height: 250px;
+}
+.platillos, 
+.descripcion {
+    color: #F2274C;
+}
+.platillos .aleatorio {
+    width: 250px;
+    height: 250px;
+}
+.platillos .aleatorio .fa-container{
+    width: 230px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.platillos .aleatorio i{
+    font-size: 50px;
+}
+.platillos .recomendacion .figuras-comida,
+.platillos .valoracion-usuarios .figuras-comida,
+.platillos .todos-platillos .figuras-comida{
+    display: inline-block;
+}
+.platillos .recomendacion .figuras-comida img,
+.platillos .valoracion-usuarios .figuras-comida img,
+.platillos .todos-platillos .figuras-comida img,
+.mas-fotos img{
+    width: 200px;
+    height: 150px;
+}
+/* Fin Restaurante */
