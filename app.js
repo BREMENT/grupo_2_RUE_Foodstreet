@@ -6,7 +6,7 @@ const restauranteRouter = require('./routes/restaurante.js');
 const carritoRouter = require('./routes/carrito.js');
 const indexRouter = require('./routes/index.js');
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');

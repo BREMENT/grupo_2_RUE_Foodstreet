@@ -3,7 +3,7 @@ const productoController = {
         res.render('detalleProducto');
     },
     create: (req, res)=>{
-        res.send('formulario-creacion');
+        res.render('product-create-form');
     },
     store: (req, res)=>{
         res.send('datos del formulario');
