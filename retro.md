@@ -27,8 +27,6 @@
 <!-- ### Dejar de hacer -->
 <!-- Aquellas prácticas que podemos eliminarlas -->
 
-# Retrospectivas
-
 ## Sprint 2
 
 ### Comenzar a hacer
