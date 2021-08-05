@@ -55,3 +55,35 @@
 - CSS.
 - Realizar retrospectiva.
 - Actualizar trello.
+
+## Sprint 4
+
+### Comenzar a hacer
+<!-- Todas aquellas cosas innovadoras que queremos probar o que notamos que deberíamos usar -->
+- JSON User
+- Separar CSS.
+- Product Form.
+- Vista Log-out.
+- Rutas usuarios Log-out.
+- Rutas usuarios con Log-in.
+
+### Más de
+<!-- Cosas que estamos usando o haciendo y que queremos que mejoren -->
+- Daily meeting.
+- Realizar reuniones una vez a la semana.
+- Realizar carrito de compras.
+
+
+### Seguir haciendo
+<!-- Aquello que venimos haciendo y que nos brinda valor -->
+- Organización.
+- Trabajo en equipo.
+- Mejorar el navbar.
+- CSS archivos partians.
+- Repartir tareas equitativamente.
+- Modificar el diseño del home (menos cargado).
+
+### Menos de
+<!-- Aquello que intentamos pero no nos da tanto beneficio como se esperaba -->
+- Retraso en los sprints.
+
