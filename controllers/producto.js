@@ -2,6 +2,9 @@ const productoController = {
     detalle: (req, res)=>{
         res.render('detalleProducto');
     },
+    products: (req, res)=>{
+        res.render('products');
+    },
     create: (req, res)=>{
         res.render('product-create-form');
     },

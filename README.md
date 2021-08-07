@@ -66,7 +66,8 @@ o
 
 **Producto**
 
-`localhost:RUTA/productos/producto`
+`localhost:RUTA/productos/detalle`
+`localhost:RUTA/productos/products`
 
 **Restaurante**
 
