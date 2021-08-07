@@ -138,6 +138,54 @@ footer .copyright {
 
 /* fin footer */
 
+/*Ultimas visitas & Ofertas - yo lo agregue*/
+
+.last-visit{ 
+    margin-top: 323px;
+ }
+ 
+ div.last-visit,
+ div.offers{
+     display: flex;
+     flex-wrap: wrap;
+ }
+ 
+ .price{
+     font-size: 15px;
+     width: 30%;
+ }
+ 
+ .discount{
+     width: 70%;
+ }
+ 
+ .discount{
+     font-size: 13px;
+     font-weight: normal;
+ }
+ 
+ h3{
+     font-size: 20px;
+     color: #666;
+     position:relative;
+ }
+ 
+ .description{
+     font-size: 20px;
+     color: #666;
+     font-weight: normal}
+ 
+ p{ font-size: 12px;}
+  /*Fin Ultimas visitas & Ofertas - yo lo agregue*/
+
+
+
+
+
+
+
+
+
 /* inicio login */
 
 
