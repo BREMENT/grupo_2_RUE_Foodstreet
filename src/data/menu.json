@@ -1,0 +1,82 @@
+[
+    {
+     "id": 1,
+     "name": "Orden Taco fundido",
+     "price": 45,
+     "Commerce": "Los Carnales",
+     "category": "visited",
+     "item-type": "Tacos",
+     "description": "Elige la carne que te gusta con queso fundido, chile poblano, tortilla de maíz y la salsa especial de Chiplotle",
+     "image": "tacofundido.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Burrito",
+        "price": 40,
+        "Commerce": "Los Carnales",
+        "category": "visited",
+        "item-type": "Tacos",
+        "description": "Tortilla de harina de trigo con frijoles, arroz, cebolla, la carne que mas te gusta y queso fundido",
+        "image": "burrito.jpg"
+       },
+       {
+        "id": 3,
+        "name": "Flautas",
+        "price": 40,
+        "Commerce": "Los Carnales",
+        "category": "visited",
+        "item-type": "Tacos",
+        "description": "6 rollitos de tortilla de maíz con pollo bañados en crema, con aguacate, queso fresco, lechuga y jitomate",
+        "image": "dorados.jpg"
+       },
+       {
+        "id": 4,
+        "name": "Sopes",
+        "price": 40,
+        "Commerce": "Los Carnales",
+        "category": "visited",
+        "item-type": "Tacos",
+        "description": "Sope de maíz con pollo bañados en crema, con aguacate, queso fresco y lechuga",
+        "image": "sopes.jpg"
+       },
+       {
+        "id": 5,
+        "name": "Keto-taco",
+        "price": 40,
+        "Commerce": "Los Carnales",
+        "category": "in-sale",
+        "item-type": "Tacos",
+        "description": "Tortilla de queso fundido con la carne que te gusta acompañados de cebolla, cilantro, tomate y aguacate",
+        "image": "taco_keto.jpg"
+       },
+       {
+        "id": 6,
+        "name": "Torta Cubana",
+        "price": 40,
+        "Commerce": "Los Carnales",
+        "category": "in-sale",
+        "item-type": "Tacos",
+        "description": "Milaneza, chorizo, huevo, jamon y quesos fundido, acompañada con nuestra salsa especial de chipotle",
+        "image": "torta_cubana.jpg"
+       },
+       {
+        "id": 7,
+        "name": "Taco de Pescado",
+        "price": 40,
+        "Commerce": "Marisqueria La Red",
+        "category": "in-sale",
+        "item-type": "Tacos",
+        "description": "Tortilla de maíz, con pescado empanizado, col, jitomate, aguacate, cilantro y crema",
+        "image": "taco_pescado.jpg"
+       },
+       {
+        "id": 8,
+        "name": "Taco de Camaron",
+        "price": 40,
+        "Commerce": "Marisqueria La Red",
+        "category": "in-sale",
+        "item-type": "Tacos",
+        "description": "Tortilla de maíz, con camarones empanizados, col, jitomate, aguacate, cilantro y crema",
+        "image": "taco_camaron.jpg"
+       }
+]
