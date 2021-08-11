@@ -1,0 +1,187 @@
+
+/* inicio registro */
+.main-register{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 25px 0px 50px;
+}
+.main-register-section-buttons{
+    padding-top: 13px;
+    width: 100%;
+}
+.main-register-section-form{
+    padding-top: 13px;
+    width: 100%;
+}
+.main-register-section-buttons h1,
+.main-register-section-form h3{
+    text-align: center;
+}
+
+.div-text-cuenta{
+    display: flex;
+    justify-content: center;
+}
+
+.text-inicio-cuenta{
+    width: 60%;
+    text-align: center;
+}
+
+.text-inicio-cuenta a{
+    color: #0aa354;
+}
+
+.buttons-group-auth{
+    padding: 0px 5%;
+}
+
+.button-auth{
+    margin: 10px 0px;
+}
+
+.button-auth .btn-auth{
+    width: 100%;
+    height: 40px;
+    color: #ffff;
+    border-radius: 10px;
+    border: none;
+}
+
+.btn-auth-facebook{
+    background-color: #3b5998;
+    transition: all 0.5s;
+}
+
+.btn-auth-google{
+    background-color: #1778f2;
+    transition: all 0.5s;
+}
+
+.btn-auth-apple{
+    background-color: #000;
+    transition: all 0.5s;
+}
+.btn-auth-facebook:hover,
+.btn-auth-google:hover,
+.btn-auth-apple:hover,
+.btn-register:hover{
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
+.btn-auth-facebook i, .btn-auth-google i{
+    font-size: 1.1rem;
+}
+
+.btn-auth-apple i{
+    font-size: 1.4rem;
+}
+
+.main-register{
+    background-color: #faede3;
+}
+
+.form-register{
+    margin: 0px 5%;
+    padding: 15px 15px 25px;
+    margin-bottom: 20px;
+}
+.form-register-item{
+    width: 100%;
+}
+
+.form-register-item input[type="text"], 
+.form-register-item input[type="email"],
+.form-register-item input[type="tel"]{
+    width: 100%;
+    outline: none;
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+    margin-bottom: 15px;
+}
+.form-register-item input[type="checkbox"],
+.form-register-item input[type="radio"]{
+    margin-bottom: 15px;
+}
+
+.div-btns{
+    margin-top: 5px;
+    display:flex;
+    justify-content:center;
+}
+
+.btn-register{
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 10px;
+    width: 77%;
+    background-color: #3b5998;
+    color: #ffff;
+    transition: all 0.5s;
+}
+
+.div-register-radio{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.div-radio{
+    width: 100%;
+}
+
+.text-label{
+    font-size: 14px;
+}
+
+.div-register-input{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* fin registro */
+
+@media (min-width: 568px) {
+    /* main register  */
+    .form-register{
+        margin: 0px 16%;
+    }
+    /* fin main register */
+}
+
+@media (min-width: 1023px) {
+        /* main register */
+        .form-register{
+            margin: 0 5%;
+        }
+    
+        .div-radio{
+            width: 45%;
+        }
+    
+        .main-register-section-buttons{
+            width: 45%;
+        }
+    
+        .main-register-section-form{
+            width: 55%;
+        }
+    
+        .div-register-input{
+            justify-content: space-between;
+        }
+        
+        .form-register-item input[type="text"]{
+            width: 48%;
+        }
+    
+        .text-inicio-cuenta{
+            font-size: 14px;
+        }
+        /* fin main register */
+    
+}
