@@ -1,0 +1,44 @@
+[{
+        "id": 1,
+        "nombre": "aura",
+        "apellido": "mata",
+        "correo": "auramatahdz@outlook.com",
+        "Telefono": "5522053892",
+        "password": "pepito123",
+        "imagen": "aura.jpg",
+        "categoria": ""
+    },
+
+    {
+        "id": 2,
+        "nombre": "Jazmin",
+        "apellido": "Olvera",
+        "correo": "jazolvera@outlook.com",
+        "Telefono": "5535643911",
+        "password": "pepito456",
+        "imagen": "jazmin.jpg",
+        "categoria": ""
+    },
+
+    {
+        "id": 3,
+        "nombre": "Eva",
+        "apellido": "Priego",
+        "correo": "evapriego@outlook.com",
+        "Telefono": "5535763911",
+        "password": "pepito789",
+        "imagen": "eva.jpg",
+        "categoria": ""
+    },
+
+    {
+        "id": 4,
+        "nombre": "Jaime",
+        "apellido": "Rosas",
+        "correo": "jaimero@outlook.com",
+        "Telefono": "5520573211",
+        "password": "pepito666",
+        "imagen": "jaime.jpg",
+        "categoria": ""
+    }
+]
