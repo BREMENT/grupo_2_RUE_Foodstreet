@@ -93,7 +93,9 @@
 
 .form-register-item input[type="text"], 
 .form-register-item input[type="email"],
-.form-register-item input[type="tel"]{
+.form-register-item input[type="tel"],
+.form-register-item input[type="password"],
+.select-option{
     width: 100%;
     outline: none;
     border-radius: 10px;
@@ -101,6 +103,11 @@
     border: none;
     margin-bottom: 15px;
 }
+
+.input-file{
+    margin-bottom: 15px;
+}
+
 .form-register-item input[type="checkbox"],
 .form-register-item input[type="radio"]{
     margin-bottom: 15px;
@@ -173,12 +180,20 @@
     
         .div-register-input{
             justify-content: space-between;
+            align-items: center;
         }
         
         .form-register-item input[type="text"]{
             width: 48%;
         }
-    
+        
+        .select-option{
+            width: 48%;
+        }
+        .input-file{
+            width: 48%;
+        }
+
         .text-inicio-cuenta{
             font-size: 14px;
         }
