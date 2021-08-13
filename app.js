@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
-const userRouter = require('./routes/user.js');
+
+// rutas
+const userRouter = require('./routes/users.js');
 const productoRouter = require('./routes/producto.js');
 const restauranteRouter = require('./routes/restaurante.js');
 const carritoRouter = require('./routes/carrito.js');
