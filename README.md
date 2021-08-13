@@ -11,6 +11,7 @@
 * Luis Jesus Villegas Castillo
   * Soy estudiante de la carrera de Ingeniería en informática octavo semestre, me gusta programar y mi principal interés es el entorno web para el desarrollo.
 * Aura Delia Mata Hernández
+  * Soy estudiante de Ingeniería en telemática con interés principalmente en la creación y diseño de páginas web, cabe destacar que mi significativo aporte sería en las bases de datos y la seguridad web. 
 
 ## Descripción
 <p align="justify">
