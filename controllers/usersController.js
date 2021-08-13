@@ -17,7 +17,9 @@ const userController = {
     create: (req, res) => {
         // registrar usuario
         res.send('registrar usuario');
+        console.log(req.body);
     }
+
 };
 
 module.exports = userController;

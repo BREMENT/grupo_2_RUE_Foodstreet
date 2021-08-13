@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,90 +9,92 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/css/login.css">
 </head>
+
 <body>
     <!-- header -->
-    <%- include('../partials/header') %> 
-    <!-- fin header -->
-    
-    <nav class="main-navbar">
-       
-            <div class="main-header-top-bar"> 
-                <p class="return"> << Volver </p>
-             </div>
-        </section>
-    </nav>
-        
-            <!-- main home -->
-    <main class="main-register">
-        <section class="main-register-section-form">
-            
-            <section class="main-article-login">
-               <div class=div-cont-login> <img src="/images/img-chilaquiles.jpg"></div>
-               <div class="div-img-login"> <article><p>Chilaquiles</p></article></div>
-            </section>
-        </section>
-        <section class="main-register-section-buttons">
-            <h1>Inicia sesión</h1>
-            <div class="div-text-cuenta">
-                <p class="text-inicio-cuenta">
-                    ¿Aún no tienes cuenta? <a href="/user/signup">Registrate aquí</a>
-                </p>
+    <%- include('../partials/header') %>
+        <!-- fin header -->
+
+        <nav class="main-navbar">
+
+            <div class="main-header-top-bar">
+                <p class="return">
+                    << Volver </p>
             </div>
-            <div class="buttons-group-auth">
-                <div class="button-auth">
-                    <button class="btn-auth btn-auth-facebook">
+            </section>
+        </nav>
+
+        <!-- main home -->
+        <main class="main-register">
+            <section class="main-register-section-form">
+
+                <section class="main-article-login">
+                    <div class=div-cont-login> <img src="/images/img-chilaquiles.jpg"></div>
+                    <div class="div-img-login">
+                        <article>
+                            <p>Chilaquiles</p>
+                        </article>
+                    </div>
+                </section>
+            </section>
+            <section class="main-register-section-buttons">
+                <h1>Inicia sesión</h1>
+                <div class="div-text-cuenta">
+                    <p class="text-inicio-cuenta">
+                        ¿Aún no tienes cuenta? <a href="/user/signup">Registrate aquí</a>
+                    </p>
+                </div>
+                <div class="buttons-group-auth">
+                    <div class="button-auth">
+                        <button class="btn-auth btn-auth-facebook">
                         <i class="fab fa-facebook"></i>
                         Facebook
                     </button>
-                </div>
-                <div class="button-auth">
-                    <button class="btn-auth btn-auth-google">
+                    </div>
+                    <div class="button-auth">
+                        <button class="btn-auth btn-auth-google">
                         <i class="fab fa-google"></i>
                         Google
                     </button>
-                </div>
-                <div class="button-auth">
-                    <button class="btn-auth btn-auth-apple">
+                    </div>
+                    <div class="button-auth">
+                        <button class="btn-auth btn-auth-apple">
                         <i class="fab fa-apple"></i>
                         Apple
                     </button>
+                    </div>
+
+                    <div class="form-register-item">
+                        <input type="email" placeholder="Correo">
+                    </div>
+                    <div class="form-register-item">
+                        <input type="tel" placeholder="Escribe tu Contraseña">
+                    </div>
+
+                    <div class="form-register-item">
+                        <input type="checkbox" name="condicion" id="condicion" value="acepto">
+                        <label class="text-label" for="">Acepto los terminos y condiciones y la política de privacidad</label>
+                    </div>
+                    <div class="form-register-item div-btns">
+                        <button class="btn-register">Ingresar</button>
+                    </div>
                 </div>
 
-                <div class="form-register-item">
-                    <input type="email" placeholder="Correo">
-                </div>
-                <div class="form-register-item">
-                    <input type="tel" placeholder="Escribe tu Contraseña">
-                </div>
 
-                <div class="form-register-item">
-                    <input type="checkbox" name="condicion" id="condicion" value="acepto">
-                    <label class="text-label" for="">Acepto los terminos y condiciones y la política de privacidad</label>
-                </div>
-                <div class="form-register-item div-btns">
-                    <button class="btn-register">Ingresar</button>
-                </div>
-            </div>        
-
-
-        </section>
-       
-      
-
-    </main>
-    <!-- fin main home -->
-
- <!-- fin bontones -->
+            </section>
 
 
 
-    <!-- footer -->
-    <%- include('../partials/footer') %> 
-    <!-- fin footer -->
+        </main>
+        <!-- fin main home -->
+
+        <!-- fin bontones -->
+
+
+
+        <!-- footer -->
+        <%- include('../partials/footer') %>
+            <!-- fin footer -->
 </body>
 
 </html>
-
-
-
- 

@@ -3,106 +3,104 @@
 
 <%- include('../partials/head', { title: 'signup'}) %>
 
-<body>
-    <!-- header -->
-    <%- include('../partials/header') %> 
-    <!-- fin header -->
+    <body>
+        <!-- header -->
+        <%- include('../partials/header') %>
+            <!-- fin header -->
 
-    <!-- main home -->
-    <main class="main-register">
-        <section class="main-register-section-buttons">
-            <h1>Regístrate</h1>
-            <div class="div-text-cuenta">
-                <p class="text-inicio-cuenta">
-                    ¿Ya tienes cuenta? <a href="/user/login">Inicia sesión aquí</a>
-                </p>
-            </div>
-            <div class="buttons-group-auth">
-                <div class="button-auth">
-                    <button class="btn-auth btn-auth-facebook">
+            <!-- main home -->
+            <main class="main-register">
+                <section class="main-register-section-buttons">
+                    <h1>Regístrate</h1>
+                    <div class="div-text-cuenta">
+                        <p class="text-inicio-cuenta">
+                            ¿Ya tienes cuenta? <a href="/user/login">Inicia sesión aquí</a>
+                        </p>
+                    </div>
+                    <div class="buttons-group-auth">
+                        <div class="button-auth">
+                            <button class="btn-auth btn-auth-facebook">
                         <i class="fab fa-facebook"></i>
                         Facebook
                     </button>
-                </div>
-                <div class="button-auth">
-                    <button class="btn-auth btn-auth-google">
+                        </div>
+                        <div class="button-auth">
+                            <button class="btn-auth btn-auth-google">
                         <i class="fab fa-google"></i>
                         Google
                     </button>
-                </div>
-                <div class="button-auth">
-                    <button class="btn-auth btn-auth-apple">
+                        </div>
+                        <div class="button-auth">
+                            <button class="btn-auth btn-auth-apple">
                         <i class="fab fa-apple"></i>
                         Apple
                     </button>
-                </div>
-            </div>
-        </section>
-        <section class="main-register-section-form">
-            <h3>Puedes registrarte con tu teléfono</h3>
-            <div class="form-register">
-                <form action="">
-                    <div class="form-register-item">
-                        <div class="div-register-input">
-                            <input type="text" placeholder="nombres">
-                            <input type="text" placeholder="apellidos">
                         </div>
                     </div>
-                    <div class="form-register-item">
-                        <input type="email" placeholder="Correo">
-                    </div>
-                    <div class="form-register-item">
-                        <input type="tel" placeholder="Escribe tu número">
-                    </div>
+                </section>
+                <section class="main-register-section-form">
+                    <h3>Puedes registrarte con tu teléfono</h3>
+                    <div class="form-register">
+                        <form action="/signup" method="post">
+                            <div class="form-register-item">
+                                <div class="div-register-input">
+                                    <input type="text" placeholder="nombres" name="nombres">
+                                    <input type="text" placeholder="apellidos" name="apellidos">
+                                </div>
+                            </div>
+                            <div class="form-register-item">
+                                <input type="email" placeholder="Correo" name="correo">
+                            </div>
+                            <div class="form-register-item">
+                                <input type="tel" placeholder="Escribe tu número" name="telefono">
+                            </div>
 
-                    <div class="form-register-item">
-                        <input type="password" name="password" placeholder="Escribe tu contraseña">
-                    </div>
+                            <div class="form-register-item">
+                                <input type="password" placeholder="Escribe tu contraseña" name="password">
+                            </div>
 
-                    <div class="form-register-item">
-                        <div class="div-register-input">
-                            <select name="" id="" class="select-option">
+                            <div class="form-register-item">
+                                <div class="div-register-input">
+                                    <select name="" id="" class="select-option" name="categoria">
                                 <option disabled="true" selected="true" value="">Selecciona</option>
                                 <option value="vendedor">Vendedor</option>
                                 <option value="cliente">Cliente</option>
                             </select>
-                            <div class="input-file">
-                                <label class="text-label" for="perfil">Añade tu foto de perfil</label>
-                                <input type="file" name="perfil" id="perfil">
+                                    <div class="input-file">
+                                        <label class="text-label" for="perfil">Añade tu foto de perfil</label>
+                                        <input type="file" id="perfil" name="perfil">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="form-register-item">
-                        <input type="checkbox" name="condicion" id="condicion" value="acepto">
-                        <label class="text-label" for="">Acepto los terminos y condiciones y la política de privacidad</label>
-                    </div>
-                    <div class="form-register-item">
-                        <div class="div-register-radio">
-                            <div class="div-radio">
-                                <input type="radio" id="" name="verificar" value="llamada">
-                                <label class="text-label" for=""> Verificar por llamada</label>
+                            <div class="form-register-item">
+                                <input type="checkbox" name="condicion" id="condicion" value="acepto">
+                                <label class="text-label" for="">Acepto los terminos y condiciones y la política de privacidad</label>
                             </div>
-                            <div class="div-radio">
-                                <input type="radio"
-                                name="verificar"
-                                value="mensaje">
-                                <label class="text-label" for="">Verificar por sms</label>
+                            <div class="form-register-item">
+                                <div class="div-register-radio">
+                                    <div class="div-radio">
+                                        <input type="radio" id="" name="verificar" value="llamada">
+                                        <label class="text-label" for=""> Verificar por llamada</label>
+                                    </div>
+                                    <div class="div-radio">
+                                        <input type="radio" name="verificar" value="mensaje">
+                                        <label class="text-label" for="">Verificar por sms</label>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                            <div class="form-register-item div-btns">
+                                <button type="submit" class="btn-register">Registrarme</button>
+                            </div>
+                        </form>
                     </div>
-                    <div class="form-register-item div-btns">
-                        <button class="btn-register">Registrarme</button>
-                    </div>
-                </form>        
-            </div>
-        </section>
-    </main>
-    <!-- fin main home -->
+                </section>
+            </main>
+            <!-- fin main home -->
 
-    <!-- footer -->
-    <%- include('../partials/footer') %> 
-    <!-- fin footer -->
-</body>
+            <!-- footer -->
+            <%- include('../partials/footer') %>
+                <!-- fin footer -->
+    </body>
 
 </html>
