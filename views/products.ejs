@@ -11,7 +11,7 @@
 <body>
     <!-- header -->
     <%- include('./partials/header') %> 
-    <h1>Site in construction by: Brenda Mendez</h1>
+    <h1>Site in construction by: Brenda, Auxilioooo!! </h1>
     <!-- fin header -->
     
     <nav class="main-navbar">
@@ -26,118 +26,32 @@
      <main class="main-home">
         <section class="main-section-home">
             <h3>Basado en tus ordenes</h3>
-            <article class="main-article-home">
-                <img src="/images/img-chalupas.jpg" alt="chalupas">
-                <article>
-                    <p>Chalupas</p>
-                </article>
-            </article>
-            <article class="main-article-home">
-                <img src="/images/img-chilaquiles.jpg">
-                <article>
-                    <p>Chilaquiles</p>
-                </article>
-            </article>
-            <article class="main-article-home">
-                <img src="/images/img-chile_nogada.jpg">
-                <article>
-                    <p>Chile nogada</p>
-                </article>
-            </article>
-            <article class="main-article-home">
-                <img src="/images/img-tacos_pastor.jpg">
-                <article>
-                    <p>Tacos al pastor</p>
-                </article>
-            </article>
-        </section>
-    <!-- fin main home -->
 
- <!-- 2a propuesta main home By Brenda Mendez -->
- <main>
-    <section class="last-visit">
-        <h3>Basado en tu última visita</h3>
-        <div class="products">
-            <article>
-                <img src="\images\products\tacofundido.jpg" alt="Fundido de Queso" class="product_img">
-                <div class="main-article">
-                    <i class="fas fa-truck"></i>
-                    <p class="price">$40.000</p>
-                    <h4 class="description">Fundido de Queso</h4>
-                </div>
-            </article>
-            <article>
-                <img src="\images\products\burrito.jpg" alt="Burrito" class="product_img">
-                <div class="main-article">
-                    <i class="fas fa-truck"></i>
-                    <p class="price">$45.00</p>
-                    <h4 class="description">Burrito</h4>
-                </div>
-            </article>
-            <article>
-                <img src="\images\products\dorados.jpg" alt="Flautas" class="product_img">
-                <div class="main-article">
-                    <i class="fas fa-truck"></i>
-                    <p class="price">$40.000</p>
-                    <h4 class="description">Flautas</h4>
-                </div>
-            </article>
-            <article>
-                <img src="\images\products\sopes.jpg" alt="Flautas" class="product_img">
-                <div class="main-article">
-                    <i class="fas fa-truck"></i>
-                    <p class="price">$40.000</p>
-                    <h4 class="description">Sopes</h4>
-                </div>
-            </article>
-        </div>
-    </section>
-    <section class="offers">
-        <h3>Ofertas</h3>
-        <div class="products">
-            <article>
-                <img src="\images\products\taco_keto.jpg" alt="Keto-taco" class="product_img">
-                <div class="main-article">
-                    <i class="fas fa-truck"></i>
-                    <p class="price">$40.000</p>
-                    <p class="discount">2% off</p>
-                    <h4 class="description">Taco-Keto</h4>
-                </div>
-            </article>
-            <article>
-                <img src="\images\products\torta_cubana.jpg" alt="Torta_cubana" class="product_img">
-                <div class="main-article">
-                    <i class="fas fa-truck"></i>
-                    <p class="price">$40.000</p>
-                    <p class="discount">5% off</p>
-                    <h4 class="description">Torta Cubana</h4>
-                </div>
-            </article>
-            <article>
-                <img src="\images\products\taco_pescado.jpg" alt="Taco de Pescado" class="product_img">
-                <div class="main-article">
-                    <i class="fas fa-truck"></i>
-                    <p class="price">$40.000</p>
-                    <p class="discount">2% off</p>
-                    <h4 class="description">Taco de Pescado</h4>
-                </div>
-            </article>
-            <article>
-                <img src="\images\products\taco_camaron.jpg" alt="Taco de Camaron" class="product_img">
-                <div class="main-article">
-                    <i class="fas fa-truck"></i>
-                    <p class="price">$40.000</p>
-                    <p class="discount">3% off</p>
-                    <h4 class="description">Taco de Camaron</h4>
-                </div>
-            </article>
-        </div>  
-    </section>
-</main>
+            <% visited.forEach(product => { %>
+                <article class="main-article-home">
+                    <img src="/images/products/<%= product.image %>" alt="<%= product.description %>">
+                    <article>
+                        <p><%= product.name %></p>
+                        <h2>$ <%= product.price %></h2>
+                        <span><%= product.discount %></span>
+                        <i class="fas fa-truck"></i>
+                    </article>
+                </article>
+            <% }) %>
 
-
-<!-- fin 2a propuesta main home By Brenda Mendez-->
-
+            <h3> Otros productos </h3>
+            <% inSale.forEach(product => { %>
+                <article class="main-article-home">
+                    <img src="/images/products/<%= product.image %>" alt="<%= product.description %>">
+                    <article>
+                        <p><%= product.name %></p>
+                        <h2>$ <%= product.price %></h2>
+                        <span><%= product.discount %></span>
+                        <i class="fas fa-truck"></i>
+                    </article>
+                </article>
+            <% }) %>
+           
     <!-- footer -->
     <%- include('./partials/footer') %> 
     <!-- fin footer -->
