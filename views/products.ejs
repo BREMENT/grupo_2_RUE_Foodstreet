@@ -11,8 +11,7 @@
 <body>
     <!-- header -->
     <%- include('./partials/header') %> 
-    <h1>Site in construction by: Brenda, Auxilioooo!! </h1>
-    <!-- fin header -->
+        <!-- fin header -->
     
     <nav class="main-navbar">
        
@@ -29,6 +28,7 @@
 
             <% visited.forEach(product => { %>
                 <article class="main-article-home">
+                    <a href = "/productos/detalle/<%= product.id %>">
                     <img src="/images/products/<%= product.image %>" alt="<%= product.description %>">
                     <article>
                         <p><%= product.name %></p>
@@ -42,6 +42,7 @@
             <h3> Otros productos </h3>
             <% inSale.forEach(product => { %>
                 <article class="main-article-home">
+                    <a href = "/productos/detalle/<%= product.id %>">
                     <img src="/images/products/<%= product.image %>" alt="<%= product.description %>">
                     <article>
                         <p><%= product.name %></p>
