@@ -18,7 +18,7 @@
         <div class="banner-producto" style="background-image: url(https://images.unsplash.com/photo-1613514785940-daed07799d9b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80);">
             <!-- Contenido Izquierda -->
                 <div class="left-info">
-                    <h2>Nombre de platillo</h2>
+                    <h2><%= product.name %></h2>
                     <div class="puntuacion">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -26,7 +26,7 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star-half-alt"></i>
                     </div>
-                    <div class="precio">
+                    <div class="precio" >
                         <i class="fas fa-dollar-sign"></i>
                         <i class="fas fa-dollar-sign"></i>
                         <i class="fas fa-dollar-sign"></i>
@@ -49,20 +49,14 @@
         <!-- Banner Producto Termina -->
         <!-- Descripción Producto -->
         <div class="descripcion">
-            <h3>Descripción</h3>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi, distinctio quam alias iusto magnam nihil perferendis temporibus cumque voluptate at.</p>
+            <h3>Descripción: </h3>
+            <p><%= product.description %></p>
         </div>
         <!-- Descripción Producto Termina -->
         <div class="mas-fotos">
             <h3>Más fotos</h3>
             <div class="figuras-comida">
-                <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=714&q=80" alt="botón de comida de recomendación del día">
-            </div>
-            <div class="figuras-comida">
-                <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1371&q=80" alt="botón de comida de recomendación del día">
-            </div>
-            <div class="figuras-comida">
-                <img src="https://images.unsplash.com/photo-1613514785940-daed07799d9b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80" alt="botón de comida de recomendación del día">
+                <img src="/images/products/<%= product.image %>" alt="<%= product.name %>">
             </div>
             <i class="fas fa-chevron-right"></i>
         </div>

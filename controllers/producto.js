@@ -6,12 +6,13 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const productoController = {
     detalle: (req, res)=>{
-        res.render('detalleProducto');
+        let id = parseInt(req.params.id, 10)
+        const product = products.find(p =>p.id ===id)
+        res.render('detalleProducto', {product:product})
     },
     products: (req, res)=>{
         const visited = products.filter(product => product.category === 'visited')
         const inSale = products.filter(product => product.category === 'in-sale')
-        console.log({visited, inSale})
         res.render('products', {visited: visited, inSale:inSale})
     },
     create: (req, res)=>{
