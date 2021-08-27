@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const productsFilePath = path.join(__dirname, '../src/data/menu.json');   
+const productsFilePath = path.join(__dirname, '../data/menu.json');   
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const productoController = {

@@ -41,31 +41,46 @@
                 <section class="main-register-section-form">
                     <h3>Puedes registrarte con tu teléfono</h3>
                     <div class="form-register">
-                        <form action="/signup" method="post">
+                        <form action="/user/create" method="post" enctype="multipart/form-data">
                             <div class="form-register-item">
                                 <div class="div-register-input">
                                     <input type="text" placeholder="nombres" name="nombres">
                                     <input type="text" placeholder="apellidos" name="apellidos">
                                 </div>
+                                <% if(locals.errors && errors.nombres){ %>
+                                    <small><%= errors.nombres.msg %></small>
+                                <% } %>
+                                <% if(locals.errors && errors.apellidos){ %>
+                                    <small> <%= errors.apellidos.msg %> </small>
+                                <% } %>
                             </div>
                             <div class="form-register-item">
-                                <input type="email" placeholder="Correo" name="correo">
+                                <input type="email" placeholder="Correo" name="email">
+                                <% if(locals.errors && errors.email){ %>
+                                    <small><%= errors.email.msg %></small>
+                                <% } %>
                             </div>
                             <div class="form-register-item">
                                 <input type="tel" placeholder="Escribe tu número" name="telefono">
+                                <% if (locals.errors && errors.telefono) { %>
+                                    <small><%= errors.telefono.msg %></small>
+                                <% } %>
                             </div>
 
                             <div class="form-register-item">
                                 <input type="password" placeholder="Escribe tu contraseña" name="password">
+                                <% if (locals.errors && errors.password) { %>
+                                    <small><%= errors.password.msg %></small>
+                                <% } %>
                             </div>
 
                             <div class="form-register-item">
                                 <div class="div-register-input">
-                                    <select name="" id="" class="select-option" name="categoria">
-                                <option disabled="true" selected="true" value="">Selecciona</option>
-                                <option value="vendedor">Vendedor</option>
-                                <option value="cliente">Cliente</option>
-                            </select>
+                                    <select id="" class="select-option" name="categoria">
+                                        <option disabled="true" selected="true" value="">Selecciona</option>
+                                        <option value="vendedor">Vendedor</option>
+                                        <option value="cliente">Cliente</option>
+                                    </select>
                                     <div class="input-file">
                                         <label class="text-label" for="perfil">Añade tu foto de perfil</label>
                                         <input type="file" id="perfil" name="perfil">
@@ -100,7 +115,7 @@
 
             <!-- footer -->
             <%- include('../partials/footer') %>
-                <!-- fin footer -->
+            <!-- fin footer -->
     </body>
 
 </html>

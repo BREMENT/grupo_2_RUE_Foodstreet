@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const productoController = require('../controllers/producto.js');
+const productoController = require('../controllers/productController.js');
 
 // formulario para ver productos
 router.get('/products', productoController.products);
