@@ -19,7 +19,14 @@ const productoController = {
         res.render('product-create-form');
     },
     store: (req, res)=>{
-        res.send('datos del formulario');
+        const newProduct = req.body
+        newProduct.id=Date.now()
+        newProduct.image = 'default-image.png'
+        products.push(newProduct)
+        const productJSON= JSON.stringify(products)
+        fs.writeFileSync(productsFilePath, productJSON)
+        res.redirect('/productos/products');
+        console.log(req.body)
     },
     edit: (req, res)=>{
         res.send('formulario-editar');
