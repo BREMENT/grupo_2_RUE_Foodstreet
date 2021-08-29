@@ -53,13 +53,17 @@
             <p><%= product.description %></p>
         </div>
         <!-- Descripción Producto Termina -->
-        <div class="mas-fotos">
-            <h3>Más fotos</h3>
-            <div class="figuras-comida">
-                <img src="/images/products/<%= product.image %>" alt="<%= product.name %>">
+        <main class="main-register">
+            <div class="mas-fotos">
+                <section class="main-article-detail">
+                    <h3>Más fotos</h3>
+                    <div class="figuras-comida">
+                        <img src="/images/products/<%= product.image %>" alt="<%= product.name %>">
+                    </div>
+                    <i class="fas fa-chevron-right"></i>
+                </section>
             </div>
-            <i class="fas fa-chevron-right"></i>
-        </div>
+        </main>
         <!-- Comentarios -->
         <div class="comentarios">
             <p>Comentario 1</p>
