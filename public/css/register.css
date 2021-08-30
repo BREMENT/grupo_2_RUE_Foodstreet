@@ -148,9 +148,19 @@
 .div-register-input{
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
 }
 
+.div-register-item{
+    width: 100%;
+}
+
+
 /* fin registro */
+
+.alert-errors{
+    color: rgb(218, 7, 7);
+}
 
 @media (min-width: 568px) {
     /* main register  */
@@ -183,10 +193,14 @@
             align-items: center;
         }
         
-        .form-register-item input[type="text"]{
+        /* .form-register-item input[type="text"]{
             width: 48%;
-        }
+        } */
         
+        .div-register-item{
+            width: 49%;
+        }
+
         .select-option{
             width: 48%;
         }

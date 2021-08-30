@@ -1,6 +1,6 @@
 const { check } = require('express-validator');
 
-const validations = [
+const validationsSignup = [
     check('nombres')
     .notEmpty().withMessage('El campo no debe ir vacio').bail()
     .isAlpha('es-ES', {ignore: '\s'}).withMessage('El valor debe ser alfabetico').bail()
@@ -28,5 +28,19 @@ const validations = [
     .notEmpty().withMessage('El campo no debe ir vacior').bail()
 ];
 
+const validationsLogin = [
+    check('email')
+    .notEmpty().withMessage('El campo email no debe ir vacio').bail()
+    .isEmail().withMessage('El campo debe de contener un email valido').bail()
+    ,
+    check('password')
+    .notEmpty().withMessage('El campo no debe ir vacio').bail()
+    .isLength({min: 8}).withMessage('El password debe ser debe contener al menos 8 caracteres').bail()
+    .isStrongPassword().withMessage('El password no es muy fuerte').bail()
+    ,
+]
 
-module.exports = validations;
+module.exports = {
+    validationsSignup,
+    validationsLogin
+}

@@ -44,33 +44,43 @@
                         <form action="/user/create" method="post" enctype="multipart/form-data">
                             <div class="form-register-item">
                                 <div class="div-register-input">
-                                    <input type="text" placeholder="nombres" name="nombres">
-                                    <input type="text" placeholder="apellidos" name="apellidos">
-                                </div>
-                                <% if(locals.errors && errors.nombres){ %>
-                                    <small><%= errors.nombres.msg %></small>
-                                <% } %>
-                                <% if(locals.errors && errors.apellidos){ %>
-                                    <small> <%= errors.apellidos.msg %> </small>
-                                <% } %>
+                                    <!-- implementar un estilo para estos inputs -->
+                                        <div class="div-register-item">
+                                            <input type="text" placeholder="nombres" name="nombres"
+                                            values="<%= locals.errors && errors.nombres %>">
+                                            <% if(locals.errors && errors.nombres){ %>
+                                                <small class="alert-errors"><%= errors.nombres.msg %></small>
+                                            <% } %>
+                                        </div>
+                                        <div class="div-register-item">
+                                            <input type="text" placeholder="apellidos" name="apellidos"
+                                            values="<%= locals.errors && errors.apellidos %>">
+                                            <% if(locals.errors && errors.apellidos){ %>
+                                                <small class="alert-errors"> <%= errors.apellidos.msg %> </small>
+                                            <% } %>
+                                        </div> 
+                                </div>    
                             </div>
                             <div class="form-register-item">
-                                <input type="email" placeholder="Correo" name="email">
+                                <input type="email" placeholder="Correo" name="email"
+                                values="<%= locals.errors && errors.email %>">
                                 <% if(locals.errors && errors.email){ %>
-                                    <small><%= errors.email.msg %></small>
+                                    <small class="alert-errors"><%= errors.email.msg %></small>
                                 <% } %>
                             </div>
                             <div class="form-register-item">
-                                <input type="tel" placeholder="Escribe tu número" name="telefono">
+                                <input type="tel" placeholder="Escribe tu número" name="telefono"
+                                values="<%= locals.errors && errors.telefono %>">
                                 <% if (locals.errors && errors.telefono) { %>
-                                    <small><%= errors.telefono.msg %></small>
+                                    <small class="alert-errors"><%= errors.telefono.msg %></small>
                                 <% } %>
                             </div>
 
                             <div class="form-register-item">
-                                <input type="password" placeholder="Escribe tu contraseña" name="password">
+                                <input type="password" placeholder="Escribe tu contraseña" name="password"
+                                values="<%= locals.errors && errors.password %>">
                                 <% if (locals.errors && errors.password) { %>
-                                    <small><%= errors.password.msg %></small>
+                                    <small class="alert-errors"><%= errors.password.msg %></small>
                                 <% } %>
                             </div>
 

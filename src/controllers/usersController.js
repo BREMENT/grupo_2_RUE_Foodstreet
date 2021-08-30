@@ -11,6 +11,10 @@ const userController = {
     login: (req, res) => {
         res.render('users/login');
     },
+    enter: (req, res)=>{
+        const errors = validationResult(req);
+        res.send({errors: errors.mapped() });
+    },
     signup: (req, res) => {
         res.render('users/signup');
     },
