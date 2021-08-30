@@ -61,13 +61,13 @@
                         <div class="form-register-item">
                             <input type="email" name="email" placeholder="Correo">
                             <% if(locals.errors && errors.email){ %>
-                                <small><%= errors.email.msg %></small>
+                                <small class="alert-errors"><%= errors.email.msg %></small>
                             <% } %>
                         </div>
                         <div class="form-register-item">
                             <input type="password" name="password" placeholder="Escribe tu Contraseña">
                             <% if(locals.errors && errors.password){ %>
-                                <small><%= errors.password.msg %></small>
+                                <small class="alert-errors"><%= errors.password.msg %></small>
                             <% } %>
                         </div>
 

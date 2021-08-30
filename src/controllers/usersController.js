@@ -13,7 +13,11 @@ const userController = {
     },
     enter: (req, res)=>{
         const errors = validationResult(req);
-        res.send({errors: errors.mapped() });
+        if(!errors.isEmpty()){
+            res.render('users/login',{errors: errors.mapped(), old: req.body });
+            return;
+        }
+
     },
     signup: (req, res) => {
         res.render('users/signup');
