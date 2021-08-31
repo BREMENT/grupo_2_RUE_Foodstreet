@@ -1,60 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalle del restaurante</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/css/products.css">
-</head>
+
+<%- include('./partials/head', {title:'productos'}) %>
+
 <body>
     <!-- header -->
     <%- include('./partials/header') %> 
         <!-- fin header -->
     
-    <nav class="main-navbar">
+    <!-- <nav class="main-navbar">
        
             <div class="main-header-top-bar"> 
                 <p class="return"> << Volver </p>
              </div>
         </section>
-    </nav>
+    </nav> -->
         
      <!-- main home -->
-     <main class="main-home">
+    <main class="main-home">
         <section class="main-section-home">
             <h3>Basado en tus ordenes</h3>
-
-            <% visited.forEach(product => { %>
-                <article class="main-article-home">
-                    <a href = "/productos/detalle/<%= product.id %>">
-                    <img src="/images/products/<%= product.image %>" alt="<%= product.name %>">
-                    <article>
-                        <p><%= product.name %></p>
-                        <h2>$ <%= product.price %></h2>
-                        <span><%= product.discount %></span>
-                        <i class="fas fa-truck"></i>
-                    </article>
+            <% visited.forEach( product =>{ %>
+            <article class="main-article-home">
+                <a href="/productos/detalle/<%= product.id %>">
+                <img src="/images/products/<%= product.image %>" alt="<%= product.name %>">
+                <article>
+                    <p><%= product.name %></p>
+                    <h2>$ <%= product.price %></h2>
+                    <span><%= product.discount %></span>
+                    <i class="fas fa-truck"></i>
                 </article>
+                </a>
+            </article>
             <% }) %>
+        </section>
 
-            <h3> Otros productos </h3>
-            <% inSale.forEach(product => { %>
-                <article class="main-article-home">
-                    <a href = "/productos/detalle/<%= product.id %>">
-                    <img src="/images/products/<%= product.image %>" alt="<%= product.name %>">
-                    <article>
-                        <p><%= product.name %></p>
-                        <h2>$ <%= product.price %></h2>
-                        <span><%= product.discount %></span>
-                        <i class="fas fa-truck"></i>
-                    </article>
+        <section class="main-section-home">
+            <h3>Basado en tus ordenes</h3>
+            <% visited.forEach( product =>{ %>
+            <article class="main-article-home">
+                <a href="/productos/detalle/<%= product.id %>">
+                <img src="/images/products/<%= product.image %>" alt="<%= product.name %>">
+                <article>
+                    <p><%= product.name %></p>
+                    <h2>$ <%= product.price %></h2>
+                    <span><%= product.discount %></span>
+                    <i class="fas fa-truck"></i>
                 </article>
+                </a>
+            </article>
             <% }) %>
+        </section>
+    </main>
            
     <!-- footer -->
-    <%- include('./partials/footer') %> 
+    <%- include('./partials/footer'); %> 
     <!-- fin footer -->
 </body>
 
