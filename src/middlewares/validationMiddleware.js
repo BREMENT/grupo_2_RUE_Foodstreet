@@ -40,7 +40,34 @@ const validationsLogin = [
     ,
 ]
 
+const validationsProduct = [
+    check('name')
+    .notEmpty().withMessage('El campo del nombre no debe ir vacio').bail()
+    .isLength({min: 3}).withMessage('El campo debe contener almenos 3 caracteres').bail()
+    .isAlpha('es-ES',{ignore: '\s'}).withMessage('El campo debe ser alfabetico').bail()
+    ,
+    check('price')
+    .notEmpty().withMessage('El campo del precio no debe ir vacio').bail()
+    .isFloat().withMessage('El campo debe ser un float').bail()
+    ,
+    check('discount')
+    .notEmpty().withMessage('El campo del descuento no debe ir vacio').bail()
+    .isFloat().withMessage('El campo debe contener un descuento numerico').bail()
+    ,
+    check('category')
+    .notEmpty().withMessage('Se debe seleccionar alguna categoria').bail()
+    ,
+    check('food_type')
+    .notEmpty().withMessage('Se debe seleccionar algun tipo de comida').bail()
+    ,
+    check('description')
+    .notEmpty().withMessage('El campo de la descripción no debe ir vacio').bail()
+    .isAlpha('es-ES',{ignore: '\s'}).withMessage('El campo debe ser alfabetico').bail()
+    ,
+]
+
 module.exports = {
     validationsSignup,
-    validationsLogin
+    validationsLogin,
+    validationsProduct
 }

@@ -1,54 +1,38 @@
 /* inicio registro */
-.main-register{
+.main-register-product{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     padding: 25px 25px 50px;
 }
-.main-register-section-buttons{
+
+.main-register-section-form-product{
     padding-top: 13px;
     width: 100%;
 }
-.main-register-section-form{
-    padding-top: 13px;
-    width: 100%;
-}
-.main-register-section-buttons h1,
-.main-register-section-form h3{
+
+.main-register-section-form-product h3{
     text-align: center;
 }
 
-.div-text-cuenta{
-    display: flex;
-    justify-content: center;
-}
-
-.text-inicio-cuenta{
-    width: 60%;
-    text-align: center;
-}
-
-.text-inicio-cuenta a{
-    color: #0aa354;
-}
-
-.main-register{
+.main-register-product{
     background-color: #faede3;
 }
 
-.form-register{
+.form-register-product{
     margin: 0px 5%;
     padding: 15px 15px 25px;
     margin-bottom: 20px;
 }
-.form-register-item{
+
+.form-register-item-product{
     width: 100%;
 }
 
-.form-register-item input[type="text"], 
-.form-register-item input[type="email"],
-.form-register-item input[type="tel"],
-.form-register-item textarea {
+.form-register-item-product input[type="text"], 
+.form-register-item-product input[type="email"],
+.form-register-item-product input[type="tel"],
+.form-register-item-product textarea {
     width: 100%;
     outline: none;
     border-radius: 10px;
@@ -57,18 +41,18 @@
     margin-bottom: 15px;
 }
 
-.form-register-item input[type="checkbox"],
-.form-register-item input[type="radio"]{
+.form-register-item-product input[type="checkbox"],
+.form-register-item-product input[type="radio"]{
     margin-bottom: 15px;
 }
 
-.div-btns{
+.div-btns-product{
     margin-top: 5px;
     display:flex;
     justify-content:center;
 }
 
-.btn-register{
+.btn-register-product{
     border: none;
     outline: none;
     padding: 10px;
@@ -79,24 +63,8 @@
     transition: all 0.5s;
 }
 
-.div-register-radio{
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-}
-
-.div-radio{
-    width: 100%;
-}
-
 .text-label{
     font-size: 14px;
-}
-
-.div-register-input{
-    display: flex;
-    flex-wrap: wrap;
 }
 
 /* fin registro */
@@ -120,22 +88,6 @@
     /* main register */
     .form-register{
         margin: 0 16%;
-    }
-
-    .div-radio{
-        width: 45%;
-    }
-
-    /* .main-register-section-form{
-        width: 55%;
-    } */
-
-    .div-register-input{
-        justify-content: space-between;
-    }
-
-    .text-inicio-cuenta{
-        font-size: 14px;
     }
     /* fin main register */
 }

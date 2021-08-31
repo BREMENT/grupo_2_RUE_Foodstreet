@@ -36,8 +36,8 @@
         </section>
 
         <section class="main-section-home">
-            <h3>Basado en tus ordenes</h3>
-            <% visited.forEach( product =>{ %>
+            <h3>Productos en oferta</h3>
+            <% inSale.forEach( product =>{ %>
             <article class="main-article-home">
                 <a href="/productos/detalle/<%= product.id %>">
                 <img src="/images/products/<%= product.image %>" alt="<%= product.name %>">

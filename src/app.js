@@ -25,6 +25,10 @@ app.use('/restaurantes', restauranteRouter);
 app.use(carritoRouter);
 app.use(indexRouter);
 
+// handling errors
+app.use((req, res, next)=>{
+    res.status(404).send('404 not found');
+});
 
 app.listen(PORT, () => {
     console.log(`Servidor funcionando en el puerto ${PORT} `);
