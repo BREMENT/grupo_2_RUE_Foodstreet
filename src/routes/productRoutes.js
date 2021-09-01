@@ -14,8 +14,8 @@ router.get('/crear', productoController.create);
 router.post('/crear', upload.single('productImage'), validationsProduct ,productoController.store);
 
 // formulario para editar producto
-router.get('/:id/editar', productoController.edit);
-router.put('/:id/editar', productoController.update);
+router.get('/editar/:id', productoController.edit);
+router.put('/editar/:id', productoController.update);
 
 
 module.exports = router;

@@ -45,11 +45,11 @@ const productoController = {
     edit: (req, res)=>{
         const id = parseInt(req.params.id, 10);
         const product = products.find( product => product.id === id );
-        console.log(product);
         res.render('productEdit', { product });
     },
     update: (req, res)=>{
-        res.send('datos del formulario');
+        console.log(req.body);
+        res.send({res: req.body});
     }
 
 };

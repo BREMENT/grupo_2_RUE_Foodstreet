@@ -10,83 +10,56 @@
     <!-- main home -->
     <main class="main-register-product">
         <section class="main-register-section-form-product">
-        	<h3>Formulario de creación de productos</h3>	
-			<div class="form-register-product">
-				<form action="/productos/crear" method="POST" enctype="multipart/form-data">
-					<div class="row product-detail">
-						<div class="form-register-item-product">
-							<label for="name" class="form-label">Nombre del platillo:</label>
-							<input type="text" id="name" name="name" placeholder="Ej: Tacos al pastor"
-							value="<%= (locals.old && old.name) ? old.name : product.name %>">
-							<% if (locals.errors && errors.name){ %>
-								<small class="alert-errors"><%= errors.name.msg %> </small>	
-							<% } %>
-						</div>
-						<div class="form-register-item-product">
-							<label for="price" class="form-label">Precio del producto:</label>
-							<input type="text" id="price" name="price" placeholder="Ej: 5178" class="form-input"
-							value="<%= (locals.old && old.price) ? old.price : product.price %>">
-							<% if (locals.errors && errors.price){ %>
-								<small class="alert-errors"><%= errors.price.msg %> </small>	
-							<% } %>
-						</div>
-						<div class="form-register-item-product">
-							<label for="discount" class="form-label">Descuento:</label>
-							<input type="text" id="discount" name="discount" placeholder="Ej: 15" class="form-input"
-							value="<%= (locals.old && old.discount) ? old.discount : product.discount %>">
-							<% if (locals.errors && errors.discount){ %>
-								<small class="alert-errors"><%= errors.discount.msg %> </small>	
-							<% } %>
-						</div>
-						<div class="form-register-item-product">
-							<label for="category" class="form-label">Categoría:</label>
-							<select name="category" id="category" class="select-option">
-								<option value="">Elige una opción</option>
-                                <option value="in-sale" 
-                                <%= (product.category === 'in-sale')? 'selected' : '' %> >En oferta</option>
-                                <option value="visited"
-                                <%= (product.category === 'visited')? 'selected' : '' %> >Últimos agregados</option>       
-							</select>
-							<% if (locals.errors && errors.category){ %>
-								<small class="alert-errors"><%= errors.category.msg %> </small>	
-							<% } %>
-						</div>
-						<div class="form-register-item-product">
-							<label for="food_type" class="form-label">Tipo de comida:</label>
-							<select name="food_type" id="food_type" class="select-option">
-								<option value="">Elige una opción</option>
-								<option value="Mexican">Mexicana</option>
-								<option value="Chinese">China</option>
-								<option value="Japanese">Japonesa</option>
-								<option value="French">Francesa</option>
-								<option value="Italian">Italiana</option>
-								<option value="Veggie">vegetariana</option>
-							</select>
-							<% if (locals.errors && errors.food_type){ %>
-								<small class="alert-errors"><%= errors.food_type.msg %> </small>	
-							<% } %>
-						</div>
-						<div class="form-register-item-product">
-							<label for="description" class="form-label">Descipción:</label>
-							<textarea name="description" id="description" cols="50"><%=  product.description %></textarea>
-
-							<% if (locals.errors && errors.description){ %>
-								<small class="alert-errors"><%= errors.description.msg %> </small>	
-							<% } %>
-						</div>
-						<div class="input-file">
-							<input type="file" name="productImage" id="product-image"
-                            value="<%= product.image %>">
-						</div>
-
-						<div class="form-register-item-product div-btns-product">
-							<button type="submit" class="btn-register-product">Guardar producto</button>
-						</div>
-					</div>
-				</form>
-			</div>
-
-    	</section>   
+            <h3>formulario</h3>
+            <div class="form-register-product">
+                <form action="/productos/editar/<%= product.id %>?_method=PUT" method="post">
+                    <div class="form-register-item-product">
+                        <label for="">Nombre del producto</label>
+                        <input type="text" name="name" placeholder="nombre"
+                        value="<%= product.name %> ">
+                    </div>
+                    <div class="form-register-item-product">
+                        <label for="">Precio  del producto</label>
+                        <input type="text" name="price" placeholder="precio"
+                        value="<%= product.price %> ">
+                    </div>
+                    <div class="form-register-item-product">
+                        <label for="">Descuento</label>
+                        <input type="text" name="discount" placeholder="descuento">
+                    </div>
+                    <div class="form-register-item-product">
+                        <label for="">Categoria</label>
+                        <select name="category" class="select-option">
+                            <option value="">Elige una opción</option>
+                            <option value="in-sale">En oferta</option>
+                            <option value="visited">Últimos agregados</option>
+                        </select>
+                    </div>
+                    <div class="form-register-item-product">
+                        <label for="">Tipo de comida</label>
+                        <select name="food_type" id="" class="select-option">
+                            <option value="">Elige una opción</option>
+                            <option value="Mexican">Mexicana</option>
+							<option value="Chinese">China</option>
+							<option value="Japanese">Japonesa</option>
+							<option value="French">Francesa</option>
+							<option value="Italian">Italiana</option>
+							<option value="Veggie">vegetariana</option>
+                        </select>
+                    </div>
+                    <div class="form-register-item-product">
+                        <label for="">Descripción</label>
+                        <textarea name="description" id=""></textarea>
+                    </div>
+                    <div class="input-file">
+                        <input type="file" name="productImage" id="">
+                    </div>
+                    <div class="form-register-item-product div-btns-product">
+                        <button type="submit" class="btn-register-product">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </section>
     </main>
     <!-- fin main home -->
 
