@@ -78,15 +78,5 @@
     "item-type": "Tacos",
     "description": "Tortilla de maíz, con camarones empanizados, col, jitomate, aguacate, cilantro y crema",
     "image": "taco_camaron.jpg"
-  },
-  {
-    "name": "torta de apastor",
-    "price": "27",
-    "discount": "16",
-    "category": "in-sale",
-    "food_type": "Mexican",
-    "description": "nose que sea",
-    "id": 1630515811656,
-    "image": "1630515811609_productImage_.jpg"
   }
 ]
