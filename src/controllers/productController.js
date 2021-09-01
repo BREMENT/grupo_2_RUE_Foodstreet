@@ -48,10 +48,33 @@ const productoController = {
         res.render('productEdit', { product });
     },
     update: (req, res)=>{
-        console.log(req.body);
-        res.send({res: req.body});
-    }
+        
+        const id = parseInt(req.params.id);
+        const product = products.find( product => product.id === id);
 
+        const errors = validationResult(req);
+
+        if(!errors.isEmpty()){    
+            res.render('productEdit' ,{errors: errors.mapped(), product});
+            return;
+        }
+        
+        product.name = req.body.name,
+        product.price = req.body.price,
+        product.discount = req.body.discount,
+        product.category = req.body.category,
+        product.food_type = req.body.food_type,
+        product.description = req.body.description
+        
+        fs.writeFileSync(productsFilePath, JSON.stringify( products, null, 2));
+        res.redirect('/productos/products');
+    },
+    delete: (req, res)=>{
+
+    },
+    destroy: (req, res)=>{
+        
+    }
 };
 
 module.exports = productoController;

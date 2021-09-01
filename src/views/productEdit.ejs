@@ -10,46 +10,73 @@
     <!-- main home -->
     <main class="main-register-product">
         <section class="main-register-section-form-product">
-            <h3>formulario</h3>
+            <h3>formulario de edición de producto</h3>
             <div class="form-register-product">
                 <form action="/productos/editar/<%= product.id %>?_method=PUT" method="post">
                     <div class="form-register-item-product">
                         <label for="">Nombre del producto</label>
                         <input type="text" name="name" placeholder="nombre"
-                        value="<%= product.name %> ">
+                        value="<%= product.name %>">
+                        <% if (locals.errors && errors.name) { %>
+                            <small class="alert-errors"><%= errors.name.msg %> </small>
+                        <% } %>
                     </div>
                     <div class="form-register-item-product">
                         <label for="">Precio  del producto</label>
                         <input type="text" name="price" placeholder="precio"
-                        value="<%= product.price %> ">
+                        value="<%= product.price %>">
+                        <% if (locals.errors && errors.price) { %>
+                            <small class="alert-errors"><%= errors.price.msg %></small>
+                        <% } %>
                     </div>
                     <div class="form-register-item-product">
                         <label for="">Descuento</label>
-                        <input type="text" name="discount" placeholder="descuento">
+                        <input type="text" name="discount" placeholder="descuento"
+                        value="<%= product.discount %>">
+                        <% if (locals.errors && errors.discount) { %>
+                            <small class="alert-errors"><%= errors.discount.msg %> </small>
+                        <% } %>
                     </div>
                     <div class="form-register-item-product">
                         <label for="">Categoria</label>
                         <select name="category" class="select-option">
                             <option value="">Elige una opción</option>
-                            <option value="in-sale">En oferta</option>
-                            <option value="visited">Últimos agregados</option>
+                            <option value="in-sale"
+                            <%= (product.category === 'in-sale')? 'selected': '' %> >En oferta</option>
+                            <option value="visited"
+                            <%= (product.category === 'visited')? 'selected': '' %>>Últimos agregados</option>
                         </select>
+                        <% if (locals.errors && errors.category) { %>
+                            <small class="alert-errors"><%= errors.category.msg %> </small>
+                        <% } %>
                     </div>
                     <div class="form-register-item-product">
                         <label for="">Tipo de comida</label>
                         <select name="food_type" id="" class="select-option">
                             <option value="">Elige una opción</option>
-                            <option value="Mexican">Mexicana</option>
-							<option value="Chinese">China</option>
-							<option value="Japanese">Japonesa</option>
-							<option value="French">Francesa</option>
-							<option value="Italian">Italiana</option>
-							<option value="Veggie">vegetariana</option>
+                            <option value="Mexican"
+                            <%= (product.food_type === 'Mexican')? 'selected' : '' %> >Mexicana</option>
+							<option value="Chinese"
+                            <%= (product.food_type === 'Chinese')? 'selected' : '' %> >China</option>
+							<option value="Japanese"
+                            <%= (product.food_type === 'Japanese')? 'selected' : '' %> >Japonesa</option>
+							<option value="French"
+                            <%= (product.food_type === 'French')? 'selected' : '' %> >Francesa</option>
+							<option value="Italian"
+                            <%= (product.food_type === 'Italian')? 'selected' : '' %> >Italiana</option>
+							<option value="Veggie"
+                            <%= (product.food_type === 'Veggie')? 'selected' : '' %> >vegetariana</option>
                         </select>
+                        <% if (locals.errors && errors.food_type) { %>
+                            <small class="alert-errors"><%= errors.food_type.msg %> </small>
+                        <% } %>
                     </div>
                     <div class="form-register-item-product">
                         <label for="">Descripción</label>
-                        <textarea name="description" id=""></textarea>
+                        <textarea name="description" id=""><%= product.description %></textarea>
+                        <% if (locals.errors && errors.description) { %>
+                            <small class="alert-errors"><%= errors.description.msg %> </small>
+                        <% } %>
                     </div>
                     <div class="input-file">
                         <input type="file" name="productImage" id="">

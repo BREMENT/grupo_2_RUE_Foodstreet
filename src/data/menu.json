@@ -80,13 +80,13 @@
     "image": "taco_camaron.jpg"
   },
   {
-    "name": "torta a pastor",
-    "price": "25",
-    "discount": "10",
+    "name": "torta de apastor",
+    "price": "27",
+    "discount": "16",
     "category": "in-sale",
     "food_type": "Mexican",
-    "description": "nose\t\t\t\t\t\t \r\n\t\t\t\t\t\t\t",
-    "id": 1630470489411,
-    "image": "1630470489391_productImage_.jpg"
+    "description": "nose que sea",
+    "id": 1630515811656,
+    "image": "1630515811609_productImage_.jpg"
   }
 ]
