@@ -73,7 +73,7 @@
 
 @media (min-width: 568px) {
     /* main register  */
-    .form-register{
+    .form-register-product{
         margin: 0px 16%;
     }
     /* fin main register */
@@ -82,11 +82,9 @@
 /* fin tablets */
 
 /* desktop */
-
-
 @media (min-width: 1023px) {
     /* main register */
-    .form-register{
+    .form-register-product{
         margin: 0 16%;
     }
     /* fin main register */
