@@ -9,7 +9,7 @@ const productoController = {
     detalle: (req, res)=>{
         let id = parseInt(req.params.id, 10)
         const product = products.find(p =>p.id ===id)
-        res.render('detalleProducto', {product:product})
+        res.render('productDetail', {product:product})
     },
     products: (req, res)=>{
         const visited = products.filter(product => product.category === 'visited')

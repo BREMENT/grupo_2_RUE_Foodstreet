@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs',{ title: 'Detalle de producto'}) %> 
+<body>
+    <!-- header -->
+    <%- include('./partials/header') %> 
+    <!-- fin header -->
+
+    <main class="main-product">
+        <section class="product">  
+            <article class="img-product">
+                <div>
+                    <img src="/images/products/<%= product.image %>" alt="">
+                    <div>
+                        <%= product.description %>
+                    </div>
+                </div>
+            </article>
+            <article class="detail">
+                <div class="product-title">
+                    <h1><%= product.name %></h1>
+                </div>
+                <div>
+                    $<%= product.price %>
+                </div>
+                <div>
+                    10%
+                </div>
+                <div class="w-100">
+                    <button class="btn btn-primary w-100">Editar</button>
+                </div>
+                <div class="w-100">
+                    <button class="btn btn-primary w-50">Editar</button>
+                    <button class="btn btn-danger w-50">Eliminar</button>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <!-- footer -->
+    <%- include('./partials/footer') %> 
+    <!-- fin footer -->
+</body>
+</html>
