@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "id": "1",
     "name": "Orden Taco fundido",
     "price": 45,
     "Commerce": "Los Carnales",
@@ -10,7 +10,7 @@
     "image": "tacofundido.jpg"
   },
   {
-    "id": 2,
+    "id": "2",
     "name": "Burrito",
     "price": 40,
     "Commerce": "Los Carnales",
@@ -20,7 +20,7 @@
     "image": "burrito.jpg"
   },
   {
-    "id": 3,
+    "id": "3",
     "name": "Flautas",
     "price": 40,
     "Commerce": "Los Carnales",
@@ -30,7 +30,7 @@
     "image": "dorados.jpg"
   },
   {
-    "id": 4,
+    "id": "4",
     "name": "Sopes",
     "price": 40,
     "Commerce": "Los Carnales",
@@ -40,7 +40,7 @@
     "image": "sopes.jpg"
   },
   {
-    "id": 5,
+    "id": "5",
     "name": "Keto-taco",
     "price": 40,
     "Commerce": "Los Carnales",
@@ -50,7 +50,7 @@
     "image": "taco_keto.jpg"
   },
   {
-    "id": 6,
+    "id": "6",
     "name": "Torta Cubana",
     "price": 40,
     "Commerce": "Los Carnales",
@@ -60,7 +60,7 @@
     "image": "torta_cubana.jpg"
   },
   {
-    "id": 7,
+    "id": "7",
     "name": "Taco de Pescado",
     "price": 40,
     "Commerce": "Marisqueria La Red",
@@ -70,7 +70,7 @@
     "image": "taco_pescado.jpg"
   },
   {
-    "id": 8,
+    "id": "8",
     "name": "Taco de Camaron",
     "price": 40,
     "Commerce": "Marisqueria La Red",

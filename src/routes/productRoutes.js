@@ -5,7 +5,7 @@ const upload = require('../middlewares/multerproducto');
 const { validationsProduct } = require('../middlewares/validationMiddleware');
 
 // formulario para ver productos
-router.get('/products', productoController.products);
+router.get('/', productoController.products);
 // formulario para detalle de producto
 router.get('/detalle/:id', productoController.detalle);
 
@@ -17,5 +17,6 @@ router.post('/crear', upload.single('productImage'), validationsProduct ,product
 router.get('/editar/:id', productoController.edit);
 router.put('/editar/:id', validationsProduct,  productoController.update);
 
+router.delete('/destroy/:id', productoController.destroy);
 
 module.exports = router;

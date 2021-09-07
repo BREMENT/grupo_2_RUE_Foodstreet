@@ -30,8 +30,16 @@
                     <button class="btn btn-primary w-100">comprar</button>
                 </div>
                 <div class="w-100 center-between">
-                    <button class="btn btn-primary w-50">Editar</button>
-                    <button class="btn btn-danger w-50">Eliminar</button>
+                    <div class="w-50">
+                        <a href="/productos/editar/<%= product.id %>">
+                            <button class="btn btn-primary w-100">Editar</button>
+                        </a>
+                    </div>
+                    <div class="w-50">
+                        <form action="/productos/destroy/<%= product.id %>?_method=DELETE" method="POST">
+                            <button type="submit" class="btn btn-danger w-100">Eliminar</button>
+                        </form>
+                    </div>
                 </div>
             </article>
         </section>

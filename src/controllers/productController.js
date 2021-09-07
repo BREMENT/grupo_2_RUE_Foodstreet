@@ -1,14 +1,14 @@
+const {v4: uuidv4} = require('uuid');
 const { validationResult } = require('express-validator');
 const fs = require('fs');
 const path = require('path');
 
 const productsFilePath = path.join(__dirname, '../data/menu.json');   
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const productoController = {
     detalle: (req, res)=>{
-        let id = parseInt(req.params.id, 10)
-        const product = products.find(p =>p.id ===id)
+        const product = products.find(p =>p.id ===req.params.id)
         res.render('productDetail', {product:product})
     },
     products: (req, res)=>{
@@ -28,7 +28,7 @@ const productoController = {
         }
 
         const newProduct = req.body;
-        newProduct.id=Date.now();
+        newProduct.id= uuidv4();
 
         if(!req.file){
             newProduct.image = 'default-image.png'
@@ -39,18 +39,15 @@ const productoController = {
         products.push(newProduct);
         
         fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
-        res.redirect('/productos/products');
+        res.redirect('/productos/');
         
     },
     edit: (req, res)=>{
-        const id = parseInt(req.params.id, 10);
-        const product = products.find( product => product.id === id );
+        const product = products.find( product => product.id === req.params.id );
         res.render('productEdit', { product });
     },
     update: (req, res)=>{
-        
-        const id = parseInt(req.params.id);
-        const product = products.find( product => product.id === id);
+        const product = products.find( product => product.id === req.params.id);
 
         const errors = validationResult(req);
 
@@ -67,13 +64,24 @@ const productoController = {
         product.description = req.body.description
         
         fs.writeFileSync(productsFilePath, JSON.stringify( products, null, 2));
-        res.redirect('/productos/products');
+        res.redirect('/productos/');
     },
     delete: (req, res)=>{
-
+        // TODO: checar si hacemos un alerta para no borrar de golpe el producto o dejarlo de esta forma
     },
     destroy: (req, res)=>{
+        const post = products.findIndex(product => product.id === req.params.id);
         
+        console.log(products[post]);
+        if(products[post].image !== 'detault-img.png'){
+            fs.unlinkSync(path.join(__dirname,`../../public/images/products/${products[post].image}`));
+        }
+
+        products = products.filter( product=> product.id !== req.params.id);
+        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
+        
+
+        res.redirect('/productos/');
     }
 };
 

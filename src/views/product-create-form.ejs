@@ -66,9 +66,7 @@
 						</div>
 						<div class="form-register-item-product">
 							<label for="description" class="form-label">Descipción:</label>
-							<textarea name="description" id="description">
-								<%= locals.old && old.description %> 
-							</textarea>
+							<textarea name="description" id="description"><%= locals.old && old.description %></textarea>
 							<% if (locals.errors && errors.description){ %>
 								<small class="alert-errors"><%= errors.description.msg %> </small>	
 							<% } %>
