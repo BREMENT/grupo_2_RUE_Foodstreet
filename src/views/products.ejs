@@ -23,7 +23,7 @@
             <% visited.forEach( product =>{ %>
             <article class="main-article-home">
                 <a href="/productos/detalle/<%= product.id %>">
-                <img src="/images/products/<%= product.image %>" alt="<%= product.name %>">
+                <img class="main-article-img" src="/images/products/<%= product.image %>" alt="<%= product.name %>">
                 <article>
                     <p><%= product.name %></p>
                     <h2>$ <%= product.price %></h2>
@@ -40,7 +40,7 @@
             <% inSale.forEach( product =>{ %>
             <article class="main-article-home">
                 <a href="/productos/detalle/<%= product.id %>">
-                <img src="/images/products/<%= product.image %>" alt="<%= product.name %>">
+                <img class="main-article-img" src="/images/products/<%= product.image %>" alt="<%= product.name %>">
                 <article>
                     <p><%= product.name %></p>
                     <h2>$ <%= product.price %></h2>

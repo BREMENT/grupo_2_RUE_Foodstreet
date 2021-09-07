@@ -70,10 +70,11 @@
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 
-.main-article-home img {
+.main-article-img {
     width: 100%;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    height: 250px;
 }
 
 .main-article-home article {
