@@ -1,11 +1,7 @@
-const { v4: uuidv4 } = require('uuid');
-const bcryptjs = require('bcryptjs');
-const { validationResult } = require('express-validator');
-const path = require('path');
-const fs = require('fs');
-
-const pathFile = path.join(__dirname, '../data/user.json');
-const userList = JSON.parse(fs.readFileSync(pathFile, 'utf-8'));
+const bcryptjs = require('bcryptjs');// true
+const { validationResult } = require('express-validator');// true
+const bcrypt = require('bcryptjs');
+const UserModel = require('../models/Users');
 
 const userController = {
     login: (req, res) => {
@@ -14,9 +10,35 @@ const userController = {
     enter: (req, res)=>{
         const errors = validationResult(req);
         if(!errors.isEmpty()){
-            res.render('users/login',{errors: errors.mapped(), old: req.body });
-            return;
+            return res.render('users/login',{errors: errors.mapped(), old: req.body });
         }
+
+        const user = UserModel.findField('email', req.body.email);
+        if(user){
+            const compare = bcrypt.compareSync(req.body.password, user.password);
+            if( compare ){
+                delete compare.password;
+                req.session.userLogged = user;
+                if(req.body.recordar){
+                    res.cookie('recordar', user.id, {maxAge: 60000}); 
+                    // el maxAge -> cambiara por ahora sera 1 minuto
+                }
+                
+                return res.redirect('/');
+            }
+
+            return res.render('users/login',{
+                errors:{
+                    email: { msg: 'Favor de verificar su password o su email'}
+                }
+            })
+        }
+
+        return res.render('users/login', {
+            errors: {
+                email: { msg: 'Usted no esta registrado'}
+            }
+        })
 
     },
     signup: (req, res) => {
@@ -30,15 +52,12 @@ const userController = {
             return;
         }
 
-        let imagen = '';
-        if(!req.file){
-            imagen = 'aura.jpg';
-        }else{
+        let imagen = 'aura.jpg';
+        if(req.file){
             imagen = req.file.filename;
         }
 
         const user = {
-            id: uuidv4(),
             imagen: imagen,
             nombres: req.body.nombres,
             apellidos: req.body.apellidos,
@@ -48,10 +67,16 @@ const userController = {
             categoria: req.body.categoria
         }
 
-        userList.push( user );
-        fs.writeFileSync(pathFile, JSON.stringify(userList,null,2));
+        const userNew = UserModel.create( user );
 
-        res.send('se registro el usuario');
+        res.redirect('/login');
+    },
+    profile: (req, res)=>{
+        res.render('users/profile');
+    },
+    logout: (req, res) => {
+        req.session.destroy();
+        return res.redirect('/');
     }
 
 };

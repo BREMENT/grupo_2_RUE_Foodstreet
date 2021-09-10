@@ -1,8 +1,10 @@
-require('dotenv').config;
+require('dotenv').config();
 const path = require('path');
 const methodOverride = require('method-override');
 const express = require('express');
-const app = express();
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
+const adminLoggedMiddleware = require('./middlewares/adminLoggedMiddleware');
 
 // rutas
 const userRouter = require('./routes/usersRoutes');
@@ -12,13 +14,22 @@ const carritoRouter = require('./routes/carrito.js');
 const indexRouter = require('./routes/index.js');
 
 const PORT = process.env.PORT || 8080;
+const app = express();
 
 app.use(express.static( path.join(__dirname, '../public')));
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname,'./views'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(methodOverride('_method'));
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname,'./views'));
+app.use(session({
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: false
+}));
+app.use(cookieParser());
+app.use(adminLoggedMiddleware);
+
 
 app.use('/user', userRouter);
 app.use('/productos', productoRouter);

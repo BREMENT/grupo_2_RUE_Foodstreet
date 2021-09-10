@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head', {title: 'Perfil'}) %>
+<body>
+    
+    <main>
+        <section>
+            <img src="/images/users/<%= locals.user.imagen %>" alt="<%= locals.user.imagen %>" width="150" height="150">
+            <article>
+                <p><%= locals.user.nombres%> <%= locals.user.apellidos %></p>
+                <p><%= locals.user.email %></p>
+                <a href="/productos/crear">Crear</a>
+                <a href="/user/logout">Logout</a>
+            </article>
+        </section>
+    </main>
+
+</body>
+</html>
