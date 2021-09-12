@@ -1,6 +1,6 @@
 function loggedMiddleware(req, res, next){
     if(req.session.userLogged){
-        res.redirect('/');
+        return res.redirect('/');
     }
 
     next();

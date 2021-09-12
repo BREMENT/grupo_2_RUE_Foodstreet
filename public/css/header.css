@@ -34,7 +34,12 @@ header ul li .usuario {
     height: 51.89px;
     color: white;
     display: flex;
-    padding: 12px
+    padding: 12px;
 }
 /* fin header */
 
+.img-header-profile{
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+}

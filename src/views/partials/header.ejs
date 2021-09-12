@@ -1,11 +1,39 @@
 <header>
-    <ul>
-        <li><a href="/" class="logo"> <img src="/images/Rue_logo_white_resized.png" alt="logo" ></a></li>
-        <div class="iconos">
-            <li><a href="#" class="ubicacion"><i class="fas fa-map-marker-alt"></i></a></li>
-            <li><a href="/productos/" class="buscador"><i class="fas fa-search"></i></a></li>
-            <li><a href="/carrito" class="carrito"><i class="fas fa-cart-plus"></i> </a></li>
-            <li><a href="/user/login" class="usuario"><i class="fas fa-user-circle"></i></a></li>
-        </div>
-    </ul>
+  <ul>
+    <li>
+        <a href="/" class="logo">
+            <img src="/images/Rue_logo_white_resized.png" alt="logo"/>
+        </a>
+    </li>
+    <div class="iconos">
+      <li>
+        <a href="#" class="ubicacion">
+            <i class="fas fa-map-marker-alt"></i>
+        </a>
+      </li>
+      <li>
+        <a href="/productos/" class="buscador">
+            <i class="fas fa-search"></i>
+        </a>
+      </li>
+      <li>
+        <a href="/carrito" class="carrito">
+            <i class="fas fa-cart-plus"></i>
+        </a>
+      </li>
+      <%if(!locals.isLogged){%>
+      <li>
+        <a href="/user/login" class="usuario">
+            <i class="fas fa-user-circle"></i>
+        </a>
+      </li>
+      <%}else{%>
+      <li class0">
+          <a href="/user/profile" class="usuario">
+              <img class="img-header-profile" src="/images/users/<%= locals.user.imagen %>" alt="">
+          </a>
+      </li>
+      <%}%>
+    </div>
+  </ul>
 </header>

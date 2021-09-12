@@ -48,5 +48,15 @@
     "telefono": "9932245543",
     "password": "$2a$10$6M7F1W5SjSetQuD5A9nML./Pp/auGnSujdn3Q1eEYCIjApKsJ0nzu",
     "categoria": "vendedor"
+  },
+  {
+    "id": "a7a864c1-ac40-4e62-9c3c-08fa7b2ac360",
+    "imagen": "aura.jpg",
+    "nombres": "andra",
+    "apellidos": "perez perez",
+    "email": "andrea@gmail.com",
+    "telefono": "9932245543",
+    "password": "$2a$10$5CbiCb.TGYv1/Rf4QlRzbugYWYdlaofwX6wz8pczU6HS0hNkkGZW6",
+    "categoria": "cliente"
   }
 ]

@@ -9,7 +9,7 @@ let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const productoController = {
     detalle: (req, res)=>{
         const product = products.find(p =>p.id ===req.params.id)
-        res.render('productDetail', {product:product})
+        res.render('productDetail', {product:product, user: req.session.userLogged })
     },
     products: (req, res)=>{
         const visited = products.filter(product => product.category === 'visited')

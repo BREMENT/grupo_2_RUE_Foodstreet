@@ -24,7 +24,7 @@ const userController = {
                     // el maxAge -> cambiara por ahora sera 1 minuto
                 }
                 
-                return res.redirect('/');
+                return res.redirect('/user/profile');
             }
 
             return res.render('users/login',{
@@ -72,7 +72,7 @@ const userController = {
         res.redirect('/login');
     },
     profile: (req, res)=>{
-        res.render('users/profile');
+        res.render('users/profile', {user: req.session.userLogged });
     },
     logout: (req, res) => {
         req.session.destroy();

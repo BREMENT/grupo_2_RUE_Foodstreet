@@ -2,18 +2,20 @@
 <html lang="en">
 <%- include('../partials/head', {title: 'Perfil'}) %>
 <body>
-    
+
+    <%- include('../partials/header') %>
     <main>
-        <section>
-            <img src="/images/users/<%= locals.user.imagen %>" alt="<%= locals.user.imagen %>" width="150" height="150">
+        <section class="section-profile">
+            <div>
+                <img src="/images/users/<%= user.imagen %>" alt="">
+            </div>
             <article>
-                <p><%= locals.user.nombres%> <%= locals.user.apellidos %></p>
-                <p><%= locals.user.email %></p>
-                <a href="/productos/crear">Crear</a>
                 <a href="/user/logout">Logout</a>
             </article>
         </section>
     </main>
+
+    <%- include('../partials/footer') %>
 
 </body>
 </html>

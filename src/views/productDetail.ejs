@@ -29,6 +29,7 @@
                 <div class="center-flex">
                     <button class="btn btn-primary w-100">comprar</button>
                 </div>
+                <%if( user!== undefined &&  user.categoria==='vendedor'){%>
                 <div class="w-100 center-between">
                     <div class="w-50">
                         <a href="/productos/editar/<%= product.id %>">
@@ -41,6 +42,7 @@
                         </form>
                     </div>
                 </div>
+                <%}%>
             </article>
         </section>
     </main>
