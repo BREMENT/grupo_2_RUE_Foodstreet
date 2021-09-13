@@ -4,11 +4,12 @@ const productoController = require('../controllers/productController.js');
 const upload = require('../middlewares/multerproducto');
 const { validationsProduct } = require('../middlewares/validationMiddleware');
 const sellerMiddleware = require('../middlewares/sellerMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware');
 
 // formulario para ver productos
 router.get('/', productoController.products);
 // formulario para detalle de producto
-router.get('/detalle/:id', productoController.detalle);
+router.get('/detalle/:id', authMiddleware, productoController.detalle);// autenticacion
 
 // formulario para crear producto
 router.get('/crear', sellerMiddleware ,productoController.create);
