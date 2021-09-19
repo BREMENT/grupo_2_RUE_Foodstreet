@@ -87,3 +87,28 @@
 <!-- Aquello que intentamos pero no nos da tanto beneficio como se esperaba -->
 - Retraso en los sprints.
 
+## Sprint 5
+<!-- Todas aquellas cosas innovadoras que queremos probar o que notamos que deberíamos usar -->
+- Trabajar en carrito de compras
+- Estilos en perfil de usuario
+- Estilo en detalle producto
+- Estilo para 404 not found
+- Comenzar a revisar sprint 6 
+
+
+### Más de
+<!-- Cosas que estamos usando o haciendo y que queremos que mejoren -->
+- Daily meeting participacion de todos los integrantes.
+- Realizar reuniones una vez a la semana.
+- Realizar carrito de compras.
+
+### Seguir haciendo
+<!-- Aquello que venimos haciendo y que nos brinda valor -->
+- Organización.
+- Trabajo en equipo.
+- Repartir tareas equitativamente.
+- Modificar el diseño del home (quitar banner)
+
+### Menos de
+<!-- Aquello que intentamos pero no nos da tanto beneficio como se esperaba -->
+- Retraso en los sprints.
