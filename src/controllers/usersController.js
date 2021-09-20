@@ -13,7 +13,7 @@ const userController = {
             return res.render('users/login',{errors: errors.mapped(), old: req.body });
         }
 
-        const user = UserModel.findField('email', req.body.email);
+        const user = UserModel.findField('email', req.body.email );
         if(user){
             const compare = bcrypt.compareSync(req.body.password, user.password);
             if( compare ){
@@ -29,15 +29,17 @@ const userController = {
 
             return res.render('users/login',{
                 errors:{
-                    email: { msg: 'Favor de verificar su password o su email'}
-                }
-            })
+                    email: { msg: 'Favor de verificar su password o su email'},
+                    password: { msg: 'Favor de verificar su password o su email'}
+                }, old: {email: req.body.email}
+            });
         }
 
-        return res.render('users/login', {
+        return res.render('users/login',{
             errors: {
-                email: { msg: 'Usted no esta registrado'}
-            }
+                email: { msg: 'Favor de verificar su password o su email'},
+                password: { msg: 'Favor de verificar su password o su email'}
+            }, old: {email: req.body.email}
         })
 
     },
@@ -50,6 +52,16 @@ const userController = {
         if(!errors.isEmpty()){
             res.render('users/signup',{errors: errors.mapped(), old: req.body });
             return;
+        }
+
+        const userExist = UserModel.findField('email', req.body.email);
+        if(userExist){
+            
+            return res.render('users/signup', {
+                errors: {
+                    email: { msg: 'No se pudo crear el usuario con esa dirección de email'}
+                },
+                old: req.body });
         }
 
         let imagen = 'aura.jpg';
@@ -67,9 +79,9 @@ const userController = {
             categoria: req.body.categoria
         }
 
-        const userNew = UserModel.create( user );
+        UserModel.create( user );
 
-        res.redirect('/login');
+        res.redirect('users/login');
     },
     profile: (req, res)=>{
         res.render('users/profile', {user: req.session.userLogged });

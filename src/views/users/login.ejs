@@ -6,16 +6,9 @@
 <body>
     <!-- header -->
     <%- include('../partials/header') %>
-        <!-- fin header -->
+    <!-- fin header -->
 
-        <!-- <nav class="main-navbar">
-
-            <div class="main-header-top-bar">
-                <p class="return">
-                    << Volver </p>
-            </div>
-            </section>
-        </nav> -->
+        
 
         <!-- main home -->
         <main class="main-register">
@@ -59,7 +52,8 @@
 
                     <form action="/user/enter" method="POST">
                         <div class="form-register-item">
-                            <input type="email" name="email" placeholder="Correo">
+                            <input type="email" name="email" placeholder="Correo"
+                            value="<%= locals.old && old.email %>">
                             <% if(locals.errors && errors.email){ %>
                                 <small class="alert-errors"><%= errors.email.msg %></small>
                             <% } %>

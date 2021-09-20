@@ -47,14 +47,14 @@
                                     <!-- implementar un estilo para estos inputs -->
                                         <div class="div-register-item">
                                             <input type="text" placeholder="nombres" name="nombres"
-                                            values="<%= locals.errors && errors.nombres %>">
+                                            value="<%= locals.old && old.nombres %>">
                                             <% if(locals.errors && errors.nombres){ %>
                                                 <small class="alert-errors"><%= errors.nombres.msg %></small>
                                             <% } %>
                                         </div>
                                         <div class="div-register-item">
                                             <input type="text" placeholder="apellidos" name="apellidos"
-                                            values="<%= locals.errors && errors.apellidos %>">
+                                            value="<%= locals.old && old.apellidos %>">
                                             <% if(locals.errors && errors.apellidos){ %>
                                                 <small class="alert-errors"> <%= errors.apellidos.msg %> </small>
                                             <% } %>
@@ -63,22 +63,21 @@
                             </div>
                             <div class="form-register-item">
                                 <input type="email" placeholder="Correo" name="email"
-                                values="<%= locals.errors && errors.email %>">
+                                value="<%= locals.old && old.email %>">
                                 <% if(locals.errors && errors.email){ %>
                                     <small class="alert-errors"><%= errors.email.msg %></small>
                                 <% } %>
                             </div>
                             <div class="form-register-item">
                                 <input type="tel" placeholder="Escribe tu número" name="telefono"
-                                values="<%= locals.errors && errors.telefono %>">
+                                value="<%= locals.old && old.telefono %>">
                                 <% if (locals.errors && errors.telefono) { %>
                                     <small class="alert-errors"><%= errors.telefono.msg %></small>
                                 <% } %>
                             </div>
 
                             <div class="form-register-item">
-                                <input type="password" placeholder="Escribe tu contraseña" name="password"
-                                values="<%= locals.errors && errors.password %>">
+                                <input type="password" placeholder="Escribe tu contraseña" name="password">
                                 <% if (locals.errors && errors.password) { %>
                                     <small class="alert-errors"><%= errors.password.msg %></small>
                                 <% } %>
@@ -87,10 +86,13 @@
                             <div class="form-register-item">
                                 <div class="div-register-input">
                                     <select id="" class="select-option" name="categoria">
-                                        <option disabled="true" selected="true" value="">Selecciona</option>
-                                        <option value="vendedor">Vendedor</option>
+                                        <option disabled="true" selected="true" value="">Selecciona</option>                               
+                                        <option value="vendedor" >Vendedor</option>
                                         <option value="cliente">Cliente</option>
                                     </select>
+                                    <% if (locals.errors && errors.categoria) { %>
+                                        <small class="alert-errors"><%= errors.categoria.msg %></small>
+                                    <% } %>
                                     <div class="input-file">
                                         <label class="text-label" for="perfil">Añade tu foto de perfil</label>
                                         <input type="file" id="perfil" name="perfil">

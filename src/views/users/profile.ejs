@@ -4,13 +4,71 @@
 <body>
 
     <%- include('../partials/header') %>
-    <main>
+    <main class="main-profile">
         <section class="section-profile">
-            <div>
-                <img src="/images/users/<%= user.imagen %>" alt="">
-            </div>
-            <article>
-                <a href="/user/logout">Logout</a>
+            <article class="section-header">
+                <div class="">
+                    <a class="btn-profile add-product" href="/productos/crear">
+                        add product
+                        <i class="fas fa-plus-circle"></i>
+                    </a>
+                </div>
+                <div class="">
+                    <a class="btn-profile danger"  href="/user/logout">
+                        Logout
+                        <i class="fas fa-sign-out-alt"></i>
+                    </a>
+                </div>
+            </article>
+            
+            <article class="section-body">
+                <div class="section-img">
+                    <img src="/images/users/<%= user.imagen %>" alt="">
+                </div>
+                <div class="section-caracteristic">
+                    <h1>Perfil</h1>
+                    <div class="content-group">
+                        <div class="content-data">
+                            <label class="label-data">Nombre</label>
+                            <p class="content"><%= user.nombres %></p>
+                        </div>
+                        <div class="content-data">
+                            <label class="label-data">Apellido</label>
+                            <p class="content"><%= user.apellidos %></p>
+                        </div>
+                        
+                        <div class="content-data">
+                            <label class="label-data">Categoria</label>
+                            <p class="content"><%= user.categoria %></p>
+                        </div>
+                    </div>
+                    <div class="content-group">
+                        <div class="content-data">
+                            <label class="label-data">Email</label>
+                            <p class="content"><%= user.email %></p>
+                        </div>
+                        <div class="content-data">
+                            <label class="label-data">Teléfono</label>
+                            <p class="content"><%= user.telefono %></p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="section-footer"> 
+               
+                    <div class="">
+                        <a class="btn-profile add-product" href="">
+                            Edit
+                            <i class="fas fa-user-edit"></i>
+                        </a>
+                    </div>
+                    <div class="">
+                        <a class="btn-profile danger" href="">
+                            delete
+                            <i class="fas fa-minus-circle"></i>
+                        </a>
+                    </div>                              
             </article>
         </section>
     </main>
