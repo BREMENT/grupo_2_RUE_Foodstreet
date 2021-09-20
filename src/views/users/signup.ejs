@@ -69,11 +69,25 @@
                                 <% } %>
                             </div>
                             <div class="form-register-item">
-                                <input type="tel" placeholder="Escribe tu número" name="telefono"
-                                value="<%= locals.old && old.telefono %>">
-                                <% if (locals.errors && errors.telefono) { %>
-                                    <small class="alert-errors"><%= errors.telefono.msg %></small>
-                                <% } %>
+                                <div class="div-register-input">
+                                    <div class="div-register-item">
+                                        <select id="" class="select-option" name="categoria">
+                                            <option disabled="true" selected="true" value="">Selecciona</option>                               
+                                            <option value="vendedor" >Vendedor</option>
+                                            <option value="cliente">Cliente</option>
+                                        </select>
+                                        <% if (locals.errors && errors.categoria) { %>
+                                            <small class="alert-errors"><%= errors.categoria.msg %></small>
+                                        <% } %>
+                                    </div>
+                                    <div class="div-register-item">
+                                        <input type="tel" placeholder="Escribe tu número" name="telefono"
+                                        value="<%= locals.old && old.telefono %>">
+                                        <% if (locals.errors && errors.telefono) { %>
+                                            <small class="alert-errors"><%= errors.telefono.msg %></small>
+                                        <% } %>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="form-register-item">
@@ -84,38 +98,17 @@
                             </div>
 
                             <div class="form-register-item">
-                                <div class="div-register-input">
-                                    <select id="" class="select-option" name="categoria">
-                                        <option disabled="true" selected="true" value="">Selecciona</option>                               
-                                        <option value="vendedor" >Vendedor</option>
-                                        <option value="cliente">Cliente</option>
-                                    </select>
-                                    <% if (locals.errors && errors.categoria) { %>
-                                        <small class="alert-errors"><%= errors.categoria.msg %></small>
-                                    <% } %>
-                                    <div class="input-file">
-                                        <label class="text-label" for="perfil">Añade tu foto de perfil</label>
-                                        <input type="file" id="perfil" name="perfil">
-                                    </div>
-                                </div>
+                                <div class="input-file">
+                                    <label class="text-label" for="perfil">Añade tu foto de perfil</label>
+                                    <input type="file" id="perfil" name="perfil">
+                                </div>            
                             </div>
 
                             <div class="form-register-item">
                                 <input type="checkbox" name="condicion" id="condicion" value="acepto">
                                 <label class="text-label" for="">Acepto los terminos y condiciones y la política de privacidad</label>
                             </div>
-                            <div class="form-register-item">
-                                <div class="div-register-radio">
-                                    <div class="div-radio">
-                                        <input type="radio" id="" name="verificar" value="llamada">
-                                        <label class="text-label" for=""> Verificar por llamada</label>
-                                    </div>
-                                    <div class="div-radio">
-                                        <input type="radio" name="verificar" value="mensaje">
-                                        <label class="text-label" for="">Verificar por sms</label>
-                                    </div>
-                                </div>
-                            </div>
+                            
                             <div class="form-register-item div-btns">
                                 <button type="submit" class="btn-register">Registrarme</button>
                             </div>

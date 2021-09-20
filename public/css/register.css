@@ -89,6 +89,7 @@
 }
 .form-register-item{
     width: 100%;
+    margin-bottom: 15px;
 }
 
 .form-register-item input[type="text"], 
@@ -101,7 +102,6 @@
     border-radius: 10px;
     padding: 10px;
     border: none;
-    margin-bottom: 15px;
 }
 
 .input-file{
@@ -128,17 +128,6 @@
     background-color: #3b5998;
     color: #ffff;
     transition: all 0.5s;
-}
-
-.div-register-radio{
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-}
-
-.div-radio{
-    width: 100%;
 }
 
 .text-label{
@@ -170,16 +159,12 @@
     /* fin main register */
 }
 
-@media (min-width: 1023px) {
+@media (min-width: 1015px) {
         /* main register */
         .form-register{
             margin: 0 5%;
         }
-    
-        .div-radio{
-            width: 45%;
-        }
-    
+
         .main-register-section-buttons{
             width: 45%;
         }
@@ -187,25 +172,14 @@
         .main-register-section-form{
             width: 55%;
         }
-    
+
         .div-register-input{
             justify-content: space-between;
-            align-items: center;
+            
         }
-        
-        /* .form-register-item input[type="text"]{
-            width: 48%;
-        } */
         
         .div-register-item{
             width: 49%;
-        }
-
-        .select-option{
-            width: 48%;
-        }
-        .input-file{
-            width: 48%;
         }
 
         .text-inicio-cuenta{
