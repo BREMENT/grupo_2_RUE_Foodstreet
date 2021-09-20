@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head', {title: '404 not found'}) %> 
+<body>
+
+    <header class="header-error">
+        <nav class="nav-error">
+            <div class="nav-error-logo">
+                <img src="/images/Rue_logo_white_resized.png" alt="">
+            </div>
+        </nav>
+    </header>
+    
+    <main class="main">
+        <section class="main-content">
+            <article class="container">
+                <div class="content-error">
+                    <div class="content-text">
+                        4
+                    </div>
+                    <div class="content-img">
+                        <img id="images" alt="" src="images/product-error/1.jpg">
+                    </div>
+                    <div class="content-text">
+                        4
+                    </div>
+                </div>
+            </article>
+            <article class="container">
+                <h1>OOOPS, PÁGINA NO ECONTRADA.</h1>
+                <p>
+                    Parece que te perdiste entre tantos pasillos y productos, pero no te preocupes en <span>Rue</span> no hay nada que no podamos hacer por ti
+                </p>
+                <div class="btn-home">
+                    <a href="/home">Volver al home</a>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <%- include('./partials/footer') %> 
+
+    <script src="/js/error.js"></script>
+</body>
+</html>
