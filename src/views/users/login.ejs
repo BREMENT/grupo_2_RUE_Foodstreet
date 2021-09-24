@@ -52,17 +52,21 @@
 
                     <form action="/user/enter" method="POST">
                         <div class="form-register-item">
-                            <input type="email" name="email" placeholder="Correo"
+                            <input type="email" class="input" name="email" id="email" placeholder="Correo"
                             value="<%= locals.old && old.email %>">
                             <% if(locals.errors && errors.email){ %>
                                 <small class="alert-errors"><%= errors.email.msg %></small>
-                            <% } %>
+                            <%}%>
+                            <small class="alert-errors" id="email-err"></small>
+                            
                         </div>
                         <div class="form-register-item">
-                            <input type="password" name="password" placeholder="Escribe tu Contraseña">
+                            <input type="password" class="input" name="password" id="password" placeholder="Escribe tu Contraseña">
                             <% if(locals.errors && errors.password){ %>
                                 <small class="alert-errors"><%= errors.password.msg %></small>
-                            <% } %>
+                            <%}%>
+                            <small class="alert-errors" id="pass-err"></small>
+                            
                         </div>
 
                         <div class="form-register-item">
@@ -89,7 +93,9 @@
 
         <!-- footer -->
         <%- include('../partials/footer') %>
-            <!-- fin footer -->
+        <!-- fin footer -->
+        <script type="text/javascript" src="/js/validator.min.js"></script>
+        <script src="/js/validator-login.js"></script>
 </body>
 
 </html>

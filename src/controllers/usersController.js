@@ -48,8 +48,9 @@ const userController = {
     },
     create: (req, res) => {
         const errors = validationResult(req);
-
+        
         if(!errors.isEmpty()){
+            console.log({errors: errors.mapped()});
             res.render('users/signup',{errors: errors.mapped(), old: req.body });
             return;
         }
@@ -64,13 +65,8 @@ const userController = {
                 old: req.body });
         }
 
-        let imagen = 'aura.jpg';
-        if(req.file){
-            imagen = req.file.filename;
-        }
-
         const user = {
-            imagen: imagen,
+            imagen: req.file.filename,
             nombres: req.body.nombres,
             apellidos: req.body.apellidos,
             email: req.body.email,
@@ -81,7 +77,7 @@ const userController = {
 
         UserModel.create( user );
 
-        res.redirect('users/login');
+        res.redirect('/user/login');
     },
     profile: (req, res)=>{
         res.render('users/profile', {user: req.session.userLogged });

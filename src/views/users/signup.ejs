@@ -46,14 +46,14 @@
                                 <div class="div-register-input">
                                     <!-- implementar un estilo para estos inputs -->
                                         <div class="div-register-item">
-                                            <input type="text" placeholder="nombres" name="nombres"
+                                            <input type="text" class="input" placeholder="nombres" name="nombres"
                                             value="<%= locals.old && old.nombres %>">
                                             <% if(locals.errors && errors.nombres){ %>
                                                 <small class="alert-errors"><%= errors.nombres.msg %></small>
                                             <% } %>
                                         </div>
                                         <div class="div-register-item">
-                                            <input type="text" placeholder="apellidos" name="apellidos"
+                                            <input type="text" class="input" placeholder="apellidos" name="apellidos"
                                             value="<%= locals.old && old.apellidos %>">
                                             <% if(locals.errors && errors.apellidos){ %>
                                                 <small class="alert-errors"> <%= errors.apellidos.msg %> </small>
@@ -62,7 +62,7 @@
                                 </div>    
                             </div>
                             <div class="form-register-item">
-                                <input type="email" placeholder="Correo" name="email"
+                                <input type="email" class="input" placeholder="Correo" name="email"
                                 value="<%= locals.old && old.email %>">
                                 <% if(locals.errors && errors.email){ %>
                                     <small class="alert-errors"><%= errors.email.msg %></small>
@@ -81,7 +81,7 @@
                                         <% } %>
                                     </div>
                                     <div class="div-register-item">
-                                        <input type="tel" placeholder="Escribe tu número" name="telefono"
+                                        <input type="tel" class="input" placeholder="Escribe tu número" name="telefono"
                                         value="<%= locals.old && old.telefono %>">
                                         <% if (locals.errors && errors.telefono) { %>
                                             <small class="alert-errors"><%= errors.telefono.msg %></small>
@@ -91,7 +91,7 @@
                             </div>
 
                             <div class="form-register-item">
-                                <input type="password" placeholder="Escribe tu contraseña" name="password">
+                                <input type="password" class="input" placeholder="Escribe tu contraseña" name="password">
                                 <% if (locals.errors && errors.password) { %>
                                     <small class="alert-errors"><%= errors.password.msg %></small>
                                 <% } %>

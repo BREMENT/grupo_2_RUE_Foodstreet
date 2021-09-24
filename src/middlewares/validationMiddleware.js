@@ -25,7 +25,7 @@ const validationsSignup = [
     .isStrongPassword().withMessage('El password no es muy fuerte').bail()
     ,
     check('categoria')
-    .notEmpty().withMessage('El campo no debe ir vacior').bail()
+    .notEmpty().withMessage('El campo no debe ir vacior').bail(),
 ];
 
 const validationsLogin = [
@@ -43,7 +43,7 @@ const validationsLogin = [
 const validationsProduct = [
     check('name')
     .notEmpty().withMessage('El campo del nombre no debe ir vacio').bail()
-    .isLength({min: 3}).withMessage('El campo debe contener almenos 3 caracteres').bail()
+    .isLength({min: 5}).withMessage('El campo debe contener almenos 3 caracteres').bail()
     .isAlpha('es-ES',{ignore: '\s'}).withMessage('El campo debe ser alfabetico').bail()
     ,
     check('price')
@@ -63,6 +63,7 @@ const validationsProduct = [
     check('description')
     .notEmpty().withMessage('El campo de la descripción no debe ir vacio').bail()
     .isAlpha('es-ES',{ignore: '\s'}).withMessage('El campo debe ser alfabetico').bail()
+    .isLength({min: 20}).withMessage('').bail()
     ,
 ]
 
