@@ -8,7 +8,7 @@ const pass_err = document.querySelector('#pass-err');
 const email_err = document.querySelector('#email-err');
 
 const errors = {}
-email.focus();
+
 // funciones
 const notIsEmpty = input =>{
     if(validator.isEmpty(input.value,{ ignore_whitespace: true })){
@@ -57,11 +57,13 @@ const printMsgError = () => {
     pass_err.innerHTML = '';
     email_err.innerHTML = '';
     Object.keys(errors).forEach( key =>{
-        if(key === 'email'){
-            email_err.innerHTML = errors[key];
-        }
-        if(key === 'password'){
-            pass_err.innerHTML = errors[key];
+        switch(key){
+            case 'email':
+                email_err.innerHTML = errors[key];
+                break;
+            case 'password':
+                pass_err.innerHTML = errors[key];
+                break;
         }
     });
 }
@@ -85,7 +87,7 @@ btn.addEventListener('click', (e)=>{
     pass_err.innerHTML = '';
     email_err.innerHTML = '';
 
-    if(Object.keys(errors).length > 0){
+    if(Object.keys(errors).length >= 0){
         formValidation();
         printMsgError();
     }else{

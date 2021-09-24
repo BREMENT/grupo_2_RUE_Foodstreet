@@ -2,23 +2,23 @@ console.log('===Funcionando====');
 
 // variables
 const form = document.querySelector('form');
-const btn = document.querySelector('.btn-register');
+const btn = document.querySelector('#btn');
 const email = document.querySelector('#email');
 const tel = document.querySelector('#tel');
 const password = document.querySelector('#password');
 const apellidos = document.querySelector('#apellidos');
 const nombres = document.querySelector('#nombres');
 const condicion = document.querySelector('#condicion');
-// const file -> falta;
+const file = document.querySelector('#perfil');
 // const categoria -> falta;
 
 const nombres_err = document.querySelector('#nombres_err');
 const apellidos_err = document.querySelector('#apellidos_err');
 const email_err = document.querySelector('#email_err');
 const password_err = document.querySelector('#password_err');
+const file_err = document.querySelector('#file_err');
 
 const errors = {}
-nombres.focus();
 
 // funciones
 const notIsEmpty = input =>{
@@ -74,26 +74,52 @@ const isStrongPassword = input =>{
     input.classList.add('success-input');
     return true;
 }
+// C:\\fakepath\\172H16060-agosto.pdf
+const isValidFile = input =>{
+    console.log(input);
+    if (!input.files[0]){
+        console.log('el file que intenta agregar no existe');
+        errors[input.name] = 'el file que intenta agregar no existe'
+        return false;
+    }
+    const res = validator.isIn(input.files[0].type,['image/jpeg','image/jpg','image/png']);
+    if(!res){
+        console.log('el file que intenta agregar no es valido');
+        errors[input.name] = 'el file que intenta agregar no es valido';
+        return false;
+    }
+
+    delete errors[input.name];
+    console.log('el file es valido');
+    return true;
+}
+
+// to do:  evento blur ? opcional ?
+// to do: style succes file
 
 const nombresValidations=()=>{
     if(!notIsEmpty(nombres)) return;
-    isLength(nombres, 2);
+    if(!isLength(nombres, 2)) return;
 }
 
 const apellidosValidations=()=>{
     if(!notIsEmpty(apellidos)) return;
-    isLength(apellidos, 2);
+    if(!isLength(apellidos, 2)) return;
 }
 
 const emailValidations=()=>{
     if(!notIsEmpty(email)) return;
-    isEmail(email);
+    if(!isEmail(email)) return;
 }
 
 const passwordValidations=()=>{
     if(!notIsEmpty(password)) return;
     if(!isLength(password, 8)) return;
-    isStrongPassword(password);
+    if(!isStrongPassword(password)) return;
+}
+
+const fileValidations = () =>{
+    if(!isValidFile(file)) return;
 }
 
 const formValidations = () =>{
@@ -101,19 +127,21 @@ const formValidations = () =>{
     apellidosValidations();
     emailValidations();
     passwordValidations();
+    fileValidations();
+    console.log(errors);
 }
 
 
 const printMsgErrors = () =>{
-
     nombres_err.innerHTML = '';
     apellidos_err.innerHTML = '';
     email_err.innerHTML = '';
     password_err.innerHTML = '';
-    
+
     Object.keys(errors).forEach(key=>{
+      
         switch(key){
-            case 'nombres': 
+            case 'nombres':
                 nombres_err.innerHTML = errors[key];
                 break;
             case 'apellidos':
@@ -125,7 +153,10 @@ const printMsgErrors = () =>{
             case 'password':
                 password_err.innerHTML = errors[key];
                 break;
-        }
+            case 'perfil':
+                file_err.innerHTML = errors[key];
+                break;
+        }        
     });
 }
 
@@ -152,11 +183,18 @@ password.addEventListener('blur', ()=>{
     printMsgErrors();
 });
 
+
+file.addEventListener('change', ()=>{
+    fileValidations();
+})
+
 btn.addEventListener('click', (e)=>{
-    e.preventDefault();
-    if(Object.keys(errors).length > 0){
+    
+    if(Object.keys(errors).length >= 0){
         formValidations();
         printMsgErrors();
+    }else{
+        form.submit();
     }
 });
 
