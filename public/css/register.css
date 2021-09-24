@@ -92,10 +92,7 @@
     margin-bottom: 15px;
 }
 
-.form-register-item input[type="text"], 
-.form-register-item input[type="email"],
-.form-register-item input[type="tel"],
-.form-register-item input[type="password"],
+.form-register-item .input, 
 .select-option{
     width: 100%;
     outline: none;
@@ -103,6 +100,16 @@
     padding: 10px;
     border: none;
 }
+
+.form-register-item .error-input {
+    border: 1px solid red;
+}
+
+.form-register-item .success-input{
+    border: 1px solid rgb(2, 177, 2);
+}
+
+.form
 
 .input-file{
     margin-bottom: 15px;
@@ -142,6 +149,10 @@
 
 .div-register-item{
     width: 100%;
+}
+
+.div-register-item:first-child{
+    margin-bottom: 15px;
 }
 
 
@@ -185,6 +196,11 @@
         .text-inicio-cuenta{
             font-size: 14px;
         }
+        
+        .div-register-item:first-child{
+            margin-bottom: 0px;
+        }
+
         /* fin main register */
     
 }
