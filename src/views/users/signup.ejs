@@ -1,126 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
+  <%- include('../partials/head', { title: 'signup'}) %>
 
-<%- include('../partials/head', { title: 'signup'}) %>
+  <body>
+    <!-- header -->
+    <%- include('../partials/header') %>
+    <!-- fin header -->
 
-    <body>
-        <!-- header -->
-        <%- include('../partials/header') %>
-            <!-- fin header -->
+    <!-- main home -->
+    <main class="main-register">
+      <section class="main-register-section-buttons">
+        <h1>Regístrate</h1>
+        <div class="div-text-cuenta">
+          <p class="text-inicio-cuenta">
+            ¿Ya tienes cuenta? <a href="/user/login">Inicia sesión aquí</a>
+          </p>
+        </div>
+        <div class="buttons-group-auth">
+          <div class="button-auth">
+            <button class="btn-auth btn-auth-facebook">
+              <i class="fab fa-facebook"></i>
+              Facebook
+            </button>
+          </div>
+          <div class="button-auth">
+            <button class="btn-auth btn-auth-google">
+              <i class="fab fa-google"></i>
+              Google
+            </button>
+          </div>
+          <div class="button-auth">
+            <button class="btn-auth btn-auth-apple">
+              <i class="fab fa-apple"></i>
+              Apple
+            </button>
+          </div>
+        </div>
+      </section>
+      <section class="main-register-section-form">
+        <h3>Puedes registrarte con tu teléfono</h3>
+        <div class="form-register">
+          <form
+            action="/user/create"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <div class="form-register-item">
+              <div class="div-register-input">
+                <!-- implementar un estilo para estos inputs -->
+                <div class="div-register-item">
+                  <input
+                    type="text"
+                    class="input"
+                    placeholder="nombres"
+                    name="nombres"
+                    id="nombres"
+                    value="<%= locals.old && old.nombres %>"
+                  />
+                  <% if(locals.errors && errors.nombres){ %>
+                  <small class="alert-errors"><%= errors.nombres.msg %></small>
+                  <% } %>
+                  <small class="alert-errors" id="nombres_err"></small>
+                </div>
+                <div class="div-register-item">
+                  <input
+                    type="text"
+                    class="input"
+                    placeholder="apellidos"
+                    name="apellidos"
+                    id="apellidos"
+                    value="<%= locals.old && old.apellidos %>"
+                  />
+                  <% if(locals.errors && errors.apellidos){ %>
+                  <small class="alert-errors"><%= errors.apellidos.msg %></small>
+                  <% } %>
+                  <small class="alert-errors" id="apellidos_err"></small>
+                </div>
+              </div>
+            </div>
+            <div class="form-register-item">
+              <input
+                type="email"
+                class="input"
+                placeholder="Correo"
+                name="email"
+                id="email";
+                value="<%= locals.old && old.email %>"
+              />
+              <% if(locals.errors && errors.email){ %>
+              <small class="alert-errors"><%= errors.email.msg %></small>
+              <% } %>
+              <small class="alert-errors" id="email_err"></small>
+            </div>
+            <div class="form-register-item">
+              <div class="div-register-input">
+                <div class="div-register-item">
+                  <select id="" class="select-option" name="categoria">
+                    <option disabled="true" selected="true" value="">
+                      Selecciona
+                    </option>
+                    <option value="vendedor">Vendedor</option>
+                    <option value="cliente">Cliente</option>
+                  </select>
+                  <% if (locals.errors && errors.categoria) { %>
+                  <small class="alert-errors"
+                    ><%= errors.categoria.msg %></small
+                  >
+                  <% } %>
+                </div>
+                <div class="div-register-item">
+                  <input
+                    type="tel"
+                    class="input"
+                    placeholder="Escribe tu número"
+                    name="telefono"
+                    id="tel"
+                    value="<%= locals.old && old.telefono %>"
+                  />
+                  <% if (locals.errors && errors.telefono) { %>
+                  <small class="alert-errors"><%= errors.telefono.msg %></small>
+                  <% } %>
+                </div>
+              </div>
+            </div>
 
-            <!-- main home -->
-            <main class="main-register">
-                <section class="main-register-section-buttons">
-                    <h1>Regístrate</h1>
-                    <div class="div-text-cuenta">
-                        <p class="text-inicio-cuenta">
-                            ¿Ya tienes cuenta? <a href="/user/login">Inicia sesión aquí</a>
-                        </p>
-                    </div>
-                    <div class="buttons-group-auth">
-                        <div class="button-auth">
-                            <button class="btn-auth btn-auth-facebook">
-                        <i class="fab fa-facebook"></i>
-                        Facebook
-                    </button>
-                        </div>
-                        <div class="button-auth">
-                            <button class="btn-auth btn-auth-google">
-                        <i class="fab fa-google"></i>
-                        Google
-                    </button>
-                        </div>
-                        <div class="button-auth">
-                            <button class="btn-auth btn-auth-apple">
-                        <i class="fab fa-apple"></i>
-                        Apple
-                    </button>
-                        </div>
-                    </div>
-                </section>
-                <section class="main-register-section-form">
-                    <h3>Puedes registrarte con tu teléfono</h3>
-                    <div class="form-register">
-                        <form action="/user/create" method="post" enctype="multipart/form-data">
-                            <div class="form-register-item">
-                                <div class="div-register-input">
-                                    <!-- implementar un estilo para estos inputs -->
-                                        <div class="div-register-item">
-                                            <input type="text" class="input" placeholder="nombres" name="nombres"
-                                            value="<%= locals.old && old.nombres %>">
-                                            <% if(locals.errors && errors.nombres){ %>
-                                                <small class="alert-errors"><%= errors.nombres.msg %></small>
-                                            <% } %>
-                                        </div>
-                                        <div class="div-register-item">
-                                            <input type="text" class="input" placeholder="apellidos" name="apellidos"
-                                            value="<%= locals.old && old.apellidos %>">
-                                            <% if(locals.errors && errors.apellidos){ %>
-                                                <small class="alert-errors"> <%= errors.apellidos.msg %> </small>
-                                            <% } %>
-                                        </div> 
-                                </div>    
-                            </div>
-                            <div class="form-register-item">
-                                <input type="email" class="input" placeholder="Correo" name="email"
-                                value="<%= locals.old && old.email %>">
-                                <% if(locals.errors && errors.email){ %>
-                                    <small class="alert-errors"><%= errors.email.msg %></small>
-                                <% } %>
-                            </div>
-                            <div class="form-register-item">
-                                <div class="div-register-input">
-                                    <div class="div-register-item">
-                                        <select id="" class="select-option" name="categoria">
-                                            <option disabled="true" selected="true" value="">Selecciona</option>                               
-                                            <option value="vendedor" >Vendedor</option>
-                                            <option value="cliente">Cliente</option>
-                                        </select>
-                                        <% if (locals.errors && errors.categoria) { %>
-                                            <small class="alert-errors"><%= errors.categoria.msg %></small>
-                                        <% } %>
-                                    </div>
-                                    <div class="div-register-item">
-                                        <input type="tel" class="input" placeholder="Escribe tu número" name="telefono"
-                                        value="<%= locals.old && old.telefono %>">
-                                        <% if (locals.errors && errors.telefono) { %>
-                                            <small class="alert-errors"><%= errors.telefono.msg %></small>
-                                        <% } %>
-                                    </div>
-                                </div>
-                            </div>
+            <div class="form-register-item">
+              <input
+                type="password"
+                class="input"
+                placeholder="Escribe tu contraseña"
+                name="password"
+                id="password"
+              />
+              <% if (locals.errors && errors.password) { %>
+              <small class="alert-errors"><%= errors.password.msg %></small>
+              <% } %>
+              <small class="alert-errors" id="password_err"></small>
+            </div>
 
-                            <div class="form-register-item">
-                                <input type="password" class="input" placeholder="Escribe tu contraseña" name="password">
-                                <% if (locals.errors && errors.password) { %>
-                                    <small class="alert-errors"><%= errors.password.msg %></small>
-                                <% } %>
-                            </div>
+            <div class="form-register-item">
+              <div class="input-file">
+                <label class="text-label" for="perfil"
+                  >Añade tu foto de perfil</label
+                >
+                <input type="file" id="perfil" name="perfil" />
+              </div>
+            </div>
 
-                            <div class="form-register-item">
-                                <div class="input-file">
-                                    <label class="text-label" for="perfil">Añade tu foto de perfil</label>
-                                    <input type="file" id="perfil" name="perfil">
-                                </div>            
-                            </div>
+            <div class="form-register-item">
+              <input
+                type="checkbox"
+                name="condicion"
+                id="condicion"
+                value="acepto"
+              />
+              <label class="text-label" for=""
+                >Acepto los terminos y condiciones y la política de
+                privacidad</label
+              >
+            </div>
 
-                            <div class="form-register-item">
-                                <input type="checkbox" name="condicion" id="condicion" value="acepto">
-                                <label class="text-label" for="">Acepto los terminos y condiciones y la política de privacidad</label>
-                            </div>
-                            
-                            <div class="form-register-item div-btns">
-                                <button type="submit" class="btn-register">Registrarme</button>
-                            </div>
-                        </form>
-                    </div>
-                </section>
-            </main>
-            <!-- fin main home -->
+            <div class="form-register-item div-btns">
+              <button type="submit" class="btn-register">Registrarme</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <!-- fin main home -->
 
-            <!-- footer -->
-            <%- include('../partials/footer') %>
-            <!-- fin footer -->
-    </body>
-
+    <!-- footer -->
+    <%- include('../partials/footer') %>
+    <!-- fin footer -->
+    <script type="text/javascript" src="/js/validator.min.js"></script>
+    <script src="/js/validator-signup.js"></script>
+  </body>
 </html>
