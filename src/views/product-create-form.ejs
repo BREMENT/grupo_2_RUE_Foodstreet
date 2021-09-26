@@ -16,15 +16,16 @@
 					<div class="row product-detail">
 						<div class="form-register-item-product">
 							<label for="name" class="form-label">Nombre del platillo:</label>
-							<input type="text" id="name" name="name" placeholder="Ej: Tacos al pastor"
+							<input type="text" class="input" id="name" name="name" placeholder="Ej: Tacos al pastor"
 							value="<%= locals.old && old.name %>">
 							<% if (locals.errors && errors.name){ %>
 								<small class="alert-errors"><%= errors.name.msg %> </small>	
 							<% } %>
+							<small class="alert-errors" id="name_err"></small>
 						</div>
 						<div class="form-register-item-product">
 							<label for="price" class="form-label">Precio del producto:</label>
-							<input type="text" id="price" name="price" placeholder="Ej: 5178" class="form-input"
+							<input type="number" class="input" id="price" name="price" placeholder="Ej: 5178" class="form-input"
 							value="<%= locals.old && old.price %>">
 							<% if (locals.errors && errors.price){ %>
 								<small class="alert-errors"><%= errors.price.msg %> </small>	
@@ -32,7 +33,7 @@
 						</div>
 						<div class="form-register-item-product">
 							<label for="discount" class="form-label">Descuento:</label>
-							<input type="text" id="discount" name="discount" placeholder="Ej: 15" class="form-input"
+							<input type="number" class="input" id="discount" name="discount" placeholder="Ej: 15" class="form-input"
 							value="<%= locals.old && old.discount %>">
 							<% if (locals.errors && errors.discount){ %>
 								<small class="alert-errors"><%= errors.discount.msg %> </small>	
@@ -66,17 +67,22 @@
 						</div>
 						<div class="form-register-item-product">
 							<label for="description" class="form-label">Descipción:</label>
-							<textarea name="description" id="description"><%= locals.old && old.description %></textarea>
+							<textarea name="description" class="input" id="description"><%= locals.old && old.description %></textarea>
 							<% if (locals.errors && errors.description){ %>
-								<small class="alert-errors"><%= errors.description.msg %> </small>	
+								<small class="alert-errors"><%= errors.description.msg%></small>	
 							<% } %>
+							<small class="alert-errors" id="desc_err"></small>	
 						</div>
-						<div class="input-file">
-							<input type="file" name="productImage" id="product-image">
+						<div class="form-register-item">
+							<div class="input-file">
+								<label class="text-label" for="file">Añade imagen del producto</label>
+								<input id="file" type="file" name="productImage" id="product-image">
+							</div>
+							<small class="alert-errors" id="file_err"></small>	
 						</div>
 
 						<div class="form-register-item-product div-btns-product">
-							<button type="submit" class="btn-register-product">Guardar producto</button>
+							<button id="btn" type="submit" class="btn-register-product">Guardar producto</button>
 						</div>
 					</div>
 				</form>
@@ -93,6 +99,8 @@
     <!-- footer -->
     <%- include('./partials/footer') %> 
     <!-- fin footer -->
+	<script type="text/javascript" src="/js/validator.min.js"></script>
+    <script src="/js/validator-product.js"></script>
 </body>
 
 </html>

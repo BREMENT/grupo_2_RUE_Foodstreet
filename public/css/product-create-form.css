@@ -27,18 +27,24 @@
 
 .form-register-item-product{
     width: 100%;
+    margin-bottom: 15px;
 }
 
-.form-register-item-product input[type="text"], 
-.form-register-item-product input[type="email"],
-.form-register-item-product input[type="tel"],
-.form-register-item-product textarea {
+.form-register-item-product .input,
+.select-option{
     width: 100%;
     outline: none;
     border-radius: 10px;
     padding: 10px;
     border: none;
-    margin-bottom: 15px;
+}
+
+.form-register-item-product .error-input {
+    border: 1px solid red;
+}
+
+.form-register-item-product .success-input{
+    border: 1px solid rgb(2, 177, 2);
 }
 
 .form-register-item-product input[type="checkbox"],

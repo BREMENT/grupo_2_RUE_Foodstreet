@@ -14,7 +14,8 @@ const userController = {
         }
 
         const user = UserModel.findField('email', req.body.email );
-        if(user){
+        
+        if(user){ 
             const compare = bcrypt.compareSync(req.body.password, user.password);
             if( compare ){
                 delete compare.password;

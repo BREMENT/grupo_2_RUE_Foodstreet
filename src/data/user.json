@@ -48,5 +48,15 @@
     "telefono": "6958711231",
     "password": "$2a$10$BpVov/5JyNEbXtKiBir01.X9tKa3sddgP.AHgt7QrwvxaPnbrS3z6",
     "categoria": "cliente"
+  },
+  {
+    "id": "75890203-6a8c-4bc3-8fe3-fe3d9f8a0b64",
+    "imagen": "1632527313981_perfil_.jpeg",
+    "nombres": "luis jesus",
+    "apellidos": "villegas castillo",
+    "email": "lc77278@gmail.com",
+    "telefono": "9932245543",
+    "password": "$2a$10$mhytyvXZOVWvUQ1o8dmV5u0ImvI7sZCXHL7OE4iguyWKH.rd1SRyG",
+    "categoria": "vendedor"
   }
 ]
