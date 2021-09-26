@@ -27,14 +27,15 @@
 .search-busqueda{
     display: flex;
     background-color: #ffff;
-    width: 77%;
+    width: 56%;
     border-radius: 10px;
+    margin-top: 50px;
 }
 .search-busqueda input{
     border: none;
     width: 100%;
     background-color:rgba(255, 255, 255, 0);
-    padding: 10px 0px 10px 10px;
+    padding: 2px 0px 2px 10px;
     margin: 4px;
 }
 
