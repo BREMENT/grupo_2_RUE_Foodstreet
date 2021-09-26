@@ -7,7 +7,7 @@ const password = document.querySelector('#password');
 const pass_err = document.querySelector('#pass-err');
 const email_err = document.querySelector('#email-err');
 
-const errors = {}
+const errors = {};
 
 // funciones
 const notIsEmpty = input =>{
@@ -87,11 +87,11 @@ btn.addEventListener('click', (e)=>{
     pass_err.innerHTML = '';
     email_err.innerHTML = '';
 
-    if(Object.keys(errors).length >= 0){
+    if(Object.keys(errors).length === 0){
+        form.submit();
+    }else{
         formValidation();
         printMsgError();
-    }else{
-        form.submit();
     }
     
 });

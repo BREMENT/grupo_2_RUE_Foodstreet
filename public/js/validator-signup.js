@@ -18,11 +18,12 @@ const email_err = document.querySelector('#email_err');
 const password_err = document.querySelector('#password_err');
 const file_err = document.querySelector('#file_err');
 
-const errors = {}
+const errors = {};
 
 // funciones
 const notIsEmpty = input =>{
     if(validator.isEmpty(input.value,{ ignore_whitespace: true})){
+        console.log('requerido');
         errors[input.name] = `El campo ${input.name} es requerido`;
         input.classList.add('error-input');
         input.classList.remove('success-input');
@@ -36,7 +37,7 @@ const notIsEmpty = input =>{
 
 const isLength = (input, min) =>{
     if(!validator.isLength(input.value, { min })){
-        errors[input.name]=`El campo debe contener al menor ${min} caracteres`;
+        errors[input.name]=`El campo debe contener al menos ${min} caracteres`;
         input.classList.add('error-input');
         input.classList.remove('success-input');
         return false;        
@@ -74,23 +75,19 @@ const isStrongPassword = input =>{
     input.classList.add('success-input');
     return true;
 }
-// C:\\fakepath\\172H16060-agosto.pdf
+
 const isValidFile = input =>{
-    console.log(input);
     if (!input.files[0]){
-        console.log('el file que intenta agregar no existe');
         errors[input.name] = 'el file que intenta agregar no existe'
         return false;
     }
     const res = validator.isIn(input.files[0].type,['image/jpeg','image/jpg','image/png']);
     if(!res){
-        console.log('el file que intenta agregar no es valido');
         errors[input.name] = 'el file que intenta agregar no es valido';
         return false;
     }
 
     delete errors[input.name];
-    console.log('el file es valido');
     return true;
 }
 
@@ -186,15 +183,22 @@ password.addEventListener('blur', ()=>{
 
 file.addEventListener('change', ()=>{
     fileValidations();
-})
+    printMsgErrors();
+});
+
+nombres.addEventListener('change', ()=>{
+    notIsEmpty(nombres);
+});
 
 btn.addEventListener('click', (e)=>{
     
-    if(Object.keys(errors).length >= 0){
-        formValidations();
-        printMsgErrors();
-    }else{
+    formValidations();
+    printMsgErrors();
+
+    if(Object.keys(errors).length === 0){
+        console.log('enviar');
         form.submit();
     }
+    
 });
 

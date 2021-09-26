@@ -109,8 +109,6 @@
     border: 1px solid rgb(2, 177, 2);
 }
 
-.form
-
 .input-file{
     margin-bottom: 15px;
 }
@@ -127,7 +125,6 @@
 }
 
 .btn-register{
-    
     border: none;
     outline: none;
     padding: 10px;
