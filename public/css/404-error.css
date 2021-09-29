@@ -1,9 +1,7 @@
 .nav-error{
     background-color: #F2274C;
-    padding: 10px;
+    padding: 11.5px;
     width: 100%;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
 }
 
 .nav-error-logo{
@@ -13,7 +11,7 @@
 }
 
 .nav-error-logo img{
-    width: 19.5%;
+    width: 50px;
 }
 
 .main{
@@ -120,7 +118,7 @@
         width: 40%;
     }
 
-    .nav-error-logo img{
+    /* .nav-error-logo img{
         width: 6.5%;
-    }
+    } */
 }
