@@ -15,7 +15,7 @@
                 <form action="/productos/editar/<%= product.id %>?_method=PUT" method="post">
                     <div class="form-register-item-product">
                         <label for="">Nombre del producto</label>
-                        <input type="text" name="name" placeholder="nombre"
+                        <input type="text" class="input" name="name" placeholder="nombre"
                         value="<%= product.name %>">
                         <% if (locals.errors && errors.name) { %>
                             <small class="alert-errors"><%= errors.name.msg %> </small>
@@ -23,7 +23,7 @@
                     </div>
                     <div class="form-register-item-product">
                         <label for="">Precio  del producto</label>
-                        <input type="text" name="price" placeholder="precio"
+                        <input type="text" class="input" name="price" placeholder="precio"
                         value="<%= product.price %>">
                         <% if (locals.errors && errors.price) { %>
                             <small class="alert-errors"><%= errors.price.msg %></small>
@@ -31,7 +31,7 @@
                     </div>
                     <div class="form-register-item-product">
                         <label for="">Descuento</label>
-                        <input type="text" name="discount" placeholder="descuento"
+                        <input type="text" class="input" name="discount" placeholder="descuento"
                         value="<%= product.discount %>">
                         <% if (locals.errors && errors.discount) { %>
                             <small class="alert-errors"><%= errors.discount.msg %> </small>
@@ -73,7 +73,7 @@
                     </div>
                     <div class="form-register-item-product">
                         <label for="">Descripción</label>
-                        <textarea name="description" id=""><%= product.description %></textarea>
+                        <textarea name="description" class="input" id=""><%= product.description %></textarea>
                         <% if (locals.errors && errors.description) { %>
                             <small class="alert-errors"><%= errors.description.msg %> </small>
                         <% } %>

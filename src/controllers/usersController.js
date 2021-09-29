@@ -52,18 +52,8 @@ const userController = {
         
         if(!errors.isEmpty()){
             console.log({errors: errors.mapped()});
-            res.render('users/signup',{errors: errors.mapped(), old: req.body });
-            return;
-        }
-
-        const userExist = UserModel.findField('email', req.body.email);
-        if(userExist){
+            return res.render('users/signup',{errors: errors.mapped(), old: req.body });
             
-            return res.render('users/signup', {
-                errors: {
-                    email: { msg: 'No se pudo crear el usuario con esa dirección de email'}
-                },
-                old: req.body });
         }
 
         const user = {

@@ -39,7 +39,7 @@ const productoController = {
         products.push(newProduct);
         
         fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
-        res.redirect('/productos/');
+        res.redirect('/productos');
         
     },
     edit: (req, res)=>{
@@ -72,7 +72,6 @@ const productoController = {
     destroy: (req, res)=>{
         const post = products.findIndex(product => product.id === req.params.id);
         
-        console.log(products[post]);
         if(products[post].image !== 'detault-img.png'){
             fs.unlinkSync(path.join(__dirname,`../../public/images/products/${products[post].image}`));
         }
@@ -81,7 +80,7 @@ const productoController = {
         fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
         
 
-        res.redirect('/productos/');
+        res.redirect('/productos');
     }
 };
 

@@ -58,5 +58,15 @@
     "telefono": "9932245543",
     "password": "$2a$10$mhytyvXZOVWvUQ1o8dmV5u0ImvI7sZCXHL7OE4iguyWKH.rd1SRyG",
     "categoria": "vendedor"
+  },
+  {
+    "id": "0e094b18-16c3-498f-8cb7-290d65b15369",
+    "imagen": "1632932191573_perfil_.jpeg",
+    "nombres": "luis jesus",
+    "apellidos": "villegas castillo",
+    "email": "chanchitofeliz@gmail.com",
+    "telefono": "9932245543",
+    "password": "$2a$10$w0C4haTxy2OFsvGQxswc4.CBnnLwJemtsSFb3gNTBdqXmq88BMHpG",
+    "categoria": "vendedor"
   }
 ]

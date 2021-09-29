@@ -1,4 +1,5 @@
 const { check } = require('express-validator');
+const UserModel = require('../models/Users');
 
 const validationsSignup = [
     check('nombres')
@@ -14,10 +15,24 @@ const validationsSignup = [
     check('email')
     .notEmpty().withMessage('El campo email no debe ir vacio').bail()
     .isEmail().withMessage('El campo debe de contener un email valido').bail()
+    .custom( (value)=>{
+        const emailExist = UserModel.findField('email', value);
+        if(emailExist){
+            throw new Error('adsdsd');
+        }
+        return true;
+    })
     ,
     check('telefono')
     .notEmpty().withMessage('El campo no debe ir vacio').bail()
     .isMobilePhone().withMessage('El campo debe contener un numero telefonico').bail()
+    .custom( (value)=>{
+        const numberExist = UserModel.findField('telefono', value);
+        if(numberExist){
+            throw new Error("El numero telefonico que ingreo ya existe");
+        }
+        return true;
+    })
     ,
     check('password')
     .notEmpty().withMessage('El campo no debe ir vacio').bail()
