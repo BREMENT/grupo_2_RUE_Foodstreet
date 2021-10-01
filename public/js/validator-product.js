@@ -15,8 +15,10 @@
            desc_err = document.querySelector('#desc_err'),
            file_err = document.querySelector('#file_err'),
            discount_err = document.querySelector('#discount_err'),
-           price_err = document.querySelector('#price_err');
-    
+           price_err = document.querySelector('#price_err'),
+           food_type_err = document.querySelector('#food_type_err'),
+           category_err = document.querySelector('#category_err');
+ 
     const errors = {};
     
     // funciones
@@ -125,6 +127,9 @@
         file_err.innerHTML = '';
         discount_err.innerHTML = '';
         price_err.innerHTML = '';
+        food_type_err.innerHTML = '';
+        category_err.innerHTML = '';
+        
         Object.keys(errors).forEach( key =>{
             switch(key){
                 case 'name':
@@ -141,6 +146,12 @@
                     break;
                 case 'price':
                     price_err.innerHTML = errors[key];
+                    break;
+                case 'category':
+                    category_err.innerHTML = errors[key];
+                    break;
+                case 'food_type':
+                    food_type_err.innerHTML = errors[key];
                     break;
             }
         });
@@ -174,12 +185,22 @@
         if(!inRange(discount,0,99)) return;
     }
     
+    const categoryValidations = () =>{
+        if(!notIsEmpty(category)) return;
+    }
+
+    const foodTypeValidations = () =>{
+        if(!notIsEmpty(food_type)) return;
+    }
+
     const formValidations = () =>{
         nameValidations();
         descriptionValidations();
         fileValidations();
         priceValidations();
         discountValidations();
+        categoryValidations();
+        foodTypeValidations();
         // console.log(errors);
     }
     

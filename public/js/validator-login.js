@@ -83,15 +83,10 @@ password.addEventListener('blur', ()=>{
 
 btn.addEventListener('click', (e)=>{
     e.preventDefault();
-    
-    pass_err.innerHTML = '';
-    email_err.innerHTML = '';
+    formValidation();
+    printMsgError();
 
     if(Object.keys(errors).length === 0){
         form.submit();
-    }else{
-        formValidation();
-        printMsgError();
-    }
-    
+    }    
 });

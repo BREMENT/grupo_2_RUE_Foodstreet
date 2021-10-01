@@ -25,7 +25,7 @@
                     <div class="form-register-item-product">
                         <label for="">Precio  del producto</label>
                         <input type="text" class="input" id="price" name="price" placeholder="precio"
-                        value="<%= product.price %>">
+                        min="0" step="0.01" value="<%= product.price %>">
                         <% if (locals.errors && errors.price) { %>
                             <small class="alert-errors"><%= errors.price.msg %></small>
                         <% } %>
@@ -34,7 +34,7 @@
                     <div class="form-register-item-product">
                         <label for="">Descuento</label>
                         <input type="text" class="input" id="discount" name="discount" placeholder="descuento"
-                        value="<%= product.discount %>">
+                        min="0" max="99" value="<%= product.discount %>">
                         <% if (locals.errors && errors.discount) { %>
                             <small class="alert-errors"><%= errors.discount.msg %> </small>
                         <% } %>
@@ -52,6 +52,7 @@
                         <% if (locals.errors && errors.category) { %>
                             <small class="alert-errors"><%= errors.category.msg %> </small>
                         <% } %>
+                        <small class="alert-errors" id="category_err"></small>
                     </div>
                     <div class="form-register-item-product">
                         <label for="">Tipo de comida</label>
@@ -73,6 +74,7 @@
                         <% if (locals.errors && errors.food_type) { %>
                             <small class="alert-errors"><%= errors.food_type.msg %> </small>
                         <% } %>
+                        <small class="alert-errors" id="food_type_err"></small>
                     </div>
                     <div class="form-register-item-product">
                         <label for="">Descripción</label>

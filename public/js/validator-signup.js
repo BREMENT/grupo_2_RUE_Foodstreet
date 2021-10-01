@@ -234,7 +234,7 @@
     // });
 
     btn.addEventListener('click', (e)=>{
-        
+        e.preventDefault();
         formValidations();
         printMsgErrors();
     

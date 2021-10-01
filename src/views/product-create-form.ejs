@@ -51,6 +51,7 @@
 							<% if (locals.errors && errors.category){ %>
 								<small class="alert-errors"><%= errors.category.msg %> </small>	
 							<% } %>
+							<small class="alert-errors" id="category_err"></small>
 						</div>
 						<div class="form-register-item-product">
 							<label for="food_type" class="form-label">Tipo de comida:</label>
@@ -66,6 +67,7 @@
 							<% if (locals.errors && errors.food_type){ %>
 								<small class="alert-errors"><%= errors.food_type.msg %> </small>	
 							<% } %>
+							<small class="alert-errors" id="food_type_err"></small>
 						</div>
 						<div class="form-register-item-product">
 							<label for="description" class="form-label">Descipción:</label>
