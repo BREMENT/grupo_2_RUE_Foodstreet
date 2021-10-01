@@ -15,31 +15,34 @@
                 <form action="/productos/editar/<%= product.id %>?_method=PUT" method="post">
                     <div class="form-register-item-product">
                         <label for="">Nombre del producto</label>
-                        <input type="text" class="input" name="name" placeholder="nombre"
+                        <input type="text" class="input" id="name" name="name" placeholder="nombre"
                         value="<%= product.name %>">
                         <% if (locals.errors && errors.name) { %>
                             <small class="alert-errors"><%= errors.name.msg %> </small>
                         <% } %>
+                        <small class="alert-errors" id="name_err"></small>
                     </div>
                     <div class="form-register-item-product">
                         <label for="">Precio  del producto</label>
-                        <input type="text" class="input" name="price" placeholder="precio"
+                        <input type="text" class="input" id="price" name="price" placeholder="precio"
                         value="<%= product.price %>">
                         <% if (locals.errors && errors.price) { %>
                             <small class="alert-errors"><%= errors.price.msg %></small>
                         <% } %>
+                        <small class="alert-errors" id="price_err"></small>
                     </div>
                     <div class="form-register-item-product">
                         <label for="">Descuento</label>
-                        <input type="text" class="input" name="discount" placeholder="descuento"
+                        <input type="text" class="input" id="discount" name="discount" placeholder="descuento"
                         value="<%= product.discount %>">
                         <% if (locals.errors && errors.discount) { %>
                             <small class="alert-errors"><%= errors.discount.msg %> </small>
                         <% } %>
+                        <small class="alert-errors" id="discount_err"></small>
                     </div>
                     <div class="form-register-item-product">
                         <label for="">Categoria</label>
-                        <select name="category" class="select-option">
+                        <select name="category" id="category" class="select-option">
                             <option value="">Elige una opción</option>
                             <option value="in-sale"
                             <%= (product.category === 'in-sale')? 'selected': '' %> >En oferta</option>
@@ -52,7 +55,7 @@
                     </div>
                     <div class="form-register-item-product">
                         <label for="">Tipo de comida</label>
-                        <select name="food_type" id="" class="select-option">
+                        <select name="food_type" id="food_type" class="select-option">
                             <option value="">Elige una opción</option>
                             <option value="Mexican"
                             <%= (product.food_type === 'Mexican')? 'selected' : '' %> >Mexicana</option>
@@ -73,16 +76,21 @@
                     </div>
                     <div class="form-register-item-product">
                         <label for="">Descripción</label>
-                        <textarea name="description" class="input" id=""><%= product.description %></textarea>
+                        <textarea name="description" class="input" id="description"><%= product.description %></textarea>
                         <% if (locals.errors && errors.description) { %>
                             <small class="alert-errors"><%= errors.description.msg %> </small>
                         <% } %>
+                        <small class="alert-errors" id="desc_err"></small>	
                     </div>
-                    <div class="input-file">
-                        <input type="file" name="productImage" id="">
+                    <div class="form-register-itme">
+                        <div class="input-file">
+                            <label for="file">Imagen del producto</label>
+                            <input type="file" name="productImage" id="file">
+                        </div>
+                        <small class="alert-errors" id="file_err"></small>
                     </div>
                     <div class="form-register-item-product div-btns-product">
-                        <button type="submit" class="btn-register-product">Enviar</button>
+                        <button id="btn" type="submit" class="btn-register-product">Enviar</button>
                     </div>
                 </form>
             </div>
@@ -93,6 +101,9 @@
     <!-- footer -->
     <%- include('./partials/footer') %> 
     <!-- fin footer -->
+
+    <script type="text/javascript" src="/js/validator.min.js"></script>
+    <script src="/js/validator-product.js"></script>
 </body>
 
 </html>

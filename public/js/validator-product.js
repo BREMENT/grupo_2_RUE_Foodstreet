@@ -6,7 +6,7 @@
             names = document.querySelector('#name'),
             price = document.querySelector('#price'),
             discount = document.querySelector('#discount'),
-            category = document.querySelector('#category') // TODO: validar categoria
+            category = document.querySelector('#category'), // TODO: validar categoria
             food_type = document.querySelector('#food_type'),// TODO: validar tipo de comida
             description = document.querySelector('#description'),
             file = document.querySelector('#file');
@@ -180,7 +180,7 @@
         fileValidations();
         priceValidations();
         discountValidations();
-        console.log(errors);
+        // console.log(errors);
     }
     
     // eventos
