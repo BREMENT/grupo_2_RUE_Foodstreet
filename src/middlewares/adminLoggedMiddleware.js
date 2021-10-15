@@ -1,4 +1,4 @@
-const UserModel = require('../models/Users');
+const UserModel = require('../helpers/Users');
 
 function adminLoggedMiddleware(req, res, next){
     res.locals.isLogged = false;

@@ -6,8 +6,8 @@
             names = document.querySelector('#name'),
             price = document.querySelector('#price'),
             discount = document.querySelector('#discount'),
-            category = document.querySelector('#category'), // TODO: validar categoria
-            food_type = document.querySelector('#food_type'),// TODO: validar tipo de comida
+            category = document.querySelector('#category'), 
+            food_type = document.querySelector('#food_type'),
             description = document.querySelector('#description'),
             file = document.querySelector('#file');
             

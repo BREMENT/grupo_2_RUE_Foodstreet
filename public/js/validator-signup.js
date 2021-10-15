@@ -229,10 +229,6 @@
         printMsgErrors();
     });
     
-    // nombres.addEventListener('change', ()=>{
-    //     notIsEmpty(nombres);
-    // });
-
     btn.addEventListener('click', (e)=>{
         e.preventDefault();
         formValidations();

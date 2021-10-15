@@ -1,53 +1,64 @@
 const bcryptjs = require('bcryptjs');// true
 const { validationResult } = require('express-validator');// true
-const bcrypt = require('bcryptjs');
-const UserModel = require('../models/Users');
+const {request, response} = require('express');
+// const UserModel = require('../helpers/Users');
+
+const db = require('../database/models');
+const Op = db.Sequelize.Op;
 
 const userController = {
-    login: (req, res) => {
+    login: (req = request, res = response) => {
         res.render('users/login');
     },
-    enter: (req, res)=>{
+    enter: async(req =request, res = response)=>{
         const errors = validationResult(req);
         if(!errors.isEmpty()){
             return res.render('users/login',{errors: errors.mapped(), old: req.body });
         }
 
-        const user = UserModel.findField('email', req.body.email );
-        
-        if(user){ 
-            const compare = bcrypt.compareSync(req.body.password, user.password);
-            if( compare ){
-                delete compare.password;
-                req.session.userLogged = user;
-                if(req.body.recordar){
-                    res.cookie('recordar', user.id, {maxAge: 60000}); 
-                    // el maxAge -> cambiara por ahora sera 1 minuto
+        try{
+            const user = await db.Usuario.findOne({
+                where:{
+                    correo: req.body.email
                 }
-                
-                return res.redirect('/user/profile');
+            });
+
+            if(user){
+                const comparacion = bcryptjs.compareSync(req.body.password, user.passwords);
+                if(comparacion){
+                    delete user.dataValues.passwords;
+                    req.session.userLogged = user.dataValues;
+                    if(req.body.recordar){
+                        res.cookie('recordar', user.dataValues.usuario_id, {maxAge: 60000}); 
+                    }
+
+                    return res.redirect('/user/profile');
+                }
+
+                return res.render('users/login',{
+                    errors:{
+                        email: { msg: 'Favor de verificar su password o su email'},
+                        password: { msg: 'Favor de verificar su password o su email'}
+                    }, old: {email: req.body.email}
+                });
             }
 
             return res.render('users/login',{
-                errors:{
+                errors: {
                     email: { msg: 'Favor de verificar su password o su email'},
                     password: { msg: 'Favor de verificar su password o su email'}
                 }, old: {email: req.body.email}
             });
+
+        }catch(err){
+            console.log(err);
         }
 
-        return res.render('users/login',{
-            errors: {
-                email: { msg: 'Favor de verificar su password o su email'},
-                password: { msg: 'Favor de verificar su password o su email'}
-            }, old: {email: req.body.email}
-        })
-
     },
-    signup: (req, res) => {
+    signup: (req = request, res = response) => {
         res.render('users/signup');
     },
-    create: (req, res) => {
+    create: async(req = request, res = response) => {
         const errors = validationResult(req);
         
         if(!errors.isEmpty()){
@@ -56,17 +67,28 @@ const userController = {
             
         }
 
+        const [nombre_primero, nombre_segundo = ''] = req.body.nombres.split(' ');
+        const [apellidoP, apellidoM = ''] = req.body.apellidos.split(' ');
+        //TODO: si apellidoM viene vacio retornar un error de que falta el apellidoM
+
         const user = {
-            imagen: req.file.filename,
-            nombres: req.body.nombres,
-            apellidos: req.body.apellidos,
-            email: req.body.email,
+            foto: req.file.filename,
+            nombre_primero,
+            nombre_segundo,
+            apellidoP,
+            apellidoM,
+            correo: req.body.email,
             telefono: req.body.telefono,
-            password: bcryptjs.hashSync(req.body.password, 10),
-            categoria: req.body.categoria
+            passwords: bcryptjs.hashSync(req.body.password, 10)
         }
 
-        UserModel.create( user );
+        // console.log(user);
+        try{
+           const userNew = await db.Usuario.create( user );
+           console.log(userNew);
+        }catch(error){
+            console.log(error);
+        }
 
         res.redirect('/user/login');
     },

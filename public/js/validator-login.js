@@ -6,6 +6,8 @@ const password = document.querySelector('#password');
 
 const pass_err = document.querySelector('#pass-err');
 const email_err = document.querySelector('#email-err');
+const email_ejs_error = document.querySelector('#email_ejs_error');
+const pass_ejs_error = document.querySelector('#pass_ejs_error');
 
 const errors = {};
 
@@ -72,11 +74,13 @@ const printMsgError = () => {
 form.addEventListener('submit', (e)=> e.preventDefault());
 
 email.addEventListener('blur', ()=>{
+    email_ejs_error.innerHTML = '';
     emailValidation();
     printMsgError();
 });
 
 password.addEventListener('blur', ()=>{
+    pass_ejs_error.innerHTML = '';
     passwordValidation();
     printMsgError();
 });

@@ -1,5 +1,5 @@
 const { check } = require('express-validator');
-const UserModel = require('../models/Users');
+const UserModel = require('../helpers/Users');
 
 const validationsSignup = [
     check('nombres')

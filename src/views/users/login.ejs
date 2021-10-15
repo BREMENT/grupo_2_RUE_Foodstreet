@@ -59,7 +59,7 @@
                         <input type="email" class="input" name="email" id="email" placeholder="Correo"
                         value="<%= locals.old && old.email %>">
                         <% if(locals.errors && errors.email){ %>
-                            <small class="alert-errors"><%= errors.email.msg %></small>
+                            <small id="email_ejs_error" class="alert-errors"><%= errors.email.msg %></small>
                         <%}%>
                         <small class="alert-errors" id="email-err"></small>
                             
@@ -67,7 +67,7 @@
                     <div class="form-register-item">
                         <input type="password" class="input" name="password" id="password" placeholder="Escribe tu Contraseña">
                         <% if(locals.errors && errors.password){ %>
-                            <small class="alert-errors"><%= errors.password.msg %></small>
+                            <small id="pass_ejs_error" class="alert-errors"><%= errors.password.msg %></small>
                         <%}%>
                         <small class="alert-errors" id="pass-err"></small>
                             
