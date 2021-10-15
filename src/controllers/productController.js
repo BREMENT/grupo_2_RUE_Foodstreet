@@ -1,5 +1,9 @@
 const {v4: uuidv4} = require('uuid');
 const { validationResult } = require('express-validator');
+const {request, response} = require('express');
+const db = require('../database/models');
+
+const Op = db.Sequelize.Op;
 const fs = require('fs');
 const path = require('path');
 
@@ -11,15 +15,32 @@ const productoController = {
         const product = products.find(p =>p.id ===req.params.id)
         res.render('productDetail', {product:product, user: req.session.userLogged })
     },
-    products: (req, res)=>{
-        const visited = products.filter(product => product.category === 'visited')
-        const inSale = products.filter(product => product.category === 'in-sale')
-        res.render('products', {visited: visited, inSale:inSale})
+    products: async(req = request, res = response)=>{
+        const inSale = db.Producto.findAll({
+            where:{ 
+                tipo_categoria_id:1
+            }
+        });
+
+        const visited = db.Producto.findAll({
+            where:{ 
+                tipo_categoria_id:2
+            }
+        });
+
+        try {
+            const [inSaleDb, visitedDb] = await Promise.all([inSale,visited]);
+            res.render('products', {visited: visitedDb, inSale:inSaleDb})
+           
+        } catch (error) {
+            console.log(error);
+        }
+
     },
-    create: (req, res)=>{
+    create: (req = request, res = response)=>{
         res.render('product-create-form');
     },
-    store: (req, res)=>{
+    store: (req = resquest, res = response)=>{
         const errors = validationResult(req);
 
         if(!errors.isEmpty()){
@@ -42,11 +63,11 @@ const productoController = {
         res.redirect('/productos');
         
     },
-    edit: (req, res)=>{
+    edit: (req = request, res = response)=>{
         const product = products.find( product => product.id === req.params.id );
         res.render('productEdit', { product });
     },
-    update: (req, res)=>{
+    update: (req = request, res = response)=>{
         const product = products.find( product => product.id === req.params.id);
 
         const errors = validationResult(req);
@@ -69,7 +90,7 @@ const productoController = {
     delete: (req, res)=>{
         // TODO: checar si hacemos un alerta para no borrar de golpe el producto o dejarlo de esta forma
     },
-    destroy: (req, res)=>{
+    destroy: (req = request, res = response)=>{
         const post = products.findIndex(product => product.id === req.params.id);
         
         if(products[post].image !== 'detault-img.png'){

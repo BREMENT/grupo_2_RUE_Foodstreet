@@ -66,11 +66,10 @@ const userController = {
             return res.render('users/signup',{errors: errors.mapped(), old: req.body });
             
         }
-
+        
         const [nombre_primero, nombre_segundo = ''] = req.body.nombres.split(' ');
         const [apellidoP, apellidoM = ''] = req.body.apellidos.split(' ');
-        //TODO: si apellidoM viene vacio retornar un error de que falta el apellidoM
-
+        
         const user = {
             foto: req.file.filename,
             nombre_primero,
@@ -82,7 +81,6 @@ const userController = {
             passwords: bcryptjs.hashSync(req.body.password, 10)
         }
 
-        // console.log(user);
         try{
            const userNew = await db.Usuario.create( user );
            console.log(userNew);

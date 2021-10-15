@@ -12,7 +12,7 @@ module.exports = (sequelize, dataTypes )=>{
         },
         nombre_segundo:{
             type: dataTypes.STRING,
-            allowNull:true
+            allowNull: false
         },
         apellidoP: { 
             type: dataTypes.STRING,
