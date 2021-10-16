@@ -112,3 +112,77 @@
 ### Menos de
 <!-- Aquello que intentamos pero no nos da tanto beneficio como se esperaba -->
 - Retraso en los sprints.
+
+## Sprint 6
+<!-- Todas aquellas cosas innovadoras que queremos probar o que notamos que deberíamos usar -->
+- Trabajar tabla de datos
+- Generar relaciones tabla de datos 
+- Estilos en perfil de usuario
+- Estilo en detalle producto
+- Comenzar a revisar sprint 7 
+
+
+### Más de
+<!-- Cosas que estamos usando o haciendo y que queremos que mejoren -->
+- Daily meeting participacion de todos los integrantes.
+- Realizar reuniones una vez a la semana.
+- Realizar carrito de compras (opcional)
+
+### Seguir haciendo
+<!-- Aquello que venimos haciendo y que nos brinda valor -->
+- Organización.
+- Trabajo en equipo.
+- Repartir tareas equitativamente.
+
+
+### Menos de
+<!-- Aquello que intentamos pero no nos da tanto beneficio como se esperaba -->
+- Retraso en los sprints.
+
+## Sprint 7
+<!-- Todas aquellas cosas innovadoras que queremos probar o que notamos que deberíamos usar -->
+- Unir DataBase con CRUD productos 
+- Comenzar a revisar sprint 8 
+- Activar campo de busqueda barra search home y redireccionar 
+- Validar imagenes back end 
+- Enviar feedback a profesor con la entrega de actividades completas por slack 
+
+
+### Más de
+<!-- Cosas que estamos usando o haciendo y que queremos que mejoren -->
+- Realizar reuniones una vez a la semana.
+
+### Seguir haciendo
+<!-- Aquello que venimos haciendo y que nos brinda valor -->
+- Organización.
+- Trabajo en equipo.
+- Repartir tareas equitativamente.
+
+
+### Menos de
+<!-- Aquello que intentamos pero no nos da tanto beneficio como se esperaba -->
+- Retraso en los sprints.
+
+
+## Sprint 8
+<!-- Todas aquellas cosas innovadoras que queremos probar o que notamos que deberíamos usar -->
+- api/users/
+- api/users/:id 
+- Edpoints - usuarios & productos 
+- Dashboard - REACT 
+
+
+### Más de
+<!-- Cosas que estamos usando o haciendo y que queremos que mejoren -->
+- Realizar reuniones una vez a la semana.
+
+### Seguir haciendo
+<!-- Aquello que venimos haciendo y que nos brinda valor -->
+- Organización.
+- Trabajo en equipo.
+- Repartir tareas equitativamente.
+
+
+### Menos de
+<!-- Aquello que intentamos pero no nos da tanto beneficio como se esperaba -->
+Trello 
