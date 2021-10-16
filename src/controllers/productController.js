@@ -16,21 +16,21 @@ const productoController = {
         res.render('productDetail', {product:product, user: req.session.userLogged })
     },
     products: async(req = request, res = response)=>{
-        const inSale = db.Producto.findAll({
-            where:{ 
-                tipo_categoria_id:1
-            }
-        });
-
-        const visited = db.Producto.findAll({
-            where:{ 
-                tipo_categoria_id:2
-            }
-        });
-
         try {
-            const [inSaleDb, visitedDb] = await Promise.all([inSale,visited]);
-            res.render('products', {visited: visitedDb, inSale:inSaleDb})
+            const [inSale, visited] = await Promise.all([
+                db.Producto.findAll({
+                    where:{
+                        tipo_categoria_id:1
+                    }
+                }),
+                db.Producto.findAll({
+                    where:{
+                        tipo_categoria_id:2
+                    }
+                })
+            ]);
+
+            res.render('products', {visited , inSale})
            
         } catch (error) {
             console.log(error);
