@@ -83,4 +83,4 @@ o
 
 ### Enlaces adicionales
 - [Tablero de trabajo](https://trello.com/b/mVW3dA9E)
-- [Weekly Standup](https://miro.com/app/board/o9J_l7btgdQ=/)
+- [Daily Weekkly](https://docs.google.com/document/d/1LADYPu3A7uDHQ4dEa-Q_RVEw5Rkmw3DHXK5NomO19ys/edit)
