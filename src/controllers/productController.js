@@ -168,6 +168,18 @@ const productoController = {
         } catch (error) {
             console.log(error);
         }
+    },
+    busqueda: async(req = request, res = response) =>{
+        const busqueda = req.query.search;
+        const productos = await db.Producto.findAll({
+            where:{
+                nombre:{
+                    [Op.like]:`%${busqueda}%`
+                },
+                estatus: 1
+            }
+        })
+        res.render('productSearch',{ productos });
     }
 };
 

@@ -11,6 +11,8 @@ router.get('/', productoController.products);
 // formulario para detalle de producto authMiddleware
 router.get('/detalle/:id', authMiddleware ,productoController.detalle);// autenticacion
 
+router.get('/busqueda', productoController.busqueda);
+
 // formulario para crear producto
 router.get('/crear', sellerMiddleware ,productoController.create);
 router.post('/crear/add', upload.single('productImage'), validationsProduct ,productoController.store);

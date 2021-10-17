@@ -127,10 +127,10 @@ body {
 @media (min-width: 568px) {
     
     /* Log-in */
-           
-      .main-section-login {
+    .main-section-login {
         justify-content: space-around;
     }
+    
     .main-article-login {
         width: 45%;
         border-top-left-radius: 5px;

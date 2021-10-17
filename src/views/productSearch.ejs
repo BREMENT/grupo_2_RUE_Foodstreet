@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head', {title:'productos'}) %>
+
+<body>
+    <!-- header -->
+    <%- include('./partials/header') %> 
+    <!-- fin header -->
+    
+     <!-- main home -->
+    <main class="main-home">
+        <section class="main-section-home">
+            <%if(productos.length>0){%>
+                <h3>Basado en tus busqueda</h3>
+                <% productos.forEach( product =>{ %>
+                    <article class="main-article-home">
+                        <a href="/productos/detalle/<%= product.producto_id %>">
+                        <img class="main-article-img" src="/images/products/<%= product.foto %>" alt="<%= product.nombre %>">
+                        <article>
+                            <p><%= product.nombre %></p>
+                            <h2>$ <%= product.precio %></h2>
+                            <span><%= product.descuento %></span>
+                            <i class="fas fa-truck"></i>
+                        </article>
+                        </a>
+                    </article>
+                <% }) %>
+            <%}else{%>
+                <div>
+                    <h1>No se encontro ningún producto</h1>
+                </div>
+            <%}%>
+        </section>
+    </main>
+    <!--fin main home-->
+
+    <!-- footer -->
+    <%- include('./partials/footer'); %> 
+    <!-- fin footer -->
+</body>
+
+</html>
+
+
+
+ 
