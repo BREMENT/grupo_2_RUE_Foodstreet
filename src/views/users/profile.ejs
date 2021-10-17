@@ -7,14 +7,14 @@
     <main class="main-profile">
         <section class="section-profile">
             <article class="section-header">
-                <%#if( user!== undefined &&  user.categoria==='vendedor'){%>
+                <%if( user!== undefined &&  user.tipo_usuario_id===1){%>
                 <div class="">
                     <a class="btn-profile add-product" href="/productos/crear">
                         add product
                         <i class="fas fa-plus-circle"></i>
                     </a>
                 </div>
-                <%#}%>
+                <%}%>
                 <div class="">
                     <a class="btn-profile danger"  href="/user/logout">
                         Logout

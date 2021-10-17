@@ -51,16 +51,27 @@ const productoController = {
         }
     },
     store: async(req = resquest, res = response)=>{
-        console.log(req.body);
-        const errors = validationResult(req);
-
-        if(!errors.isEmpty()){
-            // res.render('product-create-form',{errors: errors.mapped(), old: req.body });
-            console.log(errors.mapped());
-            return;
-        }
-
         try {
+            // console.log(req.body);
+            const errors = validationResult(req);
+
+            if(!errors.isEmpty()){
+                console.log(errors.mapped());
+                console.log(req.body);
+                const [tipoComida, tipoCategoria] = await Promise.all([
+                    db.TipoComida.findAll({where:{estatus:1}}),
+                    db.TipoCategoria.findAll({where:{estatus: 1}})
+                ]);
+
+                res.render('product-create-form',{
+                    errors: errors.mapped(), 
+                    old: req.body,
+                    tipoComida, 
+                    tipoCategoria
+                });
+                return;
+            }
+
             const {
                 name:nombre,
                 price:precio,
@@ -93,7 +104,7 @@ const productoController = {
                     include: [{association:'TipoComida'}, {association:'TipoCategoria'}]
                 }),
                 db.TipoCategoria.findAll({where:{estatus: 1}}),
-                db.TipoComida.findAll({where:{estatus: 1}})
+                db.TipoComida.findAll({where:{estatus:1}})
             ]);
 
             res.render('productEdit', { product, category, foods });
