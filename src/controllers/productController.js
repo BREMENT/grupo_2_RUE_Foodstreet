@@ -4,11 +4,6 @@ const {request, response} = require('express');
 const db = require('../database/models');
 
 const Op = db.Sequelize.Op;
-// const fs = require('fs');
-// const path = require('path');
-
-// const productsFilePath = path.join(__dirname, '../data/menu.json');   
-// let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const productoController = {
     detalle: async(req = request, res = response)=>{
@@ -170,16 +165,20 @@ const productoController = {
         }
     },
     busqueda: async(req = request, res = response) =>{
-        const busqueda = req.query.search;
-        const productos = await db.Producto.findAll({
-            where:{
-                nombre:{
-                    [Op.like]:`%${busqueda}%`
-                },
-                estatus: 1
-            }
-        })
-        res.render('productSearch',{ productos });
+        try {
+            const busqueda = req.query.search;
+            const productos = await db.Producto.findAll({
+                where:{
+                    nombre:{
+                        [Op.like]:`%${busqueda}%`
+                    },
+                    estatus: 1
+                }
+            })
+            res.render('productSearch',{ productos });
+        } catch (error) {
+            console.log(error);
+        }
     }
 };
 

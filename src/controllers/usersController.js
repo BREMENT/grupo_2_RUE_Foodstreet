@@ -13,6 +13,7 @@ const userController = {
     enter: async(req =request, res = response)=>{
         const errors = validationResult(req);
         if(!errors.isEmpty()){
+            console.log({error: errors.mapped})
             return res.render('users/login',{errors: errors.mapped(), old: req.body });
         }
 
@@ -67,22 +68,22 @@ const userController = {
             
         }
         
-        const [nombre_primero, nombre_segundo = ''] = req.body.nombres.split(' ');
-        const [apellidoP, apellidoM = ''] = req.body.apellidos.split(' ');
         
-        const user = {
-            foto: req.file.filename,
-            nombre_primero,
-            nombre_segundo,
-            apellidoP,
-            apellidoM,
-            correo: req.body.email,
-            telefono: req.body.telefono,
-            passwords: bcryptjs.hashSync(req.body.password, 10)
-        }
-
         try{
-           const userNew = await db.Usuario.create( user );
+            const [nombre_primero, nombre_segundo = ''] = req.body.nombres.split(' ');
+            const [apellidoP, apellidoM = ''] = req.body.apellidos.split(' ');
+            
+            const user = {
+                foto: req.file.filename,
+                nombre_primero,
+                nombre_segundo,
+                apellidoP,
+                apellidoM,
+                correo: req.body.email,
+                telefono: req.body.telefono,
+                passwords: bcryptjs.hashSync(req.body.password, 10)
+            }
+            const userNew = await db.Usuario.create( user );
            console.log(userNew);
         }catch(error){
             console.log(error);
