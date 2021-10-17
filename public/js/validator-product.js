@@ -1,7 +1,7 @@
 (()=>{
     'use strict';
     // variable
-    const   form = document.querySelector('form'),
+    const   form = document.querySelector('#form_product'),
             btn = document.querySelector('#btn'),
             names = document.querySelector('#name'),
             price = document.querySelector('#price'),

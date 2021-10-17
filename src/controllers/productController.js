@@ -42,8 +42,8 @@ const productoController = {
     create: async(req = request, res = response)=>{
         try {
             const [tipoComida,tipoCategoria] = await Promise.all([
-                 db.TipoComida.findAll(),
-                 db.TipoCategoria.findAll()
+                 db.TipoComida.findAll({where:{estatus:1}}),
+                 db.TipoCategoria.findAll({where:{estatus:1}})
             ])
             res.render('product-create-form',{ tipoComida, tipoCategoria });  
         } catch (error) {
@@ -51,10 +51,12 @@ const productoController = {
         }
     },
     store: async(req = resquest, res = response)=>{
+        console.log(req.body);
         const errors = validationResult(req);
 
         if(!errors.isEmpty()){
-            res.render('product-create-form',{errors: errors.mapped(), old: req.body });
+            // res.render('product-create-form',{errors: errors.mapped(), old: req.body });
+            console.log(errors.mapped());
             return;
         }
 
@@ -68,7 +70,7 @@ const productoController = {
                 description: descripcion
             } = req.body;
 
-            await db.Producto.create({
+            const newUser = await db.Producto.create({
                 nombre,
                 precio,
                 descuento,
@@ -77,7 +79,7 @@ const productoController = {
                 descripcion,
                 foto: req.file.filename
             });
-            
+            console.log(newUser);
             res.redirect('/productos');   
         } catch (error) {
             console.log(error);
@@ -90,8 +92,8 @@ const productoController = {
                 db.Producto.findByPk(Number(req.params.id),{
                     include: [{association:'TipoComida'}, {association:'TipoCategoria'}]
                 }),
-                db.TipoCategoria.findAll(),
-                db.TipoComida.findAll()
+                db.TipoCategoria.findAll({where:{estatus: 1}}),
+                db.TipoComida.findAll({where:{estatus: 1}})
             ]);
 
             res.render('productEdit', { product, category, foods });
@@ -142,13 +144,10 @@ const productoController = {
         // TODO: checar si hacemos un alerta para no borrar de golpe el producto o dejarlo de esta forma
     },
     destroy: async(req = request, res = response)=>{
-        // const post = products.findIndex(product => product.id === req.params.id);
         
-        // if(products[post].image !== 'detault-img.png'){
-        //     fs.unlinkSync(path.join(__dirname,`../../public/images/products/${products[post].image}`));
-        // }
-
-        // TODO: falta cundo eliminamos el producto eliminar la imagen
+        //fs.unlinkSync(path.join(__dirname,`../../public/images/products/${products[post].image}`));
+        
+        // TODO: realmente hay que eliminar la imagen cuando eliminamos el producto??
         try {
             const id = Number(req.params.id);
             const producto = await db.Producto.update({
@@ -176,6 +175,7 @@ const productoController = {
                 }
             })
             res.render('productSearch',{ productos });
+            console.log('Soy busqueda');
         } catch (error) {
             console.log(error);
         }

@@ -11,8 +11,6 @@ router.get('/', productoController.products);
 // formulario para detalle de producto authMiddleware
 router.get('/detalle/:id', authMiddleware ,productoController.detalle);// autenticacion
 
-router.get('/busqueda', productoController.busqueda);
-
 // formulario para crear producto
 router.get('/crear', sellerMiddleware ,productoController.create);
 router.post('/crear/add', upload.single('productImage'), validationsProduct ,productoController.store);
@@ -20,6 +18,9 @@ router.post('/crear/add', upload.single('productImage'), validationsProduct ,pro
 // formulario para editar producto sellerMiddleware
 router.get('/editar/:id', sellerMiddleware ,productoController.edit);
 router.put('/editar/:id', upload.single('productImage') ,validationsProduct,  productoController.update);
+
+router.get('/busqueda', productoController.busqueda);
+
 // sellerMiddleware
 router.put('/destroy/:id', sellerMiddleware ,productoController.destroy);
 
