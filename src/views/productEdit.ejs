@@ -12,11 +12,11 @@
         <section class="main-register-section-form-product">
             <h3>formulario de edición de producto</h3>
             <div class="form-register-product">
-                <form action="/productos/editar/<%= product.id %>?_method=PUT" method="post">
+                <form action="/productos/editar/<%= product.producto_id %>?_method=PUT" method="post" enctype="multipart/form-data">
                     <div class="form-register-item-product">
                         <label for="">Nombre del producto</label>
                         <input type="text" class="input" id="name" name="name" placeholder="nombre"
-                        value="<%= product.name %>">
+                        value="<%= product.nombre %>">
                         <% if (locals.errors && errors.name) { %>
                             <small class="alert-errors"><%= errors.name.msg %> </small>
                         <% } %>
@@ -25,7 +25,7 @@
                     <div class="form-register-item-product">
                         <label for="">Precio  del producto</label>
                         <input type="text" class="input" id="price" name="price" placeholder="precio"
-                        min="0" step="0.01" value="<%= product.price %>">
+                        min="0" step="0.01" value="<%= product.precio %>">
                         <% if (locals.errors && errors.price) { %>
                             <small class="alert-errors"><%= errors.price.msg %></small>
                         <% } %>
@@ -34,7 +34,7 @@
                     <div class="form-register-item-product">
                         <label for="">Descuento</label>
                         <input type="text" class="input" id="discount" name="discount" placeholder="descuento"
-                        min="0" max="99" value="<%= product.discount %>">
+                        min="0" max="99" value="<%= product.descuento %>">
                         <% if (locals.errors && errors.discount) { %>
                             <small class="alert-errors"><%= errors.discount.msg %> </small>
                         <% } %>
@@ -44,10 +44,11 @@
                         <label for="">Categoria</label>
                         <select name="category" id="category" class="select-option">
                             <option value="">Elige una opción</option>
-                            <option value="in-sale"
-                            <%= (product.category === 'in-sale')? 'selected': '' %> >En oferta</option>
-                            <option value="visited"
-                            <%= (product.category === 'visited')? 'selected': '' %>>Últimos agregados</option>
+                            <%category.forEach(categoria=>{%>
+                                <option value="<%= categoria.tipo_categoria_id %>"
+                                    <%= (categoria.tipo_categoria_id === product.tipo_categoria_id)? 'selected' : ''%>
+                                ><%=categoria.descripcion%></option>
+                            <%})%>
                         </select>
                         <% if (locals.errors && errors.category) { %>
                             <small class="alert-errors"><%= errors.category.msg %> </small>
@@ -58,18 +59,11 @@
                         <label for="">Tipo de comida</label>
                         <select name="food_type" id="food_type" class="select-option">
                             <option value="">Elige una opción</option>
-                            <option value="Mexican"
-                            <%= (product.food_type === 'Mexican')? 'selected' : '' %> >Mexicana</option>
-							<option value="Chinese"
-                            <%= (product.food_type === 'Chinese')? 'selected' : '' %> >China</option>
-							<option value="Japanese"
-                            <%= (product.food_type === 'Japanese')? 'selected' : '' %> >Japonesa</option>
-							<option value="French"
-                            <%= (product.food_type === 'French')? 'selected' : '' %> >Francesa</option>
-							<option value="Italian"
-                            <%= (product.food_type === 'Italian')? 'selected' : '' %> >Italiana</option>
-							<option value="Veggie"
-                            <%= (product.food_type === 'Veggie')? 'selected' : '' %> >vegetariana</option>
+                            <%foods.forEach(comida =>{%>
+                                <option value="<%= comida.tipo_comida_id %>"
+                                    <%= (comida.tipo_comida_id === product.tipo_comida_id)?'selected' : '' %>
+                                ><%= comida.descripcion %></option>    
+                            <%})%>
                         </select>
                         <% if (locals.errors && errors.food_type) { %>
                             <small class="alert-errors"><%= errors.food_type.msg %> </small>
@@ -78,7 +72,7 @@
                     </div>
                     <div class="form-register-item-product">
                         <label for="">Descripción</label>
-                        <textarea name="description" class="input" id="description"><%= product.description %></textarea>
+                        <textarea name="description" class="input" id="description"><%= product.descripcion %></textarea>
                         <% if (locals.errors && errors.description) { %>
                             <small class="alert-errors"><%= errors.description.msg %> </small>
                         <% } %>

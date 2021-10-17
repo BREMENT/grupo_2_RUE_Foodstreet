@@ -8,17 +8,17 @@ const authMiddleware = require('../middlewares/authMiddleware');
 
 // formulario para ver productos
 router.get('/', productoController.products);
-// formulario para detalle de producto
-router.get('/detalle/:id', authMiddleware, productoController.detalle);// autenticacion
+// formulario para detalle de producto authMiddleware
+router.get('/detalle/:id', authMiddleware ,productoController.detalle);// autenticacion
 
 // formulario para crear producto
 router.get('/crear', sellerMiddleware ,productoController.create);
-router.post('/crear', upload.single('productImage'), validationsProduct ,productoController.store);
+router.post('/crear/add', upload.single('productImage'), validationsProduct ,productoController.store);
 
-// formulario para editar producto
+// formulario para editar producto sellerMiddleware
 router.get('/editar/:id', sellerMiddleware ,productoController.edit);
-router.put('/editar/:id', validationsProduct,  productoController.update);
-
-router.delete('/destroy/:id', sellerMiddleware ,productoController.destroy);
+router.put('/editar/:id', upload.single('productImage') ,validationsProduct,  productoController.update);
+// sellerMiddleware
+router.put('/destroy/:id', sellerMiddleware ,productoController.destroy);
 
 module.exports = router;

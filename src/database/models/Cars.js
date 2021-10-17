@@ -6,7 +6,6 @@ module.exports = (sequelize, dataTypes ) =>{
             primaryKey: true,
             autoIncrement: true,
         },
-        // TODO: usuario_id
         cantidad_items:{
             type: dataTypes.INTEGER,
             allowNull: false
@@ -14,13 +13,24 @@ module.exports = (sequelize, dataTypes ) =>{
         precio_total:{
             type: dataTypes.FLOAT,
             allowNull: false
+        },
+        usuario_id: {
+            type: dataTypes.INTEGER
         }
     };
     const config = {
         tableName: 'carritos',
         timestamps: false
     };
-    // TODO: relaciones
+
     const Carrito = sequelize.define(alias, column, config);
+
+    Carrito.associate = models =>{
+        Carrito.belongsTo(models.Usuario,{
+            foreignKey: 'usuario_id',
+            as: 'CarritoUsuario'
+        });
+    }
+
     return Carrito;
 }

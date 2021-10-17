@@ -72,6 +72,6 @@ VALUES
 '1634342619607_perfil_.jpg',2),
 ('gael','matias','gallegos','leon','matiasLeon@gmail.com','9955989001',
 '$2a$10$hU4EoWhelDZtFEOuo5HOueIvAJqNz8Hwp6zt9t4GnfqsRmvi6x1k2',
-'1634342801933_perfil_.jpg',1),
+'1634342801933_perfil_.jpg',1);
 
 /*insertar tabla carrito opcional*/

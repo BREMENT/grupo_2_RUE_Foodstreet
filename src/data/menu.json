@@ -78,5 +78,14 @@
     "item-type": "Tacos",
     "description": "Tortilla de maíz, con camarones empanizados, col, jitomate, aguacate, cilantro y crema",
     "image": "taco_camaron.jpg"
+  },
+  {
+    "name": "el taquisimo",
+    "price": "150",
+    "discount": "14",
+    "category": "1",
+    "food_type": "2",
+    "description": "es una prueba de insercion",
+    "image": "1634409607902_productImage_.png"
   }
 ]

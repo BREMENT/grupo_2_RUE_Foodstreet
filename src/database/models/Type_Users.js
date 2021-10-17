@@ -9,15 +9,24 @@ module.exports = (sequelize, dataTypes ) =>{
         descripcion:{
             type: dataTypes.STRING,
             allowNull: false
+        },
+        estatus: {
+            type: dataTypes.INTEGER,
+            defaultValue: 1
         }
     };
     const config = {
         tableName: 'tipo_usuarios',
         timestamps: false
     }
-
-    // TODO: relaciones
-
     const TipoUsuario = sequelize.define(alias, column, config);
+
+    TipoUsuario.associate = models =>{
+        TipoUsuario.hasMany(models.Usuario, {
+            foreignKey: 'tipo_usuario_id',
+            as:'TipoUsuario_usuario'
+        });
+    }
+
     return TipoUsuario;
 }

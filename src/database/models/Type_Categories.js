@@ -9,6 +9,10 @@ module.exports = (sequelize, dataTypes ) =>{
         descripcion: {
             type: dataTypes.STRING,
             allowNull: false
+        },
+        estatus: {
+            type: dataTypes.INTEGER,
+            defaultValue: 1
         }
     };
     const config = {
@@ -16,7 +20,14 @@ module.exports = (sequelize, dataTypes ) =>{
         timestamps: false
     };
 
-    // TODO: relaciones
     const TipoCategoria = sequelize.define(alias, column, config);
+
+    TipoCategoria.associate = models =>{
+        TipoCategoria.hasMany(models.Producto, {
+            foreignKey: 'tipo_comida_id',
+            as: 'TipoComida_Producto'
+        });
+    }
+
     return TipoCategoria;
 }

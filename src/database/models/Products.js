@@ -18,8 +18,12 @@ module.exports = (sequelize, dataTypes) =>{
             type: dataTypes.FLOAT,
             allowNull: true,
         },
-        // TODO: tipo_comida_id
-        // TODO: tipo_categoria_id
+        tipo_comida_id:{
+            type: dataTypes.INTEGER
+        },
+        tipo_categoria_id:{
+            type: dataTypes.INTEGER
+        },
         descripcion:{
             type: dataTypes.STRING,
             allowNull: false,
@@ -27,6 +31,10 @@ module.exports = (sequelize, dataTypes) =>{
         foto: {
             type: dataTypes.STRING,
             allowNull: false,
+        },
+        estatus: {
+            type: dataTypes.INTEGER,
+            defaultValue: 1
         }
     };
     const config = {
@@ -34,8 +42,18 @@ module.exports = (sequelize, dataTypes) =>{
         timestamps: false
     };
 
-    //TODO: relaciones
-
     const Producto = sequelize.define(alias, column, config);
+
+    Producto.associate = models =>{
+        Producto.belongsTo(models.TipoCategoria,{
+            foreignKey: 'tipo_categoria_id',
+            as: 'TipoCategoria'
+        });
+
+        Producto.belongsTo(models.TipoComida,{
+            foreignKey: 'tipo_comida_id',
+            as: 'TipoComida'
+        });
+    }
     return Producto;
 }

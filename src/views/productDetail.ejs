@@ -10,39 +10,39 @@
         <section class="product">  
             <article class="img-product">
                 <div>
-                    <img src="/images/products/<%= product.image %>" alt="">
+                    <img src="/images/products/<%= product.foto %>" alt="">
                     <div>
-                        <%= product.description %>
+                        <%= product.descripcion %>
                     </div>
                 </div>
             </article>
             <article class="detail">
                 <div class="product-title">
-                    <h1><%= product.name %></h1>
+                    <h1><%= product.nombre %></h1>
                 </div>
                 <div>
-                    $<%= product.price %>
+                    $<%= product.precio %>
                 </div>
                 <div>
-                    10%
+                    <%= product.descuento %>%
                 </div>
                 <div class="center-flex">
                     <button class="btn btn-primary w-100">comprar</button>
                 </div>
-                <%if( user!== undefined &&  user.categoria==='vendedor'){%>
+                <%#if( user!== undefined &&  user.categoria==='vendedor'){%>
                 <div class="w-100 center-between">
                     <div class="w-50">
-                        <a href="/productos/editar/<%= product.id %>">
+                        <a href="/productos/editar/<%= product.producto_id %>">
                             <button class="btn btn-primary w-100">Editar</button>
                         </a>
                     </div>
                     <div class="w-50">
-                        <form action="/productos/destroy/<%= product.id %>?_method=DELETE" method="POST">
+                        <form action="/productos/destroy/<%= product.producto_id %>?_method=PUT" method="POST">
                             <button type="submit" class="btn btn-danger w-100">Eliminar</button>
                         </form>
                     </div>
                 </div>
-                <%}%>
+                <%#}%>
             </article>
         </section>
     </main>

@@ -38,8 +38,10 @@ module.exports = (sequelize, dataTypes )=>{
         telefono:{
             type: dataTypes.STRING,
             allowNull: false
+        },
+        tipo_usuario_id:{
+            type: dataTypes.INTEGER
         }
-        // TODO: tipo_usuario_id
     };
     const config = {
         tableName: 'usuarios',
@@ -48,7 +50,17 @@ module.exports = (sequelize, dataTypes )=>{
 
     const Usuario = sequelize.define(alias, column, config);
 
-    // TODO: asociaciones
+    Usuario.associate = models =>{
+        Usuario.belongsTo(models.TipoUsuario,{
+            foreignKey: 'tipo_usuario_id',
+            as: 'TipoUsuario'
+        });
+
+        Usuario.hasOne(models.Carrito,{
+            foreignKey: 'usuario_id',
+            as: 'UsuarioCarrito'
+        });
+    }
 
     return Usuario;
 }
