@@ -47,7 +47,7 @@
 								<option value="">Elige una opción</option>
 								<%tipoCategoria.forEach(categoria=>{%>
 									<option value="<%=categoria.tipo_categoria_id %>"
-										<%= categoria.tipo_categoria_id === Number(old.category) ? 'selected' : ''%>	
+										<%= categoria.tipo_categoria_id === ( locals.old && Number(old.category)) ? 'selected' : ''%>	
 									> <%=categoria.descripcion%> </option>
 								<%})%>
 							</select>
@@ -62,7 +62,7 @@
 								<option value="">Elige una opción</option>
 								<% tipoComida.forEach(comida=>{ %>
 									<option value="<%= comida.tipo_comida_id %>"
-										<%= (comida.tipo_comida_id === Number(old.food_type)) ? 'selected' : '' %>
+										<%= comida.tipo_comida_id ===(locals.old && Number(old.food_type)) ? 'selected' : '' %>
 									><%= comida.descripcion %></option>
 								<%})%>
 							</select>

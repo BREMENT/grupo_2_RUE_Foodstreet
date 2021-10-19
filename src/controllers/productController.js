@@ -8,7 +8,16 @@ const Op = db.Sequelize.Op;
 const productoController = {
     detalle: async(req = request, res = response)=>{
         try {    
-            const product = await db.Producto.findByPk(Number(req.params.id));
+            const id = Number(req.params.id);
+            const product = await db.Producto.findOne({
+                where:{
+                    estatus:1,
+                    producto_id: id
+                }
+            });
+            if(!product){
+                res.redirect('/productos');
+            }
             res.render('productDetail', {product, user: req.session.userLogged })
         } catch (error) {
             console.log(error);
@@ -56,8 +65,8 @@ const productoController = {
             const errors = validationResult(req);
 
             if(!errors.isEmpty()){
-                console.log(errors.mapped());
-                console.log(req.body);
+                // console.log(errors.mapped());
+                // console.log(req.body);
                 const [tipoComida, tipoCategoria] = await Promise.all([
                     db.TipoComida.findAll({where:{estatus:1}}),
                     db.TipoCategoria.findAll({where:{estatus: 1}})
@@ -99,29 +108,52 @@ const productoController = {
     },
     edit: async(req = request, res = response)=>{
         try{
-            const [product, category, foods] = await Promise.all([
-                db.Producto.findByPk(Number(req.params.id),{
+            const id = Number(req.params.id);
+            const [product, tipoCategoria, tipoComida] = await Promise.all([
+                db.Producto.findOne({
+                    where:{
+                        estatus: 1,
+                        producto_id: id
+                    },
                     include: [{association:'TipoComida'}, {association:'TipoCategoria'}]
                 }),
                 db.TipoCategoria.findAll({where:{estatus: 1}}),
                 db.TipoComida.findAll({where:{estatus:1}})
             ]);
 
-            res.render('productEdit', { product, category, foods });
+            if(!product){
+                res.redirect('/productos');
+            }
+
+            res.render('productEdit', { product, tipoCategoria, tipoComida });
         }catch (error) {
             console.log(error);
         }
     },
     update: async(req = request, res = response)=>{
-        const id = Number(req.params.id);
-        const errors = validationResult(req);
-
-        if(!errors.isEmpty()){    
-            res.render('productEdit' ,{errors: errors.mapped(), product});
-            return;
-        }
-
+        
         try {
+            const id = Number(req.params.id);
+            const errors = validationResult(req);
+    
+            if(!errors.isEmpty()){   
+                const [product, tipoComida, tipoCategoria] = await Promise.all([
+                    db.Producto.findOne({
+                        where: {
+                            estatus: 1,
+                            producto_id: id
+                        }
+                    }),
+                    db.TipoComida.findAll({where:{estatus:1}}),
+                    db.TipoCategoria.findAll({where:{estatus: 1}})
+                ]);
+                if(!product){
+                    res.redirect('/productos');
+                }
+                res.render('productEdit' ,{errors: errors.mapped(), product, tipoComida, tipoCategoria});
+                return;
+            }
+
             const {
                 name: nombre,
                 price: precio,
@@ -143,7 +175,7 @@ const productoController = {
                 where:{
                     producto_id: id,
                 }
-            })
+            });
             
             console.log(producto);
             res.redirect('/productos/');
@@ -165,7 +197,8 @@ const productoController = {
                 estatus: 0
             },{
                 where:{
-                    producto_id: id
+                    producto_id: id,
+                    estatus: 1
                 }
             });
             console.log(producto);
