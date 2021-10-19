@@ -12,7 +12,7 @@
         <section class="main-register-section-form-product">
             <h3>formulario de edición de producto</h3>
             <div class="form-register-product">
-                <form action="/productos/editar/<%= product.producto_id %>?_method=PUT" method="post" enctype="multipart/form-data">
+                <form id="form_product" action="/productos/editar/<%= product.producto_id %>?_method=PUT" method="post" enctype="multipart/form-data">
                     <div class="form-register-item-product">
                         <label for="">Nombre del producto</label>
                         <input type="text" class="input" id="name" name="name" placeholder="nombre"
@@ -24,7 +24,7 @@
                     </div>
                     <div class="form-register-item-product">
                         <label for="">Precio  del producto</label>
-                        <input type="text" class="input" id="price" name="price" placeholder="precio"
+                        <input type="number" class="input" id="price" name="price" placeholder="precio"
                         min="0" step="0.01" value="<%= product.precio %>">
                         <% if (locals.errors && errors.price) { %>
                             <small class="alert-errors"><%= errors.price.msg %></small>
@@ -33,7 +33,7 @@
                     </div>
                     <div class="form-register-item-product">
                         <label for="">Descuento</label>
-                        <input type="text" class="input" id="discount" name="discount" placeholder="descuento"
+                        <input type="number" class="input" id="discount" name="discount" placeholder="descuento"
                         min="0" max="99" value="<%= product.descuento %>">
                         <% if (locals.errors && errors.discount) { %>
                             <small class="alert-errors"><%= errors.discount.msg %> </small>
@@ -83,7 +83,7 @@
                     </div>
                     <div class="form-register-itme">
                         <div class="input-file">
-                            <label for="file">Imagen del producto</label>
+                            <label class="text-label" for="file">Imagen del producto</label>
                             <input type="file" name="productImage" id="file">
                         </div>
                         <small class="alert-errors" id="file_err"></small>
@@ -102,7 +102,7 @@
     <!-- fin footer -->
 
     <script type="text/javascript" src="/js/validator.min.js"></script>
-    <script src="/js/validator-product.js"></script>
+    <script src="/js/validator-product-edit.js"></script>
 </body>
 
 </html>

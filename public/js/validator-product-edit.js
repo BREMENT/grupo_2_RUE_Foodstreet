@@ -20,7 +20,7 @@
            category_err = document.querySelector('#category_err');
  
     const errors = {};
-    
+
     // funciones
     const notIsEmpty = input =>{
         if(validator.isEmpty(input.value, { ignore_whitespace: true})){
@@ -91,7 +91,7 @@
     
     const notEmptyFile = input => {
         if(!input.files[0]){
-            errors[input.name] = `El campo ${input.name} es requerido`;
+            // errors[input.name] = `El campo ${input.name} es requerido`;
             return false;
         }
         delete errors[input.name];

@@ -135,15 +135,15 @@ const productoController = {
         try {
             const id = Number(req.params.id);
             const errors = validationResult(req);
-    
+            const product = await db.Producto.findOne({
+                where: {
+                    estatus: 1,
+                    producto_id: id
+                }
+            });
+
             if(!errors.isEmpty()){   
-                const [product, tipoComida, tipoCategoria] = await Promise.all([
-                    db.Producto.findOne({
-                        where: {
-                            estatus: 1,
-                            producto_id: id
-                        }
-                    }),
+                const [tipoComida, tipoCategoria] = await Promise.all([
                     db.TipoComida.findAll({where:{estatus:1}}),
                     db.TipoCategoria.findAll({where:{estatus: 1}})
                 ]);
@@ -153,7 +153,13 @@ const productoController = {
                 res.render('productEdit' ,{errors: errors.mapped(), product, tipoComida, tipoCategoria});
                 return;
             }
-
+            let file;
+            if(!req.file){
+                file = product.foto;
+            }else{
+                file = req.file.filename;
+            }
+            
             const {
                 name: nombre,
                 price: precio,
@@ -170,7 +176,7 @@ const productoController = {
                 tipo_categoria_id,
                 tipo_comida_id,
                 descripcion,
-                foto: req.file.filename
+                foto: file
             },{
                 where:{
                     producto_id: id,
