@@ -1,4 +1,6 @@
-const {v4: uuidv4} = require('uuid');
+// const {v4: uuidv4} = require('uuid');
+const path = require('path');
+const fs = require('fs');
 const { validationResult } = require('express-validator');
 const {request, response} = require('express');
 const db = require('../database/models');
@@ -59,7 +61,7 @@ const productoController = {
             console.log(error);
         }
     },
-    store: async(req = resquest, res = response)=>{
+    store: async(req = request, res = response)=>{
         try {
             // console.log(req.body);
             const errors = validationResult(req);
@@ -67,6 +69,7 @@ const productoController = {
             if(!errors.isEmpty()){
                 // console.log(errors.mapped());
                 // console.log(req.body);
+                fs.unlinkSync(path.join(__dirname, `../../public/images/products/${ req.file.filename }`));
                 const [tipoComida, tipoCategoria] = await Promise.all([
                     db.TipoComida.findAll({where:{estatus:1}}),
                     db.TipoCategoria.findAll({where:{estatus: 1}})
@@ -142,7 +145,8 @@ const productoController = {
                 }
             });
 
-            if(!errors.isEmpty()){   
+            if(!errors.isEmpty()){
+                fs.unlinkSync(path.join(__dirname, `../../public/images/products/${req.file.filename}`));
                 const [tipoComida, tipoCategoria] = await Promise.all([
                     db.TipoComida.findAll({where:{estatus:1}}),
                     db.TipoCategoria.findAll({where:{estatus: 1}})
@@ -157,6 +161,7 @@ const productoController = {
             if(!req.file){
                 file = product.foto;
             }else{
+                fs.unlinkSync(path.join(__dirname, `../../public/images/products/${product.foto}`));
                 file = req.file.filename;
             }
             
