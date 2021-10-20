@@ -86,7 +86,9 @@
 							</div>
 							<small class="alert-errors" id="file_err"></small>	
 						</div>
-
+						<%if( locals.errorImagen && errorImagen.msg ){%>
+                            <small class="alert-errors"><%= errorImagen.msg %></small>	
+                        <%}%>
 						<div class="form-register-item-product div-btns-product">
 							<button id="btn" type="submit" class="btn-register-product">Guardar producto</button>
 						</div>
@@ -105,8 +107,8 @@
     <!-- footer -->
     <%- include('./partials/footer') %> 
     <!-- fin footer -->
-	<script type="text/javascript" src="/js/validator.min.js"></script>
-    <script src="/js/validator-product-add.js"></script>
+	<!-- <script type="text/javascript" src="/js/validator.min.js"></script>
+    <script src="/js/validator-product-add.js"></script> -->
 </body>
 
 </html>

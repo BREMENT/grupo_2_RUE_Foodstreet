@@ -13,11 +13,30 @@ router.get('/detalle/:id', authMiddleware ,productoController.detalle);// autent
 
 // formulario para crear producto
 router.get('/crear', sellerMiddleware ,productoController.create);
-router.post('/crear/add', upload.single('productImage'), validationsProduct ,productoController.store);
+router.post('/crear/add',(req, res, next)=>{
+    upload(req, res, (err)=>{
+        if(err){
+            console.log('Revento la creacion de producto');
+            console.log(err.message);
+            req.errorImagen = err.message;
+        }
+
+        next();
+    });
+}, validationsProduct ,productoController.store);
 
 // formulario para editar producto sellerMiddleware
 router.get('/editar/:id', sellerMiddleware ,productoController.edit);
-router.put('/editar/:id', upload.single('productImage') ,validationsProduct,  productoController.update);
+router.put('/editar/:id', (req, res, next)=>{
+    upload(req, res, (err)=>{
+        if(err){
+            console.log('Revento en edicion');
+            console.log(err.message);
+            req.errorImagen = err.message;
+        }
+        next();
+    });
+} ,validationsProduct,  productoController.update);
 
 router.get('/busqueda', productoController.busqueda);
 

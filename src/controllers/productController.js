@@ -66,22 +66,30 @@ const productoController = {
             // console.log(req.body);
             const errors = validationResult(req);
 
-            if(!errors.isEmpty()){
+            if(!errors.isEmpty() || req.errorImagen || !req.file ){
                 // console.log(errors.mapped());
                 // console.log(req.body);
-                fs.unlinkSync(path.join(__dirname, `../../public/images/products/${ req.file.filename }`));
+                if(!req.errorImagen && req.file ){
+                    fs.unlinkSync(path.join(__dirname, `../../public/images/products/${ req.file.filename }`));
+                }
+
                 const [tipoComida, tipoCategoria] = await Promise.all([
                     db.TipoComida.findAll({where:{estatus:1}}),
                     db.TipoCategoria.findAll({where:{estatus: 1}})
                 ]);
 
-                res.render('product-create-form',{
+                return res.render('product-create-form',{
                     errors: errors.mapped(), 
                     old: req.body,
                     tipoComida, 
-                    tipoCategoria
+                    tipoCategoria,
+                    errorImagen:{ msg: 
+                        (req.errorImagen) ? req.errorImagen 
+                        : (!req.file) ? 'EL campo de la imagen es requerido'
+                        : ''
+                    }
                 });
-                return;
+                
             }
 
             const {
@@ -93,7 +101,7 @@ const productoController = {
                 description: descripcion
             } = req.body;
 
-            const newUser = await db.Producto.create({
+            const newProduct = await db.Producto.create({
                 nombre,
                 precio,
                 descuento,
@@ -102,7 +110,7 @@ const productoController = {
                 descripcion,
                 foto: req.file.filename
             });
-            console.log(newUser);
+            console.log(newProduct);
             res.redirect('/productos');   
         } catch (error) {
             console.log(error);
@@ -145,18 +153,30 @@ const productoController = {
                 }
             });
 
-            if(!errors.isEmpty()){
-                fs.unlinkSync(path.join(__dirname, `../../public/images/products/${req.file.filename}`));
+            if(!errors.isEmpty() || req.errorImagen ){
+                console.error(req.errorImagen);
+                if(!req.errorImagen){
+                    fs.unlinkSync(path.join(__dirname, `../../public/images/products/${req.file.filename}`));
+                }
+
                 const [tipoComida, tipoCategoria] = await Promise.all([
                     db.TipoComida.findAll({where:{estatus:1}}),
                     db.TipoCategoria.findAll({where:{estatus: 1}})
                 ]);
+                
                 if(!product){
                     res.redirect('/productos');
                 }
-                res.render('productEdit' ,{errors: errors.mapped(), product, tipoComida, tipoCategoria});
-                return;
+
+                return res.render('productEdit' ,{
+                    errors: errors.mapped(), 
+                    product, 
+                    tipoComida, 
+                    tipoCategoria, 
+                    errorImagen:{ msg: req.errorImagen }
+                });
             }
+
             let file;
             if(!req.file){
                 file = product.foto;

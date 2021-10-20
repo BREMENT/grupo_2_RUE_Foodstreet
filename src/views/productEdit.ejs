@@ -86,6 +86,9 @@
                             <label class="text-label" for="file">Imagen del producto</label>
                             <input type="file" name="productImage" id="file">
                         </div>
+                        <%if( locals.errorImagen && errorImagen.msg ){%>
+                            <small class="alert-errors"><%= errorImagen.msg %></small>	
+                        <%}%>
                         <small class="alert-errors" id="file_err"></small>
                     </div>
                     <div class="form-register-item-product div-btns-product">
@@ -101,8 +104,8 @@
     <%- include('./partials/footer') %> 
     <!-- fin footer -->
 
-    <script type="text/javascript" src="/js/validator.min.js"></script>
-    <script src="/js/validator-product-edit.js"></script>
+    <!-- <script type="text/javascript" src="/js/validator.min.js"></script>
+    <script src="/js/validator-product-edit.js"></script> -->
 </body>
 
 </html>

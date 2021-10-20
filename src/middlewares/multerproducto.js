@@ -12,6 +12,19 @@ const storage = multer.diskStorage({
     }
 });
 
-upload = multer({ storage });
+upload = multer({ 
+    storage,
+    limits:{
+        fieldSize: 1000000,
+        fileSize: 1000000,
+    },
+    fileFilter: function(req, file, cb){
+        const fileExtend = path.extname(file.originalname);
+        if(!['.jpg','.png','.gif','.jpeg'].includes(fileExtend)){
+            return cb(new Error('El tipo de archivo que intenta subir no es permitido'));
+        }
+        cb(null, true);
+    }
+ }).single('productImage');
 
 module.exports = upload;
