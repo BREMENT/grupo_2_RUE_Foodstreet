@@ -101,12 +101,17 @@
             <div class="form-register-item">
               <div class="div-register-input">
                 <div class="div-register-item">
-                  <select id="" class="select-option" name="categoria">
+                  <select id="categoria" class="select-option" name="categoria">
                     <option disabled="true" selected="true" value="">
                       Selecciona
                     </option>
-                    <option value="vendedor">Vendedor</option>
-                    <option value="cliente">Cliente</option>
+                    <%tipoUsuarios.forEach(usuario=>{%>
+                      <option value="<%= usuario.tipo_usuario_id %>"
+                        <%= usuario.tipo_usuario_id === (locals.old && Number(old.categoria))
+                        ? 'selected' : '' %>  
+                      ><%= usuario.descripcion %></option>  
+                    <%})%>
+
                   </select>
                   <% if (locals.errors && errors.categoria) { %>
                   <small class="alert-errors"
@@ -152,6 +157,9 @@
                 >
                 <input type="file" id="perfil" name="perfil" />
               </div>
+                <%if( locals.errorImagen && errorImagen.msg ){%>
+                    <small class="alert-errors"><%= errorImagen.msg %></small>	
+                <%}%>
                 <small class="alert-errors" id="file_err"></small>
             </div>
 

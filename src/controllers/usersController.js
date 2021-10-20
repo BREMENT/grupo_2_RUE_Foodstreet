@@ -1,3 +1,5 @@
+const path = require('path');
+const fs = require('fs');
 const bcryptjs = require('bcryptjs');// true
 const { validationResult } = require('express-validator');// true
 const {request, response} = require('express');
@@ -56,20 +58,51 @@ const userController = {
         }
 
     },
-    signup: (req = request, res = response) => {
-        res.render('users/signup');
+    signup: async(req = request, res = response) => {
+        try{
+            const tipoUsuarios = await db.TipoUsuario.findAll({
+                where: {
+                    estatus: 1
+                }
+            });
+
+            res.render('users/signup', {
+                tipoUsuarios
+            });
+        }catch(err){
+            console.log(err);
+        }
     },
     create: async(req = request, res = response) => {
-        const errors = validationResult(req);
-        
-        if(!errors.isEmpty()){
-            console.log({errors: errors.mapped()});
-            return res.render('users/signup',{errors: errors.mapped(), old: req.body });
-            
-        }
-        
-        
         try{
+
+            const errors = validationResult(req);
+            
+            if(!errors.isEmpty() || req.errorImagen || !req.file ){
+                console.log({errors: errors.mapped()});
+    
+                if(!req.errorImagen && req.file ){
+                    fs.unlinkSync(path.join(__dirname, `../../public/images/users/${ req.file.filename }`));
+                }
+                
+                const tipoUsuarios = await db.TipoUsuario.findAll({
+                    where: {
+                        estatus: 1
+                    }
+                });
+    
+                return res.render('users/signup',{
+                    errors: errors.mapped(), 
+                    old: req.body,
+                    tipoUsuarios,
+                    errorImagen: {
+                        msg: (req.errorImagen) ? req.errorImagen
+                            : (!req.file) ? 'EL campo de la imagen es requerido' 
+                            : ''
+                    }
+                });     
+            }
+
             const [nombre_primero, nombre_segundo = ''] = req.body.nombres.split(' ');
             const [apellidoP, apellidoM = ''] = req.body.apellidos.split(' ');
             
@@ -79,6 +112,7 @@ const userController = {
                 nombre_segundo,
                 apellidoP,
                 apellidoM,
+                tipo_usuario_id: req.body.categoria,
                 correo: req.body.email,
                 telefono: req.body.telefono,
                 passwords: bcryptjs.hashSync(req.body.password, 10)
@@ -86,8 +120,8 @@ const userController = {
             const userNew = await db.Usuario.create( user );
             console.log(userNew);
             delete userNew.dataValues.passwords;
-            req.session.userLogged = userNew.dataValues
-            res.redirect('/user/profile')
+            req.session.userLogged = userNew.dataValues;
+            res.redirect('/user/profile');
         }catch(error){
             console.log(error);
         }

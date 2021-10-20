@@ -12,7 +12,16 @@ const authMiddleware = require('../middlewares/authMiddleware');
 const upload = require('../middlewares/multerMiddleware');
 
 router.get('/signup', loggedMiddleware ,userController.signup);
-router.post('/create',upload.single('perfil'), validationsSignup ,userController.create);
+router.post('/create',(req, res, next)=>{
+    upload(req, res, (err)=>{
+        if(err){
+            console.log('Revento en crear usuario');
+            console.log(err.message);
+            req.errorImagen = err.message;
+        }
+        next();
+    });
+}, validationsSignup ,userController.create);
 
 router.get('/login', loggedMiddleware ,userController.login);
 router.post('/enter', validationsLogin ,userController.enter);
