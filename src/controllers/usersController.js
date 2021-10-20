@@ -84,12 +84,15 @@ const userController = {
                 passwords: bcryptjs.hashSync(req.body.password, 10)
             }
             const userNew = await db.Usuario.create( user );
-           console.log(userNew);
+            console.log(userNew);
+            delete userNew.dataValues.passwords;
+            req.session.userLogged = userNew.dataValues
+            res.redirect('/user/profile')
         }catch(error){
             console.log(error);
         }
 
-        res.redirect('/user/login');
+        
     },
     profile: (req, res)=>{
         res.render('users/profile', {user: req.session.userLogged });
