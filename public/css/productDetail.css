@@ -1,25 +1,29 @@
 body{
     background-color: #faede3;
 }
+
 .main-product{
     margin: 10px 15px;
 }
 
 .product{
-    padding: 10px;
+    /* padding: 10px; */
     background-color: #fff;
     border-radius: 5px;
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 .img-product{
     width: 100%;
+    /* background-color: red; */
+    height: 350px;
 }
 
 .img-product img{
     width: 100%;
-    height: 300px;
+    height: 350px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
@@ -61,34 +65,84 @@ body{
 
 .product-title{
     width: 100%;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.price-before{
+    margin: 10px 0px;
+    display: flex;
+    color: rgb(167, 166, 166);
+}
+
+.price-before div{
+    margin-left: 5px;
+    text-decoration:line-through;
+}
+
+.product-desc{
+    text-align: justify;
+}
+
+.price-discount{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.product-price{
+    /* background-color:yellow; */
+    font-size: 1.8rem;
 }
 
 
+.product-discount{
+    /* background-color: red; */
+    font-size: 1.1rem;
+    margin-left: 5px;
+    color: rgb(2, 148, 2);
+}
+
 .detail{
-    padding: 5px;
+    padding: 10px;
     width: 100%;
+    height: calc(100% - 5px);
+    /* background-color: blue; */
 }
 
 
 @media (min-width: 568px){
     .product-title{
-        text-align: center;
+        font-size: 1.5rem;
     }
 
     .img-product{
-        width: 60%;
-        padding: 5px;
+        width: 55%;
+        /* padding: 5px; */
     }
 
     .detail{
-        width: 40%;
-        border:  solid 1px rgb(223, 221, 221);
-        border-radius: 5px;
+        width: 45%;
+        /* border:  solid 1px rgb(223, 221, 221);
+        border-radius: 5px; */
+    }
+    .img-product img{
+        border-bottom-left-radius: 5px;
+        border-top-right-radius: 0px;
     }
 }
 
 @media (min-width: 1023px){
+    
+    .img-product{
+        height: 400px;
+    }
+
     .img-product img{
         height: 400px;
+    }
+
+    .product-title{
+        font-size: 2rem;
     }
 }

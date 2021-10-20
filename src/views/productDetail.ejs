@@ -9,22 +9,26 @@
     <main class="main-product">
         <section class="product">  
             <article class="img-product">
-                <div>
-                    <img src="/images/products/<%= product.foto %>" alt="">
-                    <div>
-                        <%= product.descripcion %>
-                    </div>
-                </div>
+                <img src="/images/products/<%= product.foto %>" alt="">
             </article>
             <article class="detail">
                 <div class="product-title">
                     <h1><%= product.nombre %></h1>
                 </div>
-                <div>
-                    $<%= product.precio %>
+                <div class="product-desc">
+                    <%= product.descripcion %>
                 </div>
-                <div>
-                    <%= product.descuento %>%
+                <div class="price-before">
+                    Precio anterior:  
+                    <div>$ <%= product.precio %></div>
+                </div>
+                <div class="price-discount">
+                    <div class="product-price">
+                        $ <%= product.precio %>
+                    </div>
+                    <div class="product-discount">
+                        <%= product.descuento %>% OFF
+                    </div>
                 </div>
                 <div class="center-flex">
                     <button class="btn btn-primary w-100">Comprar</button>
