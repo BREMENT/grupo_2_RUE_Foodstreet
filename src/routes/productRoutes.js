@@ -23,7 +23,7 @@ router.post('/crear/add',(req, res, next)=>{
 
         next();
     });
-}, validationsProduct ,productoController.store);
+}, validationsProduct, productoController.store);
 
 // formulario para editar producto sellerMiddleware
 router.get('/editar/:id', sellerMiddleware ,productoController.edit);

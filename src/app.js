@@ -13,6 +13,9 @@ const restauranteRouter = require('./routes/restaurante.js');
 const carritoRouter = require('./routes/carrito.js');
 const indexRouter = require('./routes/index.js');
 
+// Ruta Api
+const apiRouter = require('./routes/api');
+
 const PORT = process.env.PORT || 8080;
 const app = express();
 
@@ -36,6 +39,7 @@ app.use('/productos', productoRouter);
 app.use('/restaurantes', restauranteRouter);
 app.use(carritoRouter);
 app.use(indexRouter);
+app.use(apiRouter);
 
 //handling errors
 app.use((req, res, next)=>{

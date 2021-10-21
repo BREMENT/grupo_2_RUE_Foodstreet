@@ -33,7 +33,7 @@
                 <div class="center-flex">
                     <button class="btn btn-primary w-100">Comprar</button>
                 </div>
-                <%if( user!== undefined &&  user.tipo_usuario_id===1){%>
+                <%if( user!== undefined &&  user.tipo_usuario_id == 1){%>
                 <div class="w-100 center-between">
                     <div class="w-50">
                         <a href="/productos/editar/<%= product.producto_id %>">
