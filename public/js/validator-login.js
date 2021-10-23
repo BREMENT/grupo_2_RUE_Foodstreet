@@ -1,5 +1,5 @@
 // variables
-const form = document.querySelector('form');
+const form = document.querySelector('#form_login');
 const btn = document.querySelector('.btn-register');
 const email = document.querySelector('#email');
 const password = document.querySelector('#password');
@@ -74,13 +74,11 @@ const printMsgError = () => {
 form.addEventListener('submit', (e)=> e.preventDefault());
 
 email.addEventListener('blur', ()=>{
-    email_ejs_error.innerHTML = '';
     emailValidation();
     printMsgError();
 });
 
 password.addEventListener('blur', ()=>{
-    pass_ejs_error.innerHTML = '';
     passwordValidation();
     printMsgError();
 });
