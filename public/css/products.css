@@ -128,8 +128,6 @@
     animation-timing-function: ease-in-out;
 }
 
-/* fin main home */
-
 @keyframes giro {
     0%{
         transform: rotate(0deg);
@@ -138,6 +136,8 @@
         transform: rotate(360deg);
     }
 }
+/* fin main home */
+
 
 /* tablets */
 @media (min-width: 568px) {

@@ -13,30 +13,21 @@
     <main class="main-home">
         <section class="main-section-home">
             <h3>Basado en tus ordenes</h3>
+            <% products.forEach( product =>{ %>
             <article class="main-article-home">
-                <img src="/images/img-chalupas.jpg" alt="chalupas">
-                <article>
-                    <p>Chalupas</p>
-                </article>
+                <a href="">
+                    <img src="/images/products/<%=product.foto%>" alt="<%= product.nombre %>"/>
+                    <div class="content-home">
+                        <i class="fas fa-truck"></i>
+                        <div class="home-card">
+                            <h2 class="text-price-home">$ <%=product.precio%></h2>
+                            <span class="text-discount-home"><%= product.descuento%>% OFF</span>
+                            <p class="text-name-home"><%= product.nombre %></p>
+                        </div>
+                    </div>
+                </a>
             </article>
-            <article class="main-article-home">
-                <img src="/images/img-chilaquiles.jpg">
-                <article>
-                    <p>Chilaquiles</p>
-                </article>
-            </article>
-            <article class="main-article-home">
-                <img src="/images/img-chile_nogada.jpg">
-                <article>
-                    <p>Chile nogada</p>
-                </article>
-            </article>
-            <article class="main-article-home">
-                <img src="/images/img-tacos_pastor.jpg">
-                <article>
-                    <p>Tacos al pastor</p>
-                </article>
-            </article>
+            <% }) %>
         </section>
         <section class="main-section-cat-home">
             <h3>Categorias</h3>

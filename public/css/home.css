@@ -19,11 +19,9 @@
 .main-article-home {
     width: 100%;
     background-color: #f8f7f7;
-    /* margin-bottom: 10px; */
+    margin-bottom: 10px;
     border-radius: 5px;
-    transition: all 0.5s;
-    height: calc(100% - 5px);
-    
+    transition: all 0.5s;  
 }
 
 .main-article-home:hover{
@@ -34,13 +32,67 @@
     width: 100%;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    height: 370px;
+    height: 300px;
 }
 
-.main-article-home article {
-    /* background-color: blue; */
-    padding: 10px;
-    margin: 0px;
+.content-home {
+    padding: 12px 10px 10px 10px;
+    width: 100%;
+    position: relative;
+}
+
+.content-home i{
+    border: 2px solid #F2274C;
+    border-radius: 100%;
+    padding: 5px;
+    position: absolute;
+    left: 80%;
+    top: -15px;
+    color:#F2274C;
+}
+
+.home-card{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.text-name-home{
+    width: 100%;
+    font-size: 1.05rem;
+}
+
+
+.text-price-home{
+    margin-right: 5px;
+}
+
+.text-discount-home{
+    color: #F2274C;
+}
+
+.main-section-home a{
+    text-decoration: none;
+    color:rgb(100, 100, 100);
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.main-article-home:hover
+.fas{
+    animation-name: giro;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes giro {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
 }
 
 /* main section categoria */
