@@ -8,9 +8,9 @@ const db = require('../database/models');
 const Op = db.Sequelize.Op;
 
 const productoController = {
-    detalle: async(req = request, res = response)=>{
+    detalle: async(req = request, res = response, next)=>{
         try {    
-            const id = Number(req.params.id);
+            const id = Number(req.params.id) || -1;
             const product = await db.Producto.findOne({
                 where:{
                     estatus:1,
@@ -18,7 +18,8 @@ const productoController = {
                 }
             });
             if(!product){
-                res.redirect('/productos');
+                next();
+                // res.redirect('/productos');
             }
             res.render('productDetail', {product, user: req.session.userLogged })
         } catch (error) {
