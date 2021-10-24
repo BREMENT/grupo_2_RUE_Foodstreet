@@ -9,36 +9,40 @@
     <!-- fin header -->
     
      <!-- main home -->
-    <main class="main-home">
-        <section class="main-section-home">
+    <main class="main-product-home">
+        <section class="main-product-section-home">
             <h3>Basado en tus ordenes</h3>
             <% visited.forEach( product =>{ %>
-            <article class="main-article-home">
+            <article class="main-product-article-home">
                 <a href="/productos/detalle/<%= product.producto_id %>">
-                <img class="main-article-img" src="/images/products/<%= product.foto %>" alt="<%= product.nombre %>">
-                <article>
-                    <p><%= product.nombre %></p>
-                    <h2>$ <%= product.precio %></h2>
-                    <span><%= product.descuento %></span>
-                    <i class="fas fa-truck"></i>
-                </article>
+                    <img class="main-product-article-img" src="/images/products/<%= product.foto %>" alt="<%= product.nombre %>">
+                    <div class="content-product">
+                        <i class="fas fa-truck"></i>
+                        <div class="content-card">
+                            <h2 class="text-price">$ <%= product.precio %></h2>
+                            <span class="text-discount"><%= product.descuento %>% OFF</span>
+                            <p class="text-name"><%= product.nombre %></p>
+                        </div>
+                    </div>
                 </a>
             </article>
             <% }) %>
         </section>
 
-        <section class="main-section-home">
+        <section class="main-product-section-home">
             <h3>Productos en oferta</h3>
             <% inSale.forEach( product =>{ %>
-            <article class="main-article-home">
+            <article class="main-product-article-home">
                 <a href="/productos/detalle/<%= product.producto_id %>">
-                <img class="main-article-img" src="/images/products/<%= product.foto %>" alt="<%= product.nombre %>">
-                <article>
-                    <p><%= product.nombre %></p>
-                    <h2>$ <%= product.precio %></h2>
-                    <span><%= product.descuento %></span>
+                <img class="main-product-article-img" src="/images/products/<%= product.foto %>" alt="<%= product.nombre %>">
+                <div class="content-product">
                     <i class="fas fa-truck"></i>
-                </article>
+                    <div class="content-card">
+                        <h2 class="text-price">$ <%= product.precio %></h2>
+                        <span class="text-discount"><%= product.descuento %>% OFF</span>
+                        <p class="text-name"><%= product.nombre %></p>
+                    </div>
+                </div>
                 </a>
             </article>
             <% }) %>

@@ -41,24 +41,24 @@
 /*Fin Ultimas visitas & Ofertas - yo lo agregue*/
 
 /* main home */
-.main-home{
+.main-product-home{
     background-color: #faede3;
 }
 
-.main-section-home {
+.main-product-section-home {
     width: 100%;
     padding: 0px 10px;
     display: flex;
     flex-wrap: wrap;
 }
 
-.main-section-home h3 {
+.main-product-section-home h3 {
     text-align: center;
     margin: 10px;
     width: 100%;
 }
 
-.main-article-home {
+.main-product-article-home {
     width: 100%;
     background-color: #f8f7f7;
     margin-bottom: 10px;
@@ -66,40 +66,87 @@
     transition: all 0.5s;
 }
 
-.main-article-home:hover{
+.main-product-article-home:hover{
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 
-.main-article-img {
+.main-product-article-img {
     width: 100%;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    height: 250px;
+    height: 300px;
 }
 
-.main-article-home article {
-    padding: 10px;
+.content-product {
+    width: 100%;
+    padding: 12px 10px 10px 10px;
+    position: relative;
 }
 
-.main-section-home a{
+.content-product i{
+    border: 2px solid #F2274C;
+    border-radius: 100%;
+    padding: 5px;
+    position: absolute;
+    left: 80%;
+    top: -15px;
+    color:#F2274C;
+}
+
+.content-card{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.text-name{
+    width: 100%;
+    font-size: 1.05rem;
+}
+
+
+.text-price{
+    margin-right: 5px;
+}
+
+.text-discount{
+    color: #F2274C;
+}
+
+.main-product-section-home a{
     text-decoration: none;
     color:rgb(100, 100, 100);
+    display: flex;
+    flex-wrap: wrap;
 
+}
+
+.main-product-article-home:hover
+.fas{
+    animation-name: giro;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
 }
 
 /* fin main home */
 
+@keyframes giro {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
 /* tablets */
-
-
-
 @media (min-width: 568px) {
     
     /* main home */
-    .main-section-home {
+    .main-product-section-home {
         justify-content: space-around;
     }
-    .main-article-home {
+    .main-product-article-home {
         width: 45%;
     }
     /* fin main home */
@@ -124,6 +171,8 @@
     }    
     /* fin main register */
 
+    
+
 }
 /* fin tablets */
 
@@ -132,10 +181,10 @@
 
 @media (min-width: 1023px) {
     /* main home */
-    .main-section-home {
+    .main-product-section-home {
         justify-content: space-around;
     }
-    .main-article-home {
+    .main-product-article-home {
         width: 24%;
     }
     /* fin main home */

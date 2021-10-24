@@ -19,9 +19,11 @@
 .main-article-home {
     width: 100%;
     background-color: #f8f7f7;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     border-radius: 5px;
     transition: all 0.5s;
+    height: calc(100% - 5px);
+    
 }
 
 .main-article-home:hover{
@@ -32,11 +34,13 @@
     width: 100%;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    height: 270px;
+    height: 370px;
 }
 
 .main-article-home article {
+    /* background-color: blue; */
     padding: 10px;
+    margin: 0px;
 }
 
 /* main section categoria */
