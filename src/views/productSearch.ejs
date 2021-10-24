@@ -12,7 +12,7 @@
     <main class="main-home">
         <section class="main-section-home">
             <%if(productos.length>0){%>
-                <h3>Basado en tus busqueda</h3>
+                <h3>Basado en tus busqueda <%= busqueda %></h3>
                 <% productos.forEach( product =>{ %>
                     <article class="main-article-home">
                         <a href="/productos/detalle/<%= product.producto_id %>">

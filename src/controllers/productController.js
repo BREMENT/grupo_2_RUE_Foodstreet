@@ -249,7 +249,7 @@ const productoController = {
                     estatus: 1
                 }
             })
-            res.render('productSearch',{ productos });
+            res.render('productSearch',{ productos, busqueda });
             console.log('Soy busqueda');
         } catch (error) {
             console.log(error);

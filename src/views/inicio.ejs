@@ -15,7 +15,7 @@
             <h3>Basado en tus ordenes</h3>
             <% products.forEach( product =>{ %>
             <article class="main-article-home">
-                <a href="">
+                <a href="/productos/detalle/<%= product.producto_id %>">
                     <img src="/images/products/<%=product.foto%>" alt="<%= product.nombre %>"/>
                     <div class="content-home">
                         <i class="fas fa-truck"></i>

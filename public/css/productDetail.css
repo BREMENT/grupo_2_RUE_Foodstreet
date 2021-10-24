@@ -13,6 +13,7 @@ body{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+
 }
 
 .img-product{
@@ -133,6 +134,11 @@ body{
 }
 
 @media (min-width: 1023px){
+    
+    .product{
+        width: 91.5%;
+        margin: 0px auto;
+    }
     
     .img-product{
         height: 400px;
