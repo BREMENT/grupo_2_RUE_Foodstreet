@@ -170,6 +170,7 @@
 - api/users/:id 
 - Edpoints - usuarios & productos 
 - Dashboard - REACT 
+- Presentacion
 
 
 ### Más de
@@ -181,8 +182,9 @@
 - Organización.
 - Trabajo en equipo.
 - Repartir tareas equitativamente.
+- Practicar presentacion
 
 
 ### Menos de
 <!-- Aquello que intentamos pero no nos da tanto beneficio como se esperaba -->
-Trello 
+- Trello 
