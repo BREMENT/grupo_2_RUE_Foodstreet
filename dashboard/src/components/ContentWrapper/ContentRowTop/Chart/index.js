@@ -1,30 +1,15 @@
 import React, {useEffect, useState}from 'react';
 import ChartRow from './ChartRow';
 
-let tableRowsData = [
-    {
-        title: 'Billy Elliot ',
-        length: '123',
-        rating: '5',
-        categories: ['Drama','Comedia'],
-        awards: 2
-    },
-    {
-        title: 'Alicia en el país de las maravillas',
-        length: '142',
-        rating: '4.8',
-        categories: ['Drama','Acción','Comedia'],
-        awards: 3
-    },
-    
-]
 
 function Chart(props) {
 
     const [products, setProduct] = useState([]);
+    const [meta, setMeta] = useState({});
+    const url = 'http://localhost:8080';
 
-    const peticion = async() =>{
-        const resp = await fetch('http://localhost:8080/api/products/').then(resp=>resp.json());
+    const peticion = async(endpoint) =>{
+        const resp = await fetch(`${url}${endpoint}`).then(resp=>resp.json());
         const producto = resp.products.map(product =>{
             return {
                 id: product.id,
@@ -37,14 +22,26 @@ function Chart(props) {
                 ]
             }
         })
-        console.log(producto);
+        console.log(resp);
         setProduct(producto);
+        setMeta(resp.meta);
     }
 
 
     useEffect(()=>{
-        peticion();
+        peticion('/api/products/');
     },[]);
+
+
+    const siguiente = (e) =>{
+        console.log(e);
+        peticion(e.target.value);
+    }
+
+    const anterior = (e) =>{
+        console.log(e);
+        peticion(e.target.value);
+    }
 
     return (
         <div className="card shadow mb-4">
@@ -55,7 +52,7 @@ function Chart(props) {
                             <tr>
                                 <th>Nombre</th>
                                 <th>Descripcion</th>
-                                <th>Detalle url</th>
+                                <th>Detalle</th>
                                 <th>Categorias</th>
                             </tr>
                         </thead>
@@ -63,7 +60,7 @@ function Chart(props) {
                             <tr>
                                 <th>Nombre</th>
                                 <th>Descripcion</th>
-                                <th>Detalle url</th>
+                                <th>Detalle</th>
                                 <th>Categorias</th>
                             </tr>
                         </tfoot>
@@ -77,6 +74,22 @@ function Chart(props) {
                         </tbody>
                     </table>
                 </div>
+            </div>
+            <div className={(meta.previous)?`m-3 d-flex justify-content-between`:'m-3 d-flex justify-content-end'}>
+                {
+                    meta.previous &&
+                    <button onClick={anterior}
+                            value={meta.previous}
+                            className="btn btn-primary">Anterior</button>
+                }
+
+                {
+                    meta.next &&
+                    <button onClick={siguiente}
+                            value={meta.next}
+                            className="btn btn-primary">Siguiente</button>
+                }
+                
             </div>
         </div>
     );

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import logo from '../../assets/images/logo-DH.png';
+import logo from '../../assets/images/Rue_logo_pink.png';
 
 function SideBar(props) {
     return (
@@ -10,7 +10,7 @@ function SideBar(props) {
 			<Link className="sidebar-brand d-flex align-items-center justify-content-center" 
 				to="/" exact="true">
 				<div className="sidebar-brand-icon">
-					<img className="w-100" src={logo} 
+					<img className="w-75" src={logo} 
                     alt="Digital House" />
 				</div>
 			</Link>

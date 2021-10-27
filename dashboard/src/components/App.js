@@ -9,6 +9,7 @@ import ContentRowCenter from './ContentWrapper/ContentRowTop/ContentRowCenter';
 import ContentRowMovie from './ContentWrapper/ContentRowTop/ContentRowMovie';
 import NotFound from './NotFound';
 import SearchMovies from './ContentWrapper/ContentRowTop/SearchMovies';
+import CardProduct from './ContentWrapper/ContentRowTop/CardProduct';
 
 function App() {
   return (
@@ -50,6 +51,14 @@ function App() {
           <ContentWrapper>
             <div className="container-fluid">
               <SearchMovies />
+            </div>
+          </ContentWrapper>
+        </Route>
+
+        <Route path="/product/:id">
+          <ContentWrapper>
+            <div className="container-fluid">
+              <CardProduct />
             </div>
           </ContentWrapper>
         </Route>

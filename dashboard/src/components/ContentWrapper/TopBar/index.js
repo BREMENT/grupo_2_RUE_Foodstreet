@@ -1,7 +1,25 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import perfil from '../../../assets/images/jordan-walke.png';
 
 function TopBar(props) {
+	const [user, setUser] = useState({});
+
+	const peticion = async() =>{
+		const usuario = await fetch('http://localhost:8080/api/users/1')
+								.then(resp => resp.json());
+
+		console.log(usuario.users);
+		setUser(usuario.users);
+	}
+
+	useEffect(()=>{
+		peticion();
+	}, [])
+
+	useEffect(()=>{
+		return ()=>console.error('Se desmonto el componente');
+	},[]);
+
     return (
         <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
@@ -38,9 +56,9 @@ function TopBar(props) {
 				<li className="nav-item dropdown no-arrow">
 					<a className="nav-link dropdown-toggle" 
                         href="/" id="userDropdown">
-						<span className="mr-2 d-none d-lg-inline text-gray-600 small">Jordan Walke</span>
+						<span className="mr-2 d-none d-lg-inline text-gray-600 small">{user.email}</span>
 						<img className="img-profile rounded-circle" 
-                        src={perfil} 
+                        src={`http://localhost:8080${user.img}`} 
                         alt="Jordan Walke - Creador de React" width="60" />
 					</a>
 				</li>

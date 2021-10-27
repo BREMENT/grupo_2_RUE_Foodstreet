@@ -31,25 +31,25 @@ function ContentRowMovie(props) {
                 titulo: 'Productos total',
                 cifra: products.meta.total_products,
                 color: 'primary',
-                icono: 'fa-film'
+                icono: 'fa-hamburger'
             },
             {
                 titulo: 'Usuarios total',
                 cifra: users.meta.total_users,
                 color: 'success',
-                icono: 'fa-film'
+                icono: 'fa-users'
             },
             {
                 titulo: 'Comidas total',
                 cifra: foods.meta.total_foods,
                 color: 'warning',
-                icono: 'fa-film'
+                icono: 'fa-drumstick-bite'
             },
             {
                 titulo: 'Categoria total',
                 cifra: categories.meta.total_categories,
                 color: 'danger',
-                icono: 'fa-film'
+                icono: 'fa-cogs'
             }
         ];
         

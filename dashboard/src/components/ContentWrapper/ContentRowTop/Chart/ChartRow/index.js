@@ -1,16 +1,23 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 function ChartRow({id,nombre, descripcion, detalle, categorias,}) {
     return (
         <tr>
             <td>{nombre}</td>
             <td>{descripcion}</td>
-            <td>{detalle}</td>
+            <td>
+                <Link to={`/product/${id}`}>
+                    <button className="btn btn-info">
+                        Ver más
+                    </button>
+                </Link>
+            </td>
             <td>
                 <ul>
-                    {categorias.map((category) =>
-                        <li key={id}>{category}</li>
+                    {categorias.map((category,i) =>
+                        <li key={i}>{category}</li>
                     )}
                 </ul>
             </td>
@@ -18,21 +25,19 @@ function ChartRow({id,nombre, descripcion, detalle, categorias,}) {
     );
 }
 
-// ChartRow.propTypes = {
-//     title: PropTypes.string,
-//     length: PropTypes.string,
-//     rating: PropTypes.string,
-//     categories: PropTypes.array,
-//     awards: PropTypes.number
-// }
+ChartRow.propTypes = {
+    nombre: PropTypes.string,
+    descripcion: PropTypes.string,
+    detalle: PropTypes.string,
+    categorias: PropTypes.array
+}
 
 
-// ChartRow.defaultProps = {
-//     title: 'default',
-//     length: 0,
-//     rating: 0,
-//     categories: ['Drama','Acción','Comedia'],
-//     awards: 0
-// }
+ChartRow.defaultProps = {
+    nombre: 'default',
+    descripcion: 'default',
+    detalle: 'default',
+    categories: ['default','default','default']
+}
 
 export default ChartRow;
