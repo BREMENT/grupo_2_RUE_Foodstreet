@@ -1,20 +1,24 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Genres from './Genres';
 
 function GenresInDb(props) {
-    // aplicar un hooks para traernos los genres de la db
-    const genres = [
-        'Acción',
-        'Animación',
-        'Aventura',
-        'Ciencia Ficción',
-        'Comedia',
-        'Documental',
-        'Drama',
-        'Fantasia',
-        'Infantiles',
-        'Musical'
-    ];
+    
+    const [foods, setFood] = useState([]);
+
+    const peticion = async() =>{
+        const food = await fetch('http://localhost:8080/api/foods')
+                            .then(resp => resp.json());
+        console.log(food);
+        setFood(food.foods)
+    }
+
+    useEffect(()=>{
+        peticion();
+    }, []);
+
+    useEffect(()=>{
+        return ()=>console.error('Se desmonto el componente');
+    },[])
 
     return (
         <div className="col-lg-6 mb-4">
@@ -25,7 +29,11 @@ function GenresInDb(props) {
                 <div className="card-body">
                     <div className="row">
                         {
-                            genres.map(genre=> <Genres key={genre} titulo={genre} />)
+                            foods.map(food=> <Genres 
+                                key={food.tipo_comida_id} 
+                                titulo={food.descripcion}
+                                total={food.TipoComida_producto.length} 
+                            />)
                         }
                         
                     </div>

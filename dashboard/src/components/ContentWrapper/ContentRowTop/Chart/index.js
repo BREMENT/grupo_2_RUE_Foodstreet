@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState}from 'react';
 import ChartRow from './ChartRow';
 
 let tableRowsData = [
@@ -20,6 +20,32 @@ let tableRowsData = [
 ]
 
 function Chart(props) {
+
+    const [products, setProduct] = useState([]);
+
+    const peticion = async() =>{
+        const resp = await fetch('http://localhost:8080/api/products/').then(resp=>resp.json());
+        const producto = resp.products.map(product =>{
+            return {
+                id: product.id,
+                nombre: product.name,
+                descripcion: product.description,
+                detalle: product.detail,
+                categorias: [
+                    product.TipoComida.descripcion,
+                    product.TipoCategoria.descripcion
+                ]
+            }
+        })
+        console.log(producto);
+        setProduct(producto);
+    }
+
+
+    useEffect(()=>{
+        peticion();
+    },[]);
+
     return (
         <div className="card shadow mb-4">
             <div className="card-body">
@@ -27,26 +53,24 @@ function Chart(props) {
                     <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
                         <thead>
                             <tr>
-                                <th>Título</th>
-                                <th>Duración</th>
-                                <th>Rating</th>
-                                <th>Género</th>
-                                <th>Premios</th>
+                                <th>Nombre</th>
+                                <th>Descripcion</th>
+                                <th>Detalle url</th>
+                                <th>Categorias</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>Título</th>
-                                <th>Duración</th>
-                                <th>Rating</th>
-                                <th>Género</th>
-                                <th>Premios</th>
+                                <th>Nombre</th>
+                                <th>Descripcion</th>
+                                <th>Detalle url</th>
+                                <th>Categorias</th>
                             </tr>
                         </tfoot>
                         <tbody>
                             {
-                            tableRowsData.map( ( row , i) => {
-                                return <ChartRow { ...row} key={i}/>
+                            products.map( (product) => {
+                                return <ChartRow { ...product} key={product.id}/>
                             })
                             }
 

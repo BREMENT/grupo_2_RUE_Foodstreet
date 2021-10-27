@@ -1,28 +1,61 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import CardData from './CardData';
 
 function ContentRowMovie(props) {
+    
+    const [cardsTotal, setCardsTotal] = useState([]); 
 
-    const movies = [
-        {
-            titulo: 'Movies in data base',
-            cifra: 21,
-            color: 'primary',
-            icono: 'fa-film',
-        },
-        {
-            titulo: 'Total awards',
-            cifra: 79,
-            color: 'success',
-            icono: 'fa-award',
-        },
-        {
-            titulo: 'Actors quantity',
-            cifra: 79,
-            color: 'warning',
-            icono: 'fa-user',
-        }
-    ]
+    useEffect(()=>{
+        peticion();           
+    }, []);
+
+    useEffect(()=>{
+        return ()=>console.error('Se desmonto el componente');
+    }, []);
+
+    const peticion = async() =>{
+        const [
+            products,
+            users,
+            foods,
+            categories
+        ] = await Promise.all([
+            fetch('http://localhost:8080/api/products/').then( resp => resp.json() ),
+            fetch('http://localhost:8080/api/users/').then( resp => resp.json() ),
+            fetch('http://localhost:8080/api/foods/').then( resp => resp.json() ),
+            fetch('http://localhost:8080/api/categories/').then( resp => resp.json() ),
+        ]);
+
+        const arrayTotal = [
+            {
+                titulo: 'Productos total',
+                cifra: products.meta.total_products,
+                color: 'primary',
+                icono: 'fa-film'
+            },
+            {
+                titulo: 'Usuarios total',
+                cifra: users.meta.total_users,
+                color: 'success',
+                icono: 'fa-film'
+            },
+            {
+                titulo: 'Comidas total',
+                cifra: foods.meta.total_foods,
+                color: 'warning',
+                icono: 'fa-film'
+            },
+            {
+                titulo: 'Categoria total',
+                cifra: categories.meta.total_categories,
+                color: 'danger',
+                icono: 'fa-film'
+            }
+        ];
+        
+        setCardsTotal(arrayTotal);
+    }
+
 
     return (
         <div className="row">
@@ -30,46 +63,14 @@ function ContentRowMovie(props) {
             {/* <!-- Movies in Data Base --> */}
             
             {
-                movies.map( movie =>{
-                    return <CardData key={movie.titulo}
-                                    {...movie}    />
+                cardsTotal.map( card =>{
+                    return <CardData 
+                                    key={card.titulo}
+                                    {...card}    
+                            />
                 })
             }
 
-            {/* <!-- Total awards --> */}
-            {/* <div className="col-md-4 mb-4">
-                <div className="card border-left-success shadow h-100 py-2">
-                    <div className="card-body">
-                        <div className="row no-gutters align-items-center">
-                            <div className="col mr-2">
-                                <div className="text-xs font-weight-bold text-success text-uppercase mb-1"> Total awards</div>
-                                <div className="h5 mb-0 font-weight-bold text-gray-800">79</div>
-                            </div>
-                            <div className="col-auto">
-                                <i className="fas fa-award fa-2x text-gray-300"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> */}
-
-            {/* <!-- Actors quantity --> */}
-            {/* <div className="col-md-4 mb-4">
-                <div className="card border-left-warning shadow h-100 py-2">
-                    <div className="card-body">
-                        <div className="row no-gutters align-items-center">
-                            <div className="col mr-2">
-                                <div className="text-xs font-weight-bold text-warning text-uppercase mb-1">Actors quantity
-                                </div>
-                                <div className="h5 mb-0 font-weight-bold text-gray-800">49</div>
-                            </div>
-                            <div className="col-auto">
-                                <i className="fas fa-user fa-2x text-gray-300"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> */}
         </div>
     );
 }

@@ -4,8 +4,9 @@ const methodOverride = require('method-override');
 const express = require('express');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
-const adminLoggedMiddleware = require('./middlewares/adminLoggedMiddleware');
+const cors = require('cors');
 
+const adminLoggedMiddleware = require('./middlewares/adminLoggedMiddleware');
 // rutas
 const userRouter = require('./routes/usersRoutes');
 const productoRouter = require('./routes/productRoutes.js');
@@ -19,6 +20,7 @@ const apiRouter = require('./routes/api');
 const PORT = process.env.PORT || 8080;
 const app = express();
 
+app.use(cors());
 app.use(express.static( path.join(__dirname, '../public')));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname,'./views'));
