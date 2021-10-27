@@ -1,5 +1,6 @@
 const { request, response } = require("express");
 const db = require("../../database/models");
+const Op = db.Sequelize.Op;
 
 const productController = {
   getProducts: async (req = request, res = response) => {
@@ -125,6 +126,108 @@ const productController = {
     }
     
   },
+  searchProduct: async (req = request, res = response) => {
+    try {
+      const busqueda  = req.query.search;
+      const products = await db.Producto.findAll({
+        where:{
+          estatus:1,
+          nombre:{
+            [Op.like]:`%${busqueda}%`
+          }
+        },
+        attributes: [
+          ["producto_id", "id"],
+          ["nombre", "name"],
+          ["descripcion", "description"],
+          ["precio", "price"],
+          ["descuento", "discount"],
+          [
+            db.Sequelize.fn(
+              "concat",
+              "/images/products/",
+              db.Sequelize.col("foto")
+            ),
+            "img",
+          ],
+        ],
+        include: [
+          { association: "TipoComida" },
+          { association: "TipoCategoria" },
+        ],
+        limit: 20,
+        order: [
+          ['nombre','asc']
+        ]
+      })
+      res.status(200).json({
+        meta:{
+          status: 200,
+          url: '/api/products/busqueda',
+          total_products: products.length
+        },
+        products
+      })
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({
+        meta:{
+          status: 500,
+          url: '/api/products'
+        },
+        msg: error.message
+      })
+    }
+  },
+  lastProduct: async(req = request, res = response) =>{
+    try {
+      const products = await db.Producto.findAll({
+        where:{
+          estatus:1
+        },
+        attributes: [
+          ["producto_id", "id"],
+          ["nombre", "name"],
+          ["descripcion", "description"],
+          ["precio", "price"],
+          ["descuento", "discount"],
+          [
+            db.Sequelize.fn(
+              "concat",
+              "/images/products/",
+              db.Sequelize.col("foto")
+            ),
+            "img",
+          ],
+        ],
+        include: [
+          { association: "TipoComida" },
+          { association: "TipoCategoria" },
+        ],
+        limit: 1,
+        order: [
+          ['producto_id','desc']
+        ]
+      })
+      res.status(200).json({
+        meta:{
+          status: 200,
+          url: '/api/products/busqueda',
+          total_products: products.length
+        },
+        products
+      })
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({
+        meta:{
+          status: 500,
+          url: '/api/products'
+        },
+        msg: error.message
+      })
+    }
+  }
 };
 
 module.exports = productController;

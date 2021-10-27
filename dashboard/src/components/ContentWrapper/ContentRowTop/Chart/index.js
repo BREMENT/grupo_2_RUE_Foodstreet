@@ -32,6 +32,14 @@ function Chart(props) {
         peticion('/api/products/');
     },[]);
 
+    useEffect(()=>{
+        console.warn('Se modificon el componente');
+    },[products]);
+
+
+    useEffect(()=>{
+        return ()=>console.error('Se desmonto el componente');
+    },[])
 
     const siguiente = (e) =>{
         console.log(e);
@@ -75,7 +83,9 @@ function Chart(props) {
                     </table>
                 </div>
             </div>
-            <div className={(meta.previous)?`m-3 d-flex justify-content-between`:'m-3 d-flex justify-content-end'}>
+            <div className={(meta.previous)
+                            ?`m-3 d-flex justify-content-between`
+                            :'m-3 d-flex justify-content-end'}>
                 {
                     meta.previous &&
                     <button onClick={anterior}

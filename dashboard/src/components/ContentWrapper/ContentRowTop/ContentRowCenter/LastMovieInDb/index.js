@@ -6,12 +6,10 @@ function LastMovieInDb(props) {
     const [ product, setProduct ] = useState({});
 
     const peticion = async() => {
-        const products = await fetch('http://localhost:8080/api/products/').then(resp => resp.json());
-        console.log(products.meta.total_products);
-        const last_products = await fetch(`http://localhost:8080/api/products/${products.meta.total_products}`)
-                                    .then(resp => resp.json());
-        console.log(last_products);
-        await setProduct(last_products.products);
+        const producto = await fetch('http://localhost:8080/api/products/last').then(resp => resp.json());
+        const [product] = producto.products;
+        setProduct(product);
+        
     }
     
     useEffect(()=>{

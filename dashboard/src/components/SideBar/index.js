@@ -64,7 +64,7 @@ function SideBar(props) {
 			<li className="nav-item">
 				<Link className="nav-link" 
 						to="/search">
-					<i className="fas fa-fw fa-table"></i>
+					<i className="fas fa-fw fa-search"></i>
 					<span>Search</span>
 				</Link>
 			</li>

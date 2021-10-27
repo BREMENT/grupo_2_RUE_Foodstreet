@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import perfil from '../../../assets/images/jordan-walke.png';
 
 function TopBar(props) {
 	const [user, setUser] = useState({});

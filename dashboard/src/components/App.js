@@ -8,7 +8,7 @@ import Chart from './ContentWrapper/ContentRowTop/Chart';
 import ContentRowCenter from './ContentWrapper/ContentRowTop/ContentRowCenter';
 import ContentRowMovie from './ContentWrapper/ContentRowTop/ContentRowMovie';
 import NotFound from './NotFound';
-import SearchMovies from './ContentWrapper/ContentRowTop/SearchMovies';
+import SearchProduct from './ContentWrapper/ContentRowTop/SearchProduct';
 import CardProduct from './ContentWrapper/ContentRowTop/CardProduct';
 
 function App() {
@@ -50,7 +50,7 @@ function App() {
         <Route path="/search">
           <ContentWrapper>
             <div className="container-fluid">
-              <SearchMovies />
+              <SearchProduct />
             </div>
           </ContentWrapper>
         </Route>
