@@ -7,6 +7,10 @@ const db = require('../database/models');
 
 const Op = db.Sequelize.Op;
 
+const descuento = (precio, descuento) =>{
+    return precio - ((precio*descuento)/100);
+}
+
 const productoController = {
     detalle: async(req = request, res = response, next)=>{
         try {    
@@ -21,7 +25,7 @@ const productoController = {
                 next();
                 // res.redirect('/productos');
             }
-            res.render('productDetail', {product, user: req.session.userLogged })
+            res.render('productDetail', {product, user: req.session.userLogged, descuento })
         } catch (error) {
             console.log(error);
         }

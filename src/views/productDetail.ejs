@@ -18,10 +18,20 @@
                 <div class="product-desc">
                     <%= product.descripcion %>
                 </div>
-                <div class="price-before">
-                    Precio anterior:  
-                    <div>$ <%= product.precio %></div>
-                </div>
+                <%if(product.descuento > 0){%>
+                    <div class="price-before">
+                        Precio anterior:  
+                        <div>$ <%= product.precio %></div>
+                    </div>
+                    <div class="price-discount">
+                        <div class="product-price">
+                            $ <%= descuento(product.precio, product.descuento) %>
+                        </div>
+                        <div class="product-discount">
+                            <%= product.descuento %>% OFF
+                        </div>
+                    </div>
+                <%}else{%>
                 <div class="price-discount">
                     <div class="product-price">
                         $ <%= product.precio %>
@@ -30,6 +40,7 @@
                         <%= product.descuento %>% OFF
                     </div>
                 </div>
+                <%}%>
                 <div class="center-flex">
                     <button class="btn btn-primary w-100">Comprar</button>
                 </div>
