@@ -15,19 +15,59 @@ const typesCategoryController = {
             ]);
 
             res.status(200).json({
-                count,
+                meta:{
+                    status: 200,
+                    url: '/api/categories',
+                    total_categories: count,
+                    total_page: categories.length
+                },
                 categories
             });
 
         } catch (error) {
             console.log(error);
+            res.status(500).json({
+                meta: {
+                    status: 500,
+                    url: '/api/categories'
+                },
+                msg: error.message
+            })
         }
     },
-    getCategory: (req = request, res = response) =>{
+    getCategory: async(req = request, res = response)=>{
         try {
-            
+            const id = Number(req.params.id);
+            const [count, categories] = await Promise.all([
+                db.TipoCategoria.count({where:{estatus:1}}),
+                db.TipoCategoria.findOne({
+                    where: {
+                        estatus: 1,
+                        tipo_categoria_id: id
+                    },
+                    include: [{association: 'TipoCategoria_Producto'}]
+                })
+            ]);
+
+            res.status(200).json({
+                meta:{
+                    status: 200,
+                    url: `/api/categories/${id}`,
+                    total_categories: count,
+                    total_page: 1
+                },
+                categories
+            });
+
         } catch (error) {
             console.log(error);
+            res.status(500).json({
+                meta: {
+                    status: 500,
+                    url: '/api/categories'
+                },
+                msg: error.message
+            })
         }
     }
 }
